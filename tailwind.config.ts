@@ -9,9 +9,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-
         primary: "var(--color-primary)", // #EFEFEF (Branco)
         secondary: "var(--color-secondary)", // #06080A (Preto Suave)
         highlight: "var(--color-highlight)", // #9956F6 (Roxo Destaque)
