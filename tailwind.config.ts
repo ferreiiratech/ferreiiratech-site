@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+	  fontFamily: {
+		inter: "Inter, sans-serif",
+	  },
       colors: {
         primary: "var(--color-primary)", // #EFEFEF (Branco)
         secondary: "var(--color-secondary)", // #06080A (Preto Suave)
