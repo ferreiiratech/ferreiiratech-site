@@ -2,20 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/Inter-Regular.woff") format("truetype");
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Space-Grotesk";
+  src: url("/fonts/spaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Cores Principais */
+  --color-primary: #efefef; /* Branco */
+  --color-secondary: #06080a; /* Preto Suave */
+  --color-highlight: #9956f6; /* Roxo Destaque */
+
+  /* Tons de Cinza */
+  --gray-100: #bebfc0; /* Cinza Claro */
+  --gray-200: #a8a8a9; /* Cinza Médio */
+  --gray-300: #899099; /* Cinza Escuro 30% */
+  --gray-400: #899099; /* Cinza Escuro 40% */
+  --gray-500: #899099; /* Cinza Escuro 50% */
+  --gray-600: #44443f; /* Cinza Muito Escuro */
+
+  /* Pretos */
+  --black-100: #121415; /* Preto Puro */
+  --black-200: #12161b; /* Preto Variado */
+  --black-300: #06080a; /* Preto Suave */
+
+  /* Tons de Roxo */
+  --purple-100: #bc94f4; /* Roxo Claro */
+  --purple-200: #9956f6; /* Roxo Destaque 100% */
+  --purple-300: #594d6c; /* Roxo Escuro 10% */
+
+  /* Outros Tons */
+  --purple-400: #9956f6; /* Roxo Destaque 60% */
+  --black-opacity-80: rgba(6, 8, 10, 0.8); /* Preto 80% */
+  --black-opacity-60: rgba(6, 8, 10, 0.6); /* Preto 60% */
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow: overlay;
+  color: var(--color-secondary);
+  background: url("/img/background-texture.svg") var(--color-primary);
+  font-family: "Inter", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--color-secondary);
 }
