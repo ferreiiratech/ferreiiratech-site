@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter/Inter-Regular.woff") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Space-Grotesk";
+  src: url("/fonts/spaceGrotesk/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Cores Principais */
   --color-primary: #efefef; /* Branco */
@@ -33,7 +47,22 @@
 }
 
 body {
+  overflow: overlay;
   color: var(--color-secondary);
-  background: var(--color-primary);
-  font-family: 'Inter', sans-serif;
+  background: url("/img/background-texture.svg") var(--color-primary);
+  font-family: "Inter", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--color-secondary);
 }

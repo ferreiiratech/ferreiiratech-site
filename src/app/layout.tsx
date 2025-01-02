@@ -1,16 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
 
 export const metadata: Metadata = {
   title: "Leonardo Ferreira",
@@ -24,17 +13,17 @@ export const metadata: Metadata = {
     other: {
       rel: "icon",
       url: "/favicon.ico",
-    }
+    },
   },
   generator: "Next.js",
   authors: [{ name: "Leonardo Ferreira", url: "https://ferreiiratech.com" }],
   keywords: [
-    "Leonardo Ferreira", 
-    "FerreiiraTech", 
-    "Blog", 
-    "Blog Ferreiiratech", 
-    "Portfolio", 
-    "Portfolio Leonardo Ferreira"
+    "Leonardo Ferreira",
+    "FerreiiraTech",
+    "Blog",
+    "Blog Ferreiiratech",
+    "Portfolio",
+    "Portfolio Leonardo Ferreira",
   ],
   creator: "Leonardo Ferreira",
   manifest: "/manifest.json",
@@ -48,7 +37,7 @@ export const metadata: Metadata = {
         url: "/favicon.ico",
         width: 1200,
         height: 630,
-        alt: "FerreiiraTech Logo"
+        alt: "FerreiiraTech Logo",
       },
     ],
     locale: "pt-BR",
@@ -81,11 +70,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

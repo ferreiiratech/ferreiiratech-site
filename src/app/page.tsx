@@ -1,9 +1,11 @@
-import Header from "@/components/Header";
+import Header from "@/components/Header"
+import FirstSection from "@/components/sections/FirstSection"
 
 export default function Home() {
   return (
     <div>
-      <Header/>      
+      <Header />
+      <FirstSection />
     </div>
   )
 }

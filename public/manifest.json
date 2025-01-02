@@ -1,35 +1,34 @@
 {
-    "name": "FerreiiraTech",
-    "short_name": "Ferreiira",
-    "description": "O portfólio de Leonardo Ferreira, desenvolvido com Next.js",
-    "start_url": "/",
-    "scope": "/",
-    "display": "standalone",
-    "background_color": "#FFFFFF",
-    "theme_color": "#FFFFFF",
-    "icons": [
-      {
-        "src": "/favicon.ico",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "/favicon.ico",
-        "sizes": "512x512",
-        "type": "image/png"
-      },
-      {
-        "src": "/favicon.ico",
-        "sizes": "192x192",
-        "type": "image/png",
-        "purpose": "maskable"
-      },
-      {
-        "src": "/favicon.ico",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "maskable"
-      }
-    ]
-  }
-  
+  "name": "FerreiiraTech",
+  "short_name": "Ferreiira",
+  "description": "O portfólio de Leonardo Ferreira, desenvolvido com Next.js",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
