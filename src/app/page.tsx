@@ -1,5 +1,5 @@
-import Header from "@/components/Header"
-import FirstSection from "@/components/sections/FirstSection"
+import Header from "@/app/components/Header"
+import FirstSection from "@/app/home/components/FirstSection"
 
 export default function Home() {
   return (

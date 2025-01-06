@@ -1,4 +1,4 @@
-import SocialCard from "../SocialCard"
+import SocialCard from "./SocialCard"
 
 export default function FirstSection() {
   return (
