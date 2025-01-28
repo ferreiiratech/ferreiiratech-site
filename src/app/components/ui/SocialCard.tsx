@@ -1,20 +1,8 @@
 import React from "react"
 
-type SocialCardProps = {
-  iconPath: string
-  title: string
-  altIcone?: string
-  description: string
-  link: string
-  linkText: string
-  className?: string
-  classNameButton?: string
-  titleLink?: string
-}
-
 const SocialCard = React.memo((props: SocialCardProps) => {
   return (
-    <article
+    <div
       className={`flex flex-col items-start p-6 border-gray-300 ${props.className || ""}`}
     >
       <header className="flex items-center gap-2 mb-4">
@@ -34,7 +22,7 @@ const SocialCard = React.memo((props: SocialCardProps) => {
       >
         {props.linkText}
       </a>
-    </article>
+    </div>
   )
 })
 

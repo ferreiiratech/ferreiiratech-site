@@ -3,10 +3,6 @@
 import { useState } from "react"
 import * as motion from "motion/react-client"
 
-interface DonationCardProps {
-  handleCloseDonationCard: () => void
-}
-
 export default function DonationCard(props: DonationCardProps) {
   const [textToCopy, setTextToCopy] = useState("texto para copiar")
   const [isCopied, setIsCopied] = useState<"idle" | "success" | "error">("idle")
