@@ -55,9 +55,9 @@ export default {
         /* Tons de Roxo */
         purple: {
           100: "var(--purple-100)", // #BC94F4 (Roxo Claro)
+          150: "var(--purple-150)", // #9956F6 (Roxo Destaque 80%)
           200: "var(--purple-200)", // #9956F6 (Roxo Destaque 100%)
           300: "var(--purple-300)", // #594D6C (Roxo Escuro 10%)
-          400: "var(--purple-400)", // #9956F6 (Roxo Destaque 60%)
         },
       },
     },

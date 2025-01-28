@@ -37,11 +37,11 @@
 
   /* Tons de Roxo */
   --purple-100: #bc94f4; /* Roxo Claro */
+  --purple-150: rgba(153, 86, 246, 0.8); /* Roxo Destaque 80% */
   --purple-200: #9956f6; /* Roxo Destaque 100% */
   --purple-300: #594d6c; /* Roxo Escuro 10% */
-
+  
   /* Outros Tons */
-  --purple-400: #9956f6; /* Roxo Destaque 60% */
   --black-opacity-80: rgba(6, 8, 10, 0.8); /* Preto 80% */
   --black-opacity-60: rgba(6, 8, 10, 0.6); /* Preto 60% */
   --black-opacity-40: rgba(6, 8, 10, 0.4); /* Preto 80% */
