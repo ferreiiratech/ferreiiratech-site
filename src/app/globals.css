@@ -44,6 +44,7 @@
   --purple-400: #9956f6; /* Roxo Destaque 60% */
   --black-opacity-80: rgba(6, 8, 10, 0.8); /* Preto 80% */
   --black-opacity-60: rgba(6, 8, 10, 0.6); /* Preto 60% */
+  --black-opacity-40: rgba(6, 8, 10, 0.4); /* Preto 80% */
 }
 
 body {

@@ -46,8 +46,9 @@ export default {
           200: "var(--black-200)", // #12161B (Preto Variado)
           300: "var(--black-300)", // #06080A (Preto Suave)
           opacity: {
+            90: "var(--black-opacity-90)", // Preto com Opacidade 80%
             80: "var(--black-opacity-80)", // Preto com Opacidade 80%
-            60: "var(--black-opacity-60)", // Preto com Opacidade 60%
+            40: "var(--black-opacity-40)", // Preto com Opacidade 60%
           },
         },
 
