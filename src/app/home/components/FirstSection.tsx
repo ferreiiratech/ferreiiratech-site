@@ -1,6 +1,46 @@
 import SocialCard from "./SocialCard"
 
 export default function FirstSection() {
+  const socialCards = [
+    {
+      iconPath: "/img/icon-blog.svg",
+      title: "Blog",
+      description: "Eu compartilho tudo que aprendo. Bora ler?",
+      altIcone: "Ícone do Blog",
+      link: "#",
+      linkText: "Acesse meu blog",
+      className: "border-b lg:border-r xl:border-b-0",
+      classNameButton: "cursor-not-allowed",
+      titleLink: "Estará disponível em breve"
+    },
+    {
+      iconPath: "/img/icon-youtube.svg",
+      title: "Youtube",
+      description: "Compartilhando coisas incríveis. Assista!",
+      altIcone: "Ícone do Youtube",
+      link: "https://youtube.com/@ferreiiratech",
+      linkText: "Acompanhe meu canal",
+      className: "border-b lg:border-r-0 xl:border-b-0 xl:border-r"
+    },
+    {
+      iconPath: "/img/icon-instagram.svg",
+      title: "Instagram",
+      description: "Curte tecnologia? Então bora pro meu Instagram.",
+      altIcone: "Ícone do Instagram",
+      link: "https://www.instagram.com/ferreiiratech/",
+      linkText: "Siga-me no instagram",
+      className: "border-b lg:border-r xl:border-b-0"
+    },
+    {
+      iconPath: "/img/icon-linkedin.svg",
+      title: "Linkedin",
+      description: "Juntos, podemos evoluir na área de tecnologia.",
+      altIcone: "Ícone do Linkedin",
+      link: "https://www.linkedin.com/in/ferreiiratech/",
+      linkText: "Conecte-se comigo"
+    }
+  ]
+
   return (
     <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[2fr_1fr] lg:mx-44 lg:mt-28 2xl:mx-72">
       <div className="space-y-5 lg:space-y-10">
@@ -52,46 +92,20 @@ export default function FirstSection() {
       </div>
 
       <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 border border-gray-300 rounded-xl lg:w-[100%] lg:col-span-2">
-        <SocialCard
-          iconPath="/img/icon-blog.svg"
-          title="Blog"
-          description="Eu compartilho tudo que aprendo. Bora ler?"
-          altIcone="Ícone do Blog"
-          link="#"
-          linkText="Acesse meu blog"
-          className="border-b lg:border-r xl:border-b-0"
-          classNameButton="cursor-not-allowed"
-          titleLink="Estará disponível em breve"
-        />
-
-        <SocialCard
-          iconPath="/img/icon-youtube.svg"
-          title="Youtube"
-          description="Compartilhando coisas incríveis. Assista!"
-          altIcone="Ícone do Youtube"
-          link="https://youtube.com/@ferreiiratech"
-          linkText="Acompanhe meu canal"
-          className="border-b lg:border-r-0 xl:border-b-0 xl:border-r"
-        />
-
-        <SocialCard
-          iconPath="/img/icon-instagram.svg"
-          title="Instagram"
-          description="Curte tecnologia? Então bora pro meu Instagram."
-          altIcone="Ícone do Instagram"
-          link="https://www.instagram.com/ferreiiratech/"
-          linkText="Siga-me no instagram"
-          className="border-b lg:border-r xl:border-b-0"
-        />
-
-        <SocialCard
-          iconPath="/img/icon-linkedin.svg"
-          title="Linkedin"
-          description="Juntos, podemos evoluir na área de tecnologia."
-          altIcone="Ícone do Linkedin"
-          link="https://www.linkedin.com/in/ferreiiratech/"
-          linkText="Conecte-se comigo"
-        />
+        {socialCards.map((card) => (
+          <SocialCard
+            key={card.title}
+            iconPath={card.iconPath}
+            title={card.title}
+            description={card.description}
+            altIcone={card.altIcone}
+            link={card.link}
+            linkText={card.linkText}
+            className={card.className}
+            classNameButton={card.classNameButton}
+            titleLink={card.titleLink}
+          />
+        ))}
       </div>
     </section>
   )
