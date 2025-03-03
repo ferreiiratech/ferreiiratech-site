@@ -4,7 +4,7 @@ import { useState } from "react"
 import * as motion from "motion/react-client"
 
 export default function DonationCard(props: DonationCardProps) {
-  const [textToCopy, setTextToCopy] = useState("texto para copiar")
+  const textToCopy = "texto para copiar"
   const [isCopied, setIsCopied] = useState<"idle" | "success" | "error">("idle")
 
   const handleCopy = async () => {
@@ -46,13 +46,13 @@ export default function DonationCard(props: DonationCardProps) {
               className="text-center text-sm mt-4 text-purple-500"
             >
               {isCopied === "success" && (
-                <span className="text-green-600">Texto copiado!</span>
+                <span className="text-green-600">Chave copiada!</span>
               )}
               {isCopied === "error" && (
                 <span className="text-red-600">Erro ao copiar!</span>
               )}
               {isCopied === "idle" && (
-                <span className="underline">Abrir link</span>
+                <span className="underline">Copiar chave pix</span>
               )}
             </button>
           </div>
