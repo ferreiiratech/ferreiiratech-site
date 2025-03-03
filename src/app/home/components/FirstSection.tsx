@@ -1,5 +1,5 @@
 import SocialCard from "../../components/ui/SocialCard"
-import { socialCards } from "@/data/socialCards"
+import { socialCards } from "@/app/home/components/data/socialCards"
 
 export default function FirstSection() {
   

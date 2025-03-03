@@ -3,7 +3,7 @@ import React from "react"
 const SocialCard = React.memo((props: SocialCardProps) => {
   return (
     <div
-      className={`flex flex-col items-start p-6 border-gray-300 ${props.className || ""}`}
+      className={`flex flex-col items-start p-6 ${props.className || ""} border-gray-300`}
     >
       <header className="flex items-center gap-2 mb-4">
         <img
