@@ -1,5 +1,6 @@
 import SocialCard from "../../components/ui/SocialCard"
 import { socialCards } from "@/app/home/components/data/socialCards"
+import Image from "next/image"
 
 export default function FirstSection() {
   
@@ -38,17 +39,22 @@ export default function FirstSection() {
       </div>
 
       <div className="flex justify-center lg:justify-end relative">
-        <img
+        <Image
           src="/img/leonardo-photo-section-1.svg"
           alt="Foto do engenheiro de software Leonardo Ferreira, com fundo abstrato"
           className="pointer-events-none select-none max-w-full xs:w-10/12 lg:w-fit"
+          width={500}
+          height={500}
+          priority
         />
         <div className="absolute -top-20 -right-32">
-          <img
+          <Image
             src="/img/circle-leonardo-animation.svg"
             alt="Circle Leonardo Animation"
             className="animate-spin-slow pointer-events-none select-none hidden xl:block"
             loading="lazy"
+            width={230}
+            height={230}
           />
         </div>
       </div>
