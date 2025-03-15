@@ -1,11 +1,5 @@
-import Header from "@/components/Header"
-import FirstSection from "@/components/sections/FirstSection"
+import HomePage from "@/app/home/page"
 
 export default function Home() {
-  return (
-    <div>
-      <Header />
-      <FirstSection />
-    </div>
-  )
+  return <HomePage />
 }
