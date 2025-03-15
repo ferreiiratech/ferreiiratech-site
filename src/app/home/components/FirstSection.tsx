@@ -1,6 +1,9 @@
-import SocialCard from "../SocialCard"
+import SocialCard from "../../components/ui/SocialCard"
+import { socialCards } from "@/app/home/components/data/socialCards"
+import Image from "next/image"
 
 export default function FirstSection() {
+  
   return (
     <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[2fr_1fr] lg:mx-44 lg:mt-28 2xl:mx-72">
       <div className="space-y-5 lg:space-y-10">
@@ -23,7 +26,7 @@ export default function FirstSection() {
         <button
           type="button"
           aria-label="Botão para navegar para a seção de projetos"
-          className="hidden lg:flex gap-4 justify-center items-center text-lg text-white py-2 px-6 h-20 w-80 rounded-2xl bg-purple-100 hover:bg-purple-200 transition-colors duration-300 ease-in-out"
+          className="hidden lg:flex gap-4 justify-center items-center text-lg text-white py-2 px-6 h-20 w-80 rounded-2xl bg-purple-150 hover:bg-purple-100 transition-colors duration-300 ease-in-out"
         >
           Conheça meus projetos
           <img
@@ -36,62 +39,41 @@ export default function FirstSection() {
       </div>
 
       <div className="flex justify-center lg:justify-end relative">
-        <img
+        <Image
           src="/img/leonardo-photo-section-1.svg"
           alt="Foto do engenheiro de software Leonardo Ferreira, com fundo abstrato"
           className="pointer-events-none select-none max-w-full xs:w-10/12 lg:w-fit"
+          width={500}
+          height={500}
+          priority
         />
         <div className="absolute -top-20 -right-32">
-          <img
+          <Image
             src="/img/circle-leonardo-animation.svg"
             alt="Circle Leonardo Animation"
             className="animate-spin-slow pointer-events-none select-none hidden xl:block"
             loading="lazy"
+            width={230}
+            height={230}
           />
         </div>
       </div>
 
       <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 border border-gray-300 rounded-xl lg:w-[100%] lg:col-span-2">
-        <SocialCard
-          iconPath="/img/icon-blog.svg"
-          title="Blog"
-          description="Eu compartilho tudo que aprendo. Bora ler?"
-          altIcone="Ícone do Blog"
-          link="#"
-          linkText="Acesse meu blog"
-          className="border-b lg:border-r xl:border-b-0"
-          classNameButton="cursor-not-allowed"
-          titleLink="Estará disponível em breve"
-        />
-
-        <SocialCard
-          iconPath="/img/icon-youtube.svg"
-          title="Youtube"
-          description="Compartilhando coisas incríveis. Assista!"
-          altIcone="Ícone do Youtube"
-          link="https://youtube.com/@ferreiiratech"
-          linkText="Acompanhe meu canal"
-          className="border-b lg:border-r-0 xl:border-b-0 xl:border-r"
-        />
-
-        <SocialCard
-          iconPath="/img/icon-instagram.svg"
-          title="Instagram"
-          description="Curte tecnologia? Então bora pro meu Instagram."
-          altIcone="Ícone do Instagram"
-          link="https://www.instagram.com/ferreiiratech/"
-          linkText="Siga-me no instagram"
-          className="border-b lg:border-r xl:border-b-0"
-        />
-
-        <SocialCard
-          iconPath="/img/icon-linkedin.svg"
-          title="Linkedin"
-          description="Juntos, podemos evoluir na área de tecnologia."
-          altIcone="Ícone do Linkedin"
-          link="https://www.linkedin.com/in/ferreiiratech/"
-          linkText="Conecte-se comigo"
-        />
+        {socialCards.map((card) => (
+          <SocialCard
+            key={card.title}
+            iconPath={card.iconPath}
+            title={card.title}
+            description={card.description}
+            altIcone={card.altIcone}
+            link={card.link}
+            linkText={card.linkText}
+            className={card.className}
+            classNameButton={card.classNameButton}
+            titleLink={card.titleLink}
+          />
+        ))}
       </div>
     </section>
   )
