@@ -13,3 +13,16 @@ type SocialCardProps = {
 interface DonationCardProps {
   handleCloseDonationCard: () => void
 }
+
+interface Technology {
+  icon: string
+  name: string
+  description: string
+}
+
+interface TechItemProps {
+  id: string
+  tech: Technology
+  isExpanded: boolean
+  onToggle: (id: string) => void
+}
