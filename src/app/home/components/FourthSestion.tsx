@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { projetos } from "./data/projectsData";
+import { projetos } from "@/app/home/components/data"
 import { ExternalLink } from 'lucide-react';
 
 export default function Home() {

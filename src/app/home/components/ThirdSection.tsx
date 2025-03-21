@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import Image from "next/image"
-import { technologiesData } from "./data/technologiesData"
+import { technologiesData } from "@/app/home/components/data"
 
 export default function ThirdSection() {
   const sectionRef = useRef<HTMLDivElement>(null)

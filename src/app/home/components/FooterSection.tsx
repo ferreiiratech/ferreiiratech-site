@@ -3,7 +3,7 @@
 import { Copyright } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { socialLinks } from './data/socialLinksData';
+import { socialLinks } from "@/app/home/components/data"
 
 export default function FooterSection() {
     return (
