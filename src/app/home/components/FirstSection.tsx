@@ -1,3 +1,5 @@
+'use client'
+
 import SocialCard from "../../components/ui/SocialCard"
 import { socialCards } from "@/app/home/components/data"
 import Image from "next/image"
@@ -24,6 +26,7 @@ export default function FirstSection() {
         </p>
 
         <button
+          onClick={() => window.scrollTo({ top: 3650, behavior: 'smooth' })}
           type="button"
           aria-label="Botão para navegar para a seção de projetos"
           className="hidden lg:flex gap-4 justify-center items-center text-lg text-white py-2 px-6 h-20 w-80 rounded-2xl bg-purple-150 hover:bg-purple-100 transition-colors duration-300 ease-in-out"
