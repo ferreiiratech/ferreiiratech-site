@@ -26,3 +26,15 @@ interface TechItemProps {
   isExpanded: boolean
   onToggle: (id: string) => void
 }
+
+type Projeto = {
+  id: number;
+  titulo: string;
+  descricao: string;
+  tecnologias: string[];
+  repositorio: string;
+};
+
+interface ProjetoCardProps {
+  projeto: Projeto;
+}

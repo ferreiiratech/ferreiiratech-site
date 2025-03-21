@@ -67,3 +67,11 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: var(--color-secondary);
 }
+
+.no-copy {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
