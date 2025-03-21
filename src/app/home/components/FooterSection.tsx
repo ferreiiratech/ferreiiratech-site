@@ -49,7 +49,7 @@ export default function FooterSection() {
                                     <Image 
                                         src={src}
                                         alt={alt}
-                                        className="w-7 h-7"
+                                        className="w-7 h-7 pointer-events-none select-none"
                                         loading="lazy"
                                         width={24}
                                         height={24}

@@ -32,11 +32,13 @@ export default function FirstSection() {
           className="hidden lg:flex gap-4 justify-center items-center text-lg text-white py-2 px-6 h-20 w-80 rounded-2xl bg-purple-150 hover:bg-purple-100 transition-colors duration-300 ease-in-out"
         >
           Conheça meus projetos
-          <img
+          <Image
             src="/img/arrow-button-projects.svg"
             alt="Seta para baixo"
-            className="w-12 h-12"
+            className="w-12 h-12 pointer-events-none select-none"
             loading="lazy"
+            width={12}
+            height={12}
           />
         </button>
       </div>

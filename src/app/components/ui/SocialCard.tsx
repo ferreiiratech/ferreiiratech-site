@@ -1,4 +1,6 @@
 import React from "react"
+import Image from "next/image"
+import Link from "next/link"
 
 const SocialCard = React.memo((props: SocialCardProps) => {
   return (
@@ -6,14 +8,17 @@ const SocialCard = React.memo((props: SocialCardProps) => {
       className={`flex flex-col items-start p-6 ${props.className || ""} border-gray-300`}
     >
       <header className="flex items-center gap-2 mb-4">
-        <img
+      <Image
           src={props.iconPath}
           alt={`${props.title} ícone, usado para representar a plataforma`}
+          className="pointer-events-none select-none"
+          width={40}
+          height={40}
         />
         <h2 className="font-spaceGrotesk text-2xl font-bold">{props.title}</h2>
       </header>
       <p className="text-xl text-gray-500 mb-6">{props.description}</p>
-      <a
+      <Link
         href={props.link}
         target="_blank"
         rel="noopener noreferrer"
@@ -21,7 +26,7 @@ const SocialCard = React.memo((props: SocialCardProps) => {
         title={props.titleLink || `Acesse o ${props.title}`}
       >
         {props.linkText}
-      </a>
+      </Link>
     </div>
   )
 })
