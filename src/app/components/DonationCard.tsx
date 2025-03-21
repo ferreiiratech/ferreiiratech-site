@@ -38,7 +38,7 @@ export default function DonationCard(props: DonationCardProps) {
             <img
               src="/img/qrcode-image.svg"
               alt="QR Code"
-              className="w-48 h-48"
+              className="w-48 h-48 pointer-events-none select-none"
             />
             <button
               type="button"

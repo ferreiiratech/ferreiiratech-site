@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import Image from "next/image"
-import { technologiesData } from "./data/technologiesData"
+import { technologiesData } from "@/app/home/components/data"
 
 export default function ThirdSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -141,7 +141,7 @@ function TechItem({ id, tech, isExpanded, onToggle }: TechItemProps) {
         onClick={() => onToggle(id)}
       >
         <div className="flex items-center gap-3">
-          <Image src={tech.icon} alt={tech.name} width={24} height={24}/>
+          <Image src={tech.icon} alt={tech.name} width={24} height={24} className="pointer-events-none select-none"/>
           <span>{tech.name}</span>
         </div>
         <button className="p-1 rounded-full hover:bg-gray-800 transition-colors">
