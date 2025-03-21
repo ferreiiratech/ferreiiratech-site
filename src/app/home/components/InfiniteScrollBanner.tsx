@@ -1,0 +1,34 @@
+'use client'
+
+import { useEffect, useState } from "react"
+
+export default function InfiniteScrollBanner() {
+  const [duplicated, setDuplicated] = useState(2)
+
+  useEffect(() => {
+    setDuplicated(3)
+  }, [])
+
+  return (
+    <div className="relative w-full overflow-hidden bg-black-100 py-3 lg:py-10 font-spaceGrotesk font-normal text-primary text-xl lg:text-[3rem]">
+      <div className="animate-scroll-left flex whitespace-nowrap">
+        {
+          Array(duplicated).fill(null).map((_, index) => (
+            <div key={index} className="flex items-center lg:ml-10">
+              <span>Backend</span>
+              <span className="mx-4 lg:mx-10 text-highlight">-</span>
+              <span>Programação</span>
+              <span className="mx-4 lg:mx-10 text-highlight">-</span>
+              <span>Frontend</span>
+              <span className="mx-4 lg:mx-10 text-highlight">-</span>
+              <span>Tecnologia</span>
+              <span className="mx-4 lg:mx-10 text-highlight">-</span>
+              <span>Devops</span>
+              <span className="mx-4 lg:ml-10 text-highlight">-</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  )
+}
