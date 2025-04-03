@@ -39,11 +39,9 @@ export const socialCards = [
         title: "Blog",
         description: "Eu compartilho tudo que aprendo. Bora ler?",
         altIcone: "Ícone do Blog",
-        link: "#",
+        link: "https://ferreiiratech.medium.com/",
         linkText: "Acesse meu blog",
-        className: "border-b lg:border-r xl:border-b-0",
-        classNameButton: "cursor-not-allowed",
-        titleLink: "Estará disponível em breve",
+        className: "border-b lg:border-r xl:border-b-0"
     },
     {
         iconPath: "/img/icon-youtube.svg",
