@@ -75,8 +75,6 @@ export default function FirstSection() {
             link={card.link}
             linkText={card.linkText}
             className={card.className}
-            classNameButton={card.classNameButton}
-            titleLink={card.titleLink}
           />
         ))}
       </div>

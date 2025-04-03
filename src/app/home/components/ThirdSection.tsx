@@ -51,9 +51,8 @@ export default function ThirdSection() {
               <br /> que sempre uso no <br /> meu dia a dia
             </h2>
             <p className="text-primary text-[0.8rem] sm:text-base xl:text-lg max-w-[30rem]">
-              Sempre fui uma pessoa curiosa, com uma vontade incessante de entender o funcionamento das coisas ao meu
-              redor. Na infância, desmontava meus carrinhos e os transformava, aperfeiçoando-os com luzes de LED que
-              serviam como faróis.
+              No meu dia-a-dia como desenvolvedor, utilizo diversas tecnologias que me ajudam a criar, otimizar e manter as aplicações. 
+              Aqui estão algumas das tecnologias que utilizo com mais frequência:
             </p>
           </div>
 
