@@ -1,11 +1,10 @@
-'use client'
+"use client"
 
-import SocialCard from "../../components/ui/SocialCard"
 import { socialCards } from "@/app/home/components/data"
 import Image from "next/image"
+import SocialCard from "../../components/ui/SocialCard"
 
 export default function FirstSection() {
-  
   return (
     <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[2fr_1fr] lg:mx-44 lg:mt-28 2xl:mx-72">
       <div className="space-y-5 lg:space-y-10">
@@ -26,7 +25,7 @@ export default function FirstSection() {
         </p>
 
         <button
-          onClick={() => window.scrollTo({ top: 3650, behavior: 'smooth' })}
+          onClick={() => window.scrollTo({ top: 3650, behavior: "smooth" })}
           type="button"
           aria-label="Botão para navegar para a seção de projetos"
           className="hidden lg:flex gap-4 justify-center items-center text-lg text-white py-2 px-6 h-20 w-80 rounded-2xl bg-purple-150 hover:bg-purple-100 transition-colors duration-300 ease-in-out"
@@ -65,7 +64,7 @@ export default function FirstSection() {
       </div>
 
       <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 border border-gray-300 rounded-xl lg:w-[100%] lg:col-span-2">
-        {socialCards.map((card) => (
+        {socialCards.map(card => (
           <SocialCard
             key={card.title}
             iconPath={card.iconPath}

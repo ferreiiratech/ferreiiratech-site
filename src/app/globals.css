@@ -40,7 +40,7 @@
   --purple-150: rgba(153, 86, 246, 0.8); /* Roxo Destaque 80% */
   --purple-200: #9956f6; /* Roxo Destaque 100% */
   --purple-300: #594d6c; /* Roxo Escuro 10% */
-  
+
   /* Outros Tons */
   --black-opacity-80: rgba(6, 8, 10, 0.8); /* Preto 80% */
   --black-opacity-60: rgba(6, 8, 10, 0.6); /* Preto 60% */
@@ -74,4 +74,3 @@ body::-webkit-scrollbar-thumb {
   -moz-user-select: none;
   -ms-user-select: none;
 }
-

@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
 import * as motion from "motion/react-client"
+import { useState } from "react"
 
 export default function DonationCard(props: DonationCardProps) {
   const textToCopy = "texto para copiar"

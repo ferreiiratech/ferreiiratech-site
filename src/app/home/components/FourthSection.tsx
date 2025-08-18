@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { projetos } from "@/app/home/components/data"
 import ProjectCard from "@/app/components/ui/ProjectCard"
+import { projetos } from "@/app/home/components/data"
+import Link from "next/link"
 
 export default function FourthSection() {
   return (

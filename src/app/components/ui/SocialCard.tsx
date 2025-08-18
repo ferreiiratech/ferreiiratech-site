@@ -1,6 +1,6 @@
-import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import React from "react"
 
 const SocialCard = React.memo((props: SocialCardProps) => {
   return (
@@ -8,7 +8,7 @@ const SocialCard = React.memo((props: SocialCardProps) => {
       className={`flex flex-col items-start p-6 ${props.className || ""} border-gray-300`}
     >
       <header className="flex items-center gap-2 mb-4">
-      <Image
+        <Image
           src={props.iconPath}
           alt={`${props.title} ícone, usado para representar a plataforma`}
           className="pointer-events-none select-none"
