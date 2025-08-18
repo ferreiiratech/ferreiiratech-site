@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react"
 
 export default function InfiniteScrollBanner() {
-  const [duplicated, setDuplicated] = useState(2)
+  const [duplicated, setDuplicated] = useState(3)
 
   useEffect(() => {
     setDuplicated(3)
   }, [])
 
   return (
-    <div className="relative w-full overflow-hidden bg-black-100 py-3 lg:py-10 font-spaceGrotesk font-normal text-primary text-xl lg:text-[3rem]">
+    <div className="relative w-full overflow-hidden bg-black-100 font-spaceGrotesk font-normal text-primary py-3 text-[2rem] md:text-[2.5rem] md:py-6 lg:py-10 lg:text-[3rem]">
       <div className="animate-scroll-left flex whitespace-nowrap">
         {
           Array(duplicated).fill(null).map((_, index) => (
