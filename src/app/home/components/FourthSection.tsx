@@ -12,7 +12,7 @@ export default function FourthSection() {
   
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projetos.map((item) => (
-              <div key={item.id} className="border border-[#899099]/20 rounded-lg p-8 flex flex-col h-full">
+              <div key={item.id} className="border border-[#899099]/20 rounded-lg p-8 flex flex-col h-full hover:border-[#899099]/40 transition-colors duration-300 ease-in-out">
                 <h2 className="text-xl font-spaceGrotesk font-medium text-primary mb-4">{item.titulo}</h2>
                 <p className="mb-6 flex-grow text-sm">
                 {item.descricao.length > 100 ? item.descricao.slice(0, 300) + '...' : item.descricao}
