@@ -1,4 +1,4 @@
-type SocialCardProps = {
+interface SocialCardProps {
   iconPath: string
   title: string
   altIcone?: string
@@ -27,14 +27,10 @@ interface TechItemProps {
   onToggle: (id: string) => void
 }
 
-type Projeto = {
-  id: number;
-  titulo: string;
-  descricao: string;
-  tecnologias: string[];
-  repositorio: string;
-};
-
-interface ProjetoCardProps {
-  projeto: Projeto;
+interface ProjectCardProps {
+  id: number
+  title: string
+  description: string
+  technologies: string[]
+  repository: string
 }
