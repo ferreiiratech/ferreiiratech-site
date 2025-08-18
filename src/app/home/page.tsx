@@ -2,9 +2,9 @@ import Header from "@/app/components/Header"
 import FirstSection from "@/app/home/components/FirstSection"
 import SecondSection from "@/app/home/components/SecondSection"
 import ThirdSection from "@/app/home/components/ThirdSection"
-import InfiniteScrollBanner from "./components/InfiniteScrollBanner"
-import FourthSection from "./components/FourthSection"
-import FooterSection from "./components/FooterSection"
+import InfiniteScrollBanner from "@/app/home/components/InfiniteScrollBanner"
+import FourthSection from "@/app/home/components/FourthSection"
+import FooterSection from "@/app/components/FooterSection"
 
 const HomePage = () => {
   return (
