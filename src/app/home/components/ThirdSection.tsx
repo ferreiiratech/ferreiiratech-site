@@ -156,7 +156,7 @@ function TechItem({ id, tech, isExpanded, onToggle }: TechItemProps) {
         <span className="flex items-center gap-3">
           <Image
             src={tech.icon}
-            alt={tech.name}
+            alt={tech.alt}
             width={24}
             height={24}
             className="pointer-events-none select-none"

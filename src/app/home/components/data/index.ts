@@ -98,31 +98,35 @@ export const socialLinks = [
   },
 ]
 
-export const technologiesData = {
+export const technologiesData: Record<string, Technology[]> = {
   backend: [
     {
       icon: "img/icons/java-icon.svg",
       name: "Java",
       description:
         "Linguagem de programação orientada a objetos, robusta e de alto desempenho. Utilizo Java principalmente para desenvolvimento de APIs e microsserviços.",
+      alt: "Java Icon",
     },
     {
       icon: "img/icons/springboot-icon.svg",
       name: "Spring Boot",
       description:
         "Framework que simplifica o desenvolvimento de aplicações Java, oferecendo configuração automática e um ecossistema completo para criar APIs RESTful e aplicações web.",
+      alt: "Spring Boot Icon",
     },
     {
       icon: "img/icons/quarkus-icon.svg",
       name: "Quarkus",
       description:
         "Framework Java nativo para Kubernetes, otimizado para baixo consumo de memória e tempo de inicialização rápido, ideal para ambientes de nuvem e containers.",
+      alt: "Quarkus Icon",
     },
     {
       icon: "img/icons/node-icon.svg",
       name: "Node.js",
       description:
         "Ambiente de execução JavaScript server-side que permite criar aplicações de rede escaláveis. Uso Node.js para APIs e serviços em tempo real.",
+      alt: "Node.js Icon",
     },
   ],
   frontend: [
@@ -131,18 +135,21 @@ export const technologiesData = {
       name: "TypeScript",
       description:
         "Superset do JavaScript que adiciona tipagem estática, melhorando a qualidade do código e a experiência de desenvolvimento com detecção de erros em tempo de compilação.",
+      alt: "TypeScript Icon",
     },
     {
       icon: "img/icons/react-icon.svg",
       name: "React.js",
       description:
         "Biblioteca JavaScript para construção de interfaces de usuário com componentes reutilizáveis e um fluxo de dados eficiente através do Virtual DOM.",
+      alt: "React.js Icon",
     },
     {
       icon: "img/icons/nextjs-icon.svg",
       name: "Next.js",
       description:
         "Framework React que oferece renderização híbrida, geração estática, roteamento simplificado e otimizações de performance para criar aplicações web modernas.",
+      alt: "Next.js Icon",
     },
   ],
   data: [
@@ -151,18 +158,21 @@ export const technologiesData = {
       name: "PostgreSQL",
       description:
         "Sistema de gerenciamento de banco de dados relacional avançado, com forte conformidade com SQL e recursos como consultas complexas, chaves estrangeiras e integridade transacional.",
+      alt: "PostgreSQL Icon",
     },
     {
       icon: "img/icons/mysql-icon.svg",
       name: "MySQL",
       description:
         "Banco de dados relacional popular, conhecido por sua confiabilidade e facilidade de uso. Utilizo para aplicações que necessitam de um SGBD robusto e bem estabelecido.",
+      alt: "MySQL Icon",
     },
     {
       icon: "img/icons/mongodb-icon.svg",
       name: "MongoDB",
       description:
         "Banco de dados NoSQL orientado a documentos, que oferece alta escalabilidade, flexibilidade e performance para aplicações com estruturas de dados complexas e variáveis.",
+      alt: "MongoDB Icon",
     },
   ],
   devops: [
@@ -171,12 +181,14 @@ export const technologiesData = {
       name: "Docker",
       description:
         "Plataforma de containerização que permite empacotar aplicações e suas dependências em containers isolados, garantindo consistência entre ambientes de desenvolvimento e produção.",
+      alt: "Docker Icon",
     },
     {
       icon: "img/icons/cicd-icon.svg",
       name: "CI/CD",
       description:
         "Práticas de integração contínua e entrega contínua que automatizam o processo de build, teste e deploy, aumentando a qualidade do software e a velocidade de entrega.",
+      alt: "CI/CD Icon",
     },
   ],
 }

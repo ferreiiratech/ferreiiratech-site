@@ -18,6 +18,7 @@ interface Technology {
   icon: string
   name: string
   description: string
+  alt: string
 }
 
 interface TechItemProps {
