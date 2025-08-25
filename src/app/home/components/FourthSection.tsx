@@ -1,8 +1,20 @@
 import ProjectCard from "@/app/components/ui/ProjectCard"
-import { projetos } from "@/app/home/components/data"
+import { env } from "@/app/env"
 import Link from "next/link"
 
-export default function FourthSection() {
+export default async function FourthSection() {
+  const response = await fetch(`${env.NEXT_PUBLIC_SITE_URL}/api/projects`, {
+    method: "GET",
+    cache: "no-store",
+    // next: { revalidate: 86400 },
+  })
+
+  let projetos: ProjectCardProps[] = [];
+
+  if (response.ok) {
+    projetos = await response.json()
+  }
+
   return (
     <section className="bg-secondary text-primary mt-[-2rem] 2xl:mt-[-10rem]">
       <div className="mx-5 xs:mx-10 sm:mx-14 md:mx-24 lg:mx-44 2xl:mx-72">
@@ -12,10 +24,12 @@ export default function FourthSection() {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projetos.map(item => (
+          {projetos.slice(0, 4).map((item: ProjectCardProps) => (
             <ProjectCard
               key={item.id}
               id={item.id}
+              status={item.status}
+              images={item.images}
               title={item.title}
               description={item.description}
               technologies={item.technologies}
@@ -26,9 +40,7 @@ export default function FourthSection() {
 
         <div className="text-center mt-16">
           <Link
-            href="https://github.com/ferreiiratech"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/projects"
             className="text-highlight hover:underline"
           >
             Veja mais projetos

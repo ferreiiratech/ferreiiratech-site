@@ -28,10 +28,18 @@ interface TechItemProps {
   onToggle: (id: string) => void
 }
 
+interface CardProps {
+  children: ReactNode
+}
+
+type StatusProject = "Finalizado" | "Em progresso";
+
 interface ProjectCardProps {
   id: number
+  status: StatusProject
   title: string
   description: string
   technologies: string[]
   repository: string
+  images?: string[]
 }
