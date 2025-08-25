@@ -1,19 +1,29 @@
+"use client"
+
 import ProjectCard from "@/app/components/ui/ProjectCard"
-import { env } from "@/app/env"
+import { publicEnv } from "@/app/env"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
-export default async function FourthSection() {
-  const response = await fetch(`${env.NEXT_PUBLIC_SITE_URL}/api/projects`, {
-    method: "GET",
-    cache: "no-store",
-    // next: { revalidate: 86400 },
-  })
+export default function FourthSection() {
+  const [projetos, setProjetos] = useState<ProjectCardProps[]>([])
 
-  let projetos: ProjectCardProps[] = [];
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`, {
+        method: "GET",
+        cache: "no-store",
+        // next: { revalidate: 86400 },
+      })
 
-  if (response.ok) {
-    projetos = await response.json()
-  }
+      if (response.ok) {
+        const data = await response.json()
+        setProjetos(data)
+      }
+    }
+
+    fetchData()
+  }, [])
 
   return (
     <section className="bg-secondary text-primary mt-[-2rem] 2xl:mt-[-10rem]">

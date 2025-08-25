@@ -1,14 +1,19 @@
-import { z } from 'zod';
+import { z } from "zod"
 
-const envSchema = z.object({
+const publicSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.string().url(),
-});
+})
 
-const parsed = envSchema.safeParse(process.env);
-
-if (!parsed.success) {
-  console.error('Erro na validação das variáveis de ambiente:', parsed.error.format());
-  process.exit(1);
+const rawPublicEnv = {
+  NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
 }
 
-export const env = parsed.data;
+const parsedPublic = publicSchema.safeParse(rawPublicEnv)
+
+if (!parsedPublic.success) {
+  throw new Error(
+    `Erro nas variáveis públicas: ${JSON.stringify(parsedPublic.error, null, 2)}`
+  )
+}
+
+export const publicEnv = parsedPublic.data
