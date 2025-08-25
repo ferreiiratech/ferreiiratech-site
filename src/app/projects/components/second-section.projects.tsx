@@ -12,6 +12,8 @@ import {
   PaginationNext,
   PaginationEllipsis,
 } from "@/components/ui/pagination"
+import { Skeleton } from "@/components/ui/skeleton"
+import ProjectCardSkeleton from "@/app/components/ui/card-skeleton"
 
 export default function SecondSectionProjects() {
   const [projetos, setProjetos] = useState<ProjectCardProps[]>([])
@@ -64,27 +66,31 @@ export default function SecondSectionProjects() {
     }
   }
 
+  const isLoading = projetos.length === 0
+
   return (
     <section className="bg-secondary mt-40 text-primary">
       <div className="mx-5 xs:mx-10 sm:mx-14 md:mx-24 lg:mx-44 2xl:mx-72">
-        
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {currentProjects.map(item => (
-            <ProjectCard
-              key={item.id}
-              id={item.id}
-              status={item.status}
-              images={item.images}
-              title={item.title}
-              description={item.description}
-              technologies={item.technologies}
-              repository={item.repository}
-            />
-          ))}
+          {isLoading
+            ? Array.from({ length: projectsPerPage }).map((_, idx) => (
+                <ProjectCardSkeleton key={idx} />
+              ))
+            : currentProjects.map(item => (
+                <ProjectCard
+                  key={item.id}
+                  id={item.id}
+                  status={item.status}
+                  images={item.images}
+                  title={item.title}
+                  description={item.description}
+                  technologies={item.technologies}
+                  repository={item.repository}
+                />
+              ))}
         </div>
 
-        {totalPages > projectsPerPage && (
+        {!isLoading && totalPages > projectsPerPage && (
           <Pagination className="mt-10">
             <PaginationContent>
               <PaginationItem>
