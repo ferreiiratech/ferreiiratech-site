@@ -28,7 +28,7 @@ export default function SecondSectionProjects() {
     const fetchProjects = async () => {
       const response = await fetch(
         `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
-        { method: "GET", cache: "force-cache" }
+        { method: "GET", cache: "no-store" }
       )
 
       if (response.ok) {
@@ -187,7 +187,6 @@ export default function SecondSectionProjects() {
         {!isLoading && totalPages > 1 && (
           <Pagination className="mt-10">
             <PaginationContent>
-
               <PaginationItem className="hidden xs:block">
                 <PaginationPrevious
                   onClick={e => {
