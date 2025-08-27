@@ -76,7 +76,8 @@ export default {
     (pluginApi: PluginAPI) => {
       pluginApi.addComponents({
         ".border-hover-highlight": {
-          "@apply hover:border-[#899099]/40 transition-colors duration-300 ease-in-out": {},
+          "@apply hover:border-[#899099]/40 transition-colors duration-300 ease-in-out":
+            {},
         },
       })
     },

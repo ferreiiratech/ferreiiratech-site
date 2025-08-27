@@ -1,8 +1,8 @@
 "use client"
 
+import { Skeleton } from "@/components/ui/skeleton"
 import React from "react"
 import Card from "./Card"
-import { Skeleton } from "@/components/ui/skeleton"
 
 export default function ProjectCardSkeleton() {
   return (

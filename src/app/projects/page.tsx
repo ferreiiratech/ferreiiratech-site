@@ -5,11 +5,14 @@ import FirstSectionProjects from "./components/first-section.projects"
 import SecondSectionProjects from "./components/second-section.projects"
 
 const ProjectsPage = async () => {
-  const response = await fetch(`${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`, {
-    method: "GET",
-    cache: "no-store",
-    // next: { revalidate: 86400 },
-  })
+  const response = await fetch(
+    `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
+    {
+      method: "GET",
+      cache: "no-store",
+      // next: { revalidate: 86400 },
+    }
+  )
 
   let projetos: ProjectCardProps[] = []
 

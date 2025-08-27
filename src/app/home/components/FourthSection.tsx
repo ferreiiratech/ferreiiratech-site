@@ -1,7 +1,7 @@
 "use client"
 
-import ProjectCardSkeleton from "@/app/components/ui/card-skeleton"
 import ProjectCard from "@/app/components/ui/ProjectCard"
+import ProjectCardSkeleton from "@/app/components/ui/card-skeleton"
 import { publicEnv } from "@/app/env"
 import Link from "next/link"
 import { useEffect, useState } from "react"

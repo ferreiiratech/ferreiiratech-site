@@ -1,20 +1,29 @@
 "use client"
 
+import Button from "@/app/components/ui/button"
+import Description from "@/app/components/ui/description"
+import TitleH1 from "@/app/components/ui/title-h1"
 import { socialCards } from "@/app/home/components/data"
 import Image from "next/image"
 import SocialCard from "../../components/ui/SocialCard"
-import TitleH1 from "@/app/components/ui/title-h1"
-import Description from "@/app/components/ui/description"
-import Button from "@/app/components/ui/button"
 
 export default function FirstSection() {
   return (
     <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[2fr_1fr] lg:mx-44 lg:mt-28 2xl:mx-72">
       <div className="space-y-5 lg:space-y-10">
         <TitleH1 title1="Olá, pessoa" title2="Sou o Leonardo Ferreira" />
-        <Description maxW="32rem" text="Engenheiro de software com experiência em Frontend e Backend." />
-        <Description maxW="32rem" text="Estou pronto para te ajudar a transformar ideias em soluções reais." />
-        <Button text="Conheça meus projetos" path="/#get-to-know-my-projects"/>
+        <Description
+          maxW="32rem"
+          text="Engenheiro de software com experiência em Frontend e Backend."
+        />
+        <Description
+          maxW="32rem"
+          text="Estou pronto para te ajudar a transformar ideias em soluções reais."
+        />
+        <Button
+          text="Conheça meus projetos"
+          linkTitle="/#get-to-know-my-projects"
+        />
       </div>
 
       <div className="flex justify-center lg:justify-end relative">

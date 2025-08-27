@@ -1,10 +1,10 @@
 "use client"
 
 import { ExternalLink } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import Card from "./Card"
-import Image from "next/image"
 
 const ProjectCard = React.memo((props: ProjectCardProps) => {
   return (
@@ -25,9 +25,8 @@ const ProjectCard = React.memo((props: ProjectCardProps) => {
         </span>
       </div>
 
-      <div className="flex flex-row gap-4">
-
-        <div className="w-4/5">
+      <div className="flex flex-col gap-4 mb-5 xs:flex-row xs:mb-0">
+        <div className="w-full xs:w-4/5">
           <h2 className="text-xl font-spaceGrotesk font-medium text-primary mb-4">
             {props.title.length > 30
               ? `${props.title.slice(0, 30)}...`
@@ -43,7 +42,7 @@ const ProjectCard = React.memo((props: ProjectCardProps) => {
 
         <div>
           {props.images ? (
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-row gap-2 xs:flex-col">
               {props.images.slice(0, 2).map((image, index) => (
                 <Image
                   key={index}
@@ -62,7 +61,7 @@ const ProjectCard = React.memo((props: ProjectCardProps) => {
 
       <div className="mt-auto">
         <div className="flex gap-2 mb-6">
-          {props.technologies.map(tech => (
+          {props.technologies.slice(0, 4).map(tech => (
             <span
               key={tech}
               className="text-[0.6rem] lg:text-sm font-spaceGrotesk px-3 py-1 bg-secondary border border-[#899099]/30 rounded-lg cursor-default"
