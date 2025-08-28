@@ -3,9 +3,7 @@ import Image from "next/image"
 export default function SecondSection() {
   return (
     <section className="bg-secondary mt-40 text-primary">
-
       <div className="grid grid-cols-1 gap-10 pt-32 pb-20 mx-5 xs:mx-10 sm:mx-14 md:mx-24 lg:mx-44 lg:pt-52 lg:pb-32 xs:gap-14 xl:grid-cols-[1fr_1fr] lg:gap-20 2xl:mx-72">
-
         <div>
           <div className="font-spaceGrotesk text-gray-300 text-2xl mb-5 sm:text-3xl sm:mb-10 lg:text-3xl xl:text-4xl 2xl:text-5xl">
             Um pouco{" "}
@@ -23,8 +21,8 @@ export default function SecondSection() {
             Essa curiosidade me levou a me apaixonar por tecnologia e
             programação. Tive a incrível oportunidade de conquistar uma bolsa
             integral oferecida pela Jala University, uma iniciativa voltada a
-            jovens talentos da América Latina, me permitindo estudar
-            Engenharia de Software remotamente nos Estados Unidos.
+            jovens talentos da América Latina, me permitindo estudar Engenharia
+            de Software remotamente nos Estados Unidos.
           </p>
         </div>
 

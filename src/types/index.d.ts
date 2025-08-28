@@ -1,4 +1,4 @@
-type SocialCardProps = {
+interface SocialCardProps {
   iconPath: string
   title: string
   altIcone?: string
@@ -18,6 +18,7 @@ interface Technology {
   icon: string
   name: string
   description: string
+  alt: string
 }
 
 interface TechItemProps {
@@ -27,14 +28,33 @@ interface TechItemProps {
   onToggle: (id: string) => void
 }
 
-type Projeto = {
-  id: number;
-  titulo: string;
-  descricao: string;
-  tecnologias: string[];
-  repositorio: string;
-};
+interface CardProps {
+  children: ReactNode
+}
 
-interface ProjetoCardProps {
-  projeto: Projeto;
+type StatusProject = "Finalizado" | "Em progresso"
+
+interface ProjectCardProps {
+  id: number
+  status: StatusProject
+  title: string
+  description: string
+  technologies: string[]
+  repository: string
+  images?: string[]
+}
+
+interface SearchInputProps {
+  technologies: string[]
+  searchTech: string
+  setSearchTech: (value: string) => void
+  setSelectedTag: (value: string | null) => void
+  setCurrentPage: (value: number) => void
+}
+
+interface TechFilterProps {
+  technologies: string[]
+  selectedTag: string | null
+  setSelectedTag: (tag: string | null) => void
+  setCurrentPage: (page: number) => void
 }
