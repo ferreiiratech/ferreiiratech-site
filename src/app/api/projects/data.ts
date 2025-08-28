@@ -32,6 +32,9 @@ export const projects: ProjectCardProps[] = [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "desafio técnico",
+    startDate: new Date("2024-01-01"),
+    endDate: new Date("2024-02-01"),
   },
   {
     id: 2,
@@ -45,6 +48,9 @@ export const projects: ProjectCardProps[] = [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "acadêmico",
+    startDate: new Date("2024-02-01"),
+    endDate: new Date("2024-03-01"),
   },
   {
     id: 3,
@@ -54,6 +60,9 @@ export const projects: ProjectCardProps[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but.",
     technologies: ["Java", "Spring Boot", "JPA"],
     repository: "#",
+    type: "pessoal",
+    startDate: new Date("2024-03-01"),
+    endDate: new Date("2024-04-01"),
   },
   {
     id: 4,
@@ -63,6 +72,9 @@ export const projects: ProjectCardProps[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
     technologies: ["Java", "Spring Boot", "JPA"],
     repository: "#",
+    type: "pessoal",
+    startDate: new Date("2024-04-01"),
+    endDate: new Date("2024-05-01"),
   },
   {
     id: 5,
@@ -72,6 +84,9 @@ export const projects: ProjectCardProps[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
     technologies: ["Java", "Spring Boot", "JPA"],
     repository: "#",
+    type: "pessoal",
+    startDate: new Date("2024-05-01"),
+    endDate: new Date("2024-06-01"),
   },
   {
     id: 6,
@@ -84,6 +99,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2024-06-01"),
+    endDate: new Date("2024-07-01"),
   },
   {
     id: 7,
@@ -96,6 +114,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2024-07-01"),
+    endDate: new Date("2024-08-01"),
   },
   {
     id: 8,
@@ -108,6 +129,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2024-08-01"),
+    endDate: new Date("2024-09-01"),
   },
   {
     id: 9,
@@ -120,6 +144,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2024-09-01"),
+    endDate: new Date("2024-10-01"),
   },
   {
     id: 10,
@@ -132,6 +159,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2024-10-01"),
+    endDate: new Date("2024-11-01"),
   },
   {
     id: 11,
@@ -144,6 +174,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2024-11-01"),
+    endDate: new Date("2024-12-01"),
   },
   {
     id: 12,
@@ -156,6 +189,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2024-12-01"),
+    endDate: new Date("2025-01-01"),
   },
   {
     id: 13,
@@ -168,6 +204,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-01-01"),
+    endDate: new Date("2025-02-01"),
   },
   {
     id: 14,
@@ -180,6 +219,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-02-01"),
+    endDate: new Date("2025-03-01"),
   },
   {
     id: 15,
@@ -192,6 +234,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-03-01"),
+    endDate: new Date("2025-04-01"),
   },
   {
     id: 16,
@@ -204,6 +249,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-04-01"),
+    endDate: new Date("2025-05-01"),
   },
   {
     id: 17,
@@ -216,6 +264,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-05-01"),
+    endDate: new Date("2025-06-01"),
   },
   {
     id: 18,
@@ -228,6 +279,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-06-01"),
+    endDate: new Date("2025-07-01"),
   },
   {
     id: 19,
@@ -240,6 +294,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-07-01"),
+    endDate: new Date("2025-08-01"),
   },
   {
     id: 20,
@@ -252,6 +309,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-08-01"),
+    endDate: new Date("2025-09-01"),
   },
   {
     id: 21,
@@ -264,6 +324,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-09-01"),
+    endDate: new Date("2025-10-01"),
   },
   {
     id: 22,
@@ -276,6 +339,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-10-01"),
+    endDate: new Date("2025-11-01"),
   },
   {
     id: 23,
@@ -288,6 +354,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-11-01"),
+    endDate: new Date("2025-12-01"),
   },
   {
     id: 24,
@@ -300,6 +369,9 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2025-12-01"),
+    endDate: new Date("2026-01-01"),
   },
   {
     id: 25,
@@ -312,5 +384,8 @@ export const projects: ProjectCardProps[] = [
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
     ],
+    type: "pessoal",
+    startDate: new Date("2026-01-01"),
+    endDate: new Date("2026-02-01"),
   },
 ]

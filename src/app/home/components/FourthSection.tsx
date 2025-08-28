@@ -59,6 +59,10 @@ export default function FourthSection() {
                     description={item.description}
                     technologies={item.technologies}
                     repository={item.repository}
+                    type={item.type}
+                    startDate={item.startDate}
+                    endDate={item.endDate}
+                    linkRepo={item.linkRepo}
                   />
                 ))}
         </div>

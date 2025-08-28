@@ -148,6 +148,10 @@ export default function SecondSectionProjects() {
                 description={item.description}
                 technologies={item.technologies}
                 repository={item.repository}
+                type={item.type}
+                startDate={item.startDate}
+                endDate={item.endDate}
+                linkRepo={item.linkRepo}
               />
             ))
           ) : (

@@ -33,15 +33,20 @@ interface CardProps {
 }
 
 type StatusProject = "Finalizado" | "Em progresso"
+type TypeProject = "pessoal" | "acadêmico" | "freelancer" | "desafio técnico" | "projeto open source"
 
 interface ProjectCardProps {
   id: number
   status: StatusProject
+  type: TypeProject
   title: string
   description: string
   technologies: string[]
   repository: string
   images?: string[]
+  startDate: Date
+  endDate: Date
+  linkRepo?: string
 }
 
 interface SearchInputProps {
