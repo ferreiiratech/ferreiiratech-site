@@ -6,7 +6,7 @@ export const projects: ProjectCardProps[] = [
       "Projeto Encodar titulo longo muito longo longo logo mesmo aqui é longo para caraio",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but.",
-    technologies: [
+    technologiesTag: [
       "Java",
       "Spring Boot",
       "JPA",
@@ -42,7 +42,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -58,7 +58,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     type: "pessoal",
     startDate: new Date("2024-03-01"),
@@ -70,7 +70,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     type: "pessoal",
     startDate: new Date("2024-04-01"),
@@ -82,7 +82,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     type: "pessoal",
     startDate: new Date("2024-05-01"),
@@ -94,7 +94,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 6",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -109,7 +109,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 7",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -124,7 +124,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 8",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -139,7 +139,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 9",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -154,7 +154,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 10",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -169,7 +169,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 11",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -184,7 +184,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 12",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -199,7 +199,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 13",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -214,7 +214,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 14",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -229,7 +229,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 15",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -244,7 +244,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 16",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -259,7 +259,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 17",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -274,7 +274,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 18",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -289,7 +289,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 19",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -304,7 +304,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 20",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -319,7 +319,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 21",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -334,7 +334,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 22",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -349,7 +349,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 23",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -364,7 +364,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 24",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",
@@ -379,7 +379,7 @@ export const projects: ProjectCardProps[] = [
     title: "Projeto Encodar 25",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has survived not only five centuries, mas.",
-    technologies: ["Java", "Spring Boot", "JPA"],
+    technologiesTag: ["Java", "Spring Boot", "JPA"],
     repository: "#",
     images: [
       "https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2022/02/365-O-que-e%CC%81-tecnologia_.jpg",

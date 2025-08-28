@@ -47,7 +47,7 @@ export default function SecondSectionProjects() {
 
   useEffect(() => {
     const allTechnologies = projetos
-      .flatMap(project => project.technologies ?? [])
+      .flatMap(project => project.technologiesTag ?? [])
       .filter(tech => typeof tech === "string")
 
     setTechnologies(
@@ -57,13 +57,13 @@ export default function SecondSectionProjects() {
 
   const filteredProjects = selectedTag
     ? projetos.filter(project =>
-        (project.technologies ?? []).some(
+        (project.technologiesTag ?? []).some(
           tech => tech.toLowerCase() === selectedTag.toLowerCase()
         )
       )
     : searchTech.trim()
       ? projetos.filter(project =>
-          (project.technologies ?? []).some(tech =>
+          (project.technologiesTag ?? []).some(tech =>
             tech.toLowerCase().includes(searchTech.toLowerCase())
           )
         )
@@ -146,7 +146,7 @@ export default function SecondSectionProjects() {
                 images={item.images}
                 title={item.title}
                 description={item.description}
-                technologies={item.technologies}
+                technologiesTag={item.technologiesTag}
                 repository={item.repository}
                 type={item.type}
                 startDate={item.startDate}

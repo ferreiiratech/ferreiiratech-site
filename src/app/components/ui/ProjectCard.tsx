@@ -69,7 +69,7 @@ const ProjectCard = React.memo((props: ProjectCardProps) => {
 
       <div className="mt-auto">
         <div className="flex gap-2 mb-6">
-          {props.technologies.slice(0, 4).map(tech => (
+          {props.technologiesTag.slice(0, 4).map(tech => (
             <span
               key={tech}
               className="text-[0.6rem] lg:text-sm font-spaceGrotesk px-3 py-1 bg-secondary border border-[#899099]/30 rounded-lg cursor-default"

@@ -57,7 +57,7 @@ export default function FourthSection() {
                     images={item.images}
                     title={item.title}
                     description={item.description}
-                    technologies={item.technologies}
+                    technologiesTag={item.technologiesTag}
                     repository={item.repository}
                     type={item.type}
                     startDate={item.startDate}
