@@ -28,10 +28,33 @@ interface TechItemProps {
   onToggle: (id: string) => void
 }
 
+interface CardProps {
+  children: ReactNode
+}
+
+type StatusProject = "Finalizado" | "Em progresso"
+
 interface ProjectCardProps {
   id: number
+  status: StatusProject
   title: string
   description: string
   technologies: string[]
   repository: string
+  images?: string[]
+}
+
+interface SearchInputProps {
+  technologies: string[]
+  searchTech: string
+  setSearchTech: (value: string) => void
+  setSelectedTag: (value: string | null) => void
+  setCurrentPage: (value: number) => void
+}
+
+interface TechFilterProps {
+  technologies: string[]
+  selectedTag: string | null
+  setSelectedTag: (tag: string | null) => void
+  setCurrentPage: (page: number) => void
 }

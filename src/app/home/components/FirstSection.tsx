@@ -1,5 +1,8 @@
 "use client"
 
+import Button from "@/app/components/ui/button"
+import Description from "@/app/components/ui/description"
+import TitleH1 from "@/app/components/ui/title-h1"
 import { socialCards } from "@/app/home/components/data"
 import Image from "next/image"
 import SocialCard from "../../components/ui/SocialCard"
@@ -8,38 +11,19 @@ export default function FirstSection() {
   return (
     <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[2fr_1fr] lg:mx-44 lg:mt-28 2xl:mx-72">
       <div className="space-y-5 lg:space-y-10">
-        <h1>
-          <div className="font-spaceGrotesk font-bold text-gray-500 text-2xl xxs:text-3xl sm:text-[2.7rem] sm:mb-4 sm:w-fit lg:text-5xl lg:mb-7 2xl:text-6xl">
-            Olá, pessoa.
-          </div>
-          <div className="font-spaceGrotesk font-bold text-2xl xxs:text-[1.83rem] xs:text-[1.5rem] sm:text-[2rem] sm:w-fit md:text-4xl lg:text-[2.8rem] 2xl:text-6xl">
-            Sou o Leonardo Ferreira
-          </div>
-        </h1>
-
-        <p className="text-[14.3px] xxs:text-base sm:text-2xl xl:max-w-[32rem]">
-          Engenheiro de software com experiência em Frontend e Backend.
-        </p>
-        <p className="text-[14.3px] xxs:text-base sm:text-2xl xl:max-w-[32rem]">
-          Estou pronto para te ajudar a transformar ideias em soluções reais.
-        </p>
-
-        <button
-          onClick={() => window.scrollTo({ top: 3650, behavior: "smooth" })}
-          type="button"
-          aria-label="Botão para navegar para a seção de projetos"
-          className="hidden lg:flex gap-4 justify-center items-center text-lg text-white py-2 px-6 h-20 w-80 rounded-2xl bg-purple-150 hover:bg-purple-100 transition-colors duration-300 ease-in-out"
-        >
-          Conheça meus projetos
-          <Image
-            src="/img/arrow-button-projects.svg"
-            alt="Seta para baixo"
-            className="w-12 h-12 pointer-events-none select-none"
-            loading="lazy"
-            width={12}
-            height={12}
-          />
-        </button>
+        <TitleH1 title1="Olá, pessoa" title2="Sou o Leonardo Ferreira" />
+        <Description
+          maxW="32rem"
+          text="Engenheiro de software com experiência em Frontend e Backend."
+        />
+        <Description
+          maxW="32rem"
+          text="Estou pronto para te ajudar a transformar ideias em soluções reais."
+        />
+        <Button
+          text="Conheça meus projetos"
+          linkTitle="/#get-to-know-my-projects"
+        />
       </div>
 
       <div className="flex justify-center lg:justify-end relative">
