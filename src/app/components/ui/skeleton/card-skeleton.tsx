@@ -2,7 +2,7 @@
 
 import { Skeleton } from "@/components/ui/skeleton"
 import React from "react"
-import Card from "./Card"
+import Card from "../Card"
 
 export default function ProjectCardSkeleton() {
   return (

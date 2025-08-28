@@ -1,7 +1,7 @@
 "use client"
 
 import ProjectCard from "@/app/components/ui/ProjectCard"
-import ProjectCardSkeleton from "@/app/components/ui/card-skeleton"
+import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
 import { publicEnv } from "@/app/env"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -16,8 +16,7 @@ export default function FourthSection() {
         `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
         {
           method: "GET",
-          cache: "no-store",
-          // next: { revalidate: 86400 },
+          next: { revalidate: 86400 },
         }
       )
 

@@ -1,7 +1,11 @@
 "use client"
 
 import ProjectCard from "@/app/components/ui/ProjectCard"
-import ProjectCardSkeleton from "@/app/components/ui/card-skeleton"
+import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
+import SearchInput from "@/app/components/ui/search-input"
+import SearchInputSkeleton from "@/app/components/ui/skeleton/search-input-skeleton"
+import TechFilter from "@/app/components/ui/tech-filter"
+import TechFilterSkeleton from "@/app/components/ui/skeleton/tech-filter-skeleton"
 import { publicEnv } from "@/app/env"
 import {
   Pagination,
@@ -12,7 +16,6 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { Search } from "lucide-react"
 import { useEffect, useState } from "react"
 
 export default function SecondSectionProjects() {
@@ -20,6 +23,7 @@ export default function SecondSectionProjects() {
   const [technologies, setTechnologies] = useState<string[]>([])
   const [currentPage, setCurrentPage] = useState(1)
   const [searchTech, setSearchTech] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
   const projectsPerPage = 8
   const maxTagToShow = 3
@@ -28,12 +32,14 @@ export default function SecondSectionProjects() {
     const fetchProjects = async () => {
       const response = await fetch(
         `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
-        { method: "GET", cache: "no-store" }
+        { method: "GET", next: { revalidate: 86400 } }
       )
 
       if (response.ok) {
         setProjetos(await response.json())
       }
+
+      setIsLoading(false)
     }
 
     fetchProjects()
@@ -94,67 +100,34 @@ export default function SecondSectionProjects() {
     }
   }
 
-  const isLoading = projetos.length === 0
-
   return (
     <section className="bg-secondary mt-40 text-primary">
       <div className="pt-24 pb-24 mx-5 xs:mx-10 sm:mx-14 md:mx-24 lg:mx-44 2xl:mx-72">
         <div className="flex flex-col gap-2 mb-24">
           <div className="flex flex-col md:flex-row md:items-center gap-2 w-full">
-            <div className="relative w-full 2xl:max-w-sm flex-shrink-0">
-              <input
-                id="search-tech"
-                type="text"
-                placeholder={
-                  technologies.slice(0, 3).join(", ").concat("...") ||
-                  "Buscar por tecnologia"
-                }
-                value={searchTech}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                  setSearchTech(e.target.value)
-                  setSelectedTag(null)
-                  setCurrentPage(1)
-                }}
-                className="bg-transparent pl-4 pr-10 py-2 rounded-md border border-[#899099]/30 focus:outline-none transition w-full"
-                aria-label="Buscar por tecnologia"
-                autoComplete="off"
+            {isLoading ? (
+              <SearchInputSkeleton />
+            ) : (
+              <SearchInput
+                technologies={technologies}
+                searchTech={searchTech}
+                setSearchTech={setSearchTech}
+                setSelectedTag={setSelectedTag}
+                setCurrentPage={setCurrentPage}
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#899099]/60 pointer-events-none border-[#899099]/60 border-l pl-2">
-                <Search size={20} aria-hidden="true" />
-              </span>
-            </div>
+            )}
 
-            {technologies.length > maxTagToShow && (
-              <div className="hidden 2xl:flex flex-wrap gap-2 mb-2 md:mb-0 md:ml-4">
-                <button
-                  type="button"
-                  className={`text-sm font-spaceGrotesk px-3 py-2 bg-secondary border border-[#899099]/30 rounded-lg transition focus:outline-none
-                    ${selectedTag === null ? "bg-white/25" : ""}`}
-                  onClick={() => {
-                    setSelectedTag(null)
-                    setCurrentPage(1)
-                  }}
-                  aria-pressed={selectedTag === null}
-                >
-                  Todas
-                </button>
-
-                {technologies.slice(0, 8).map(tech => (
-                  <button
-                    key={tech}
-                    type="button"
-                    className={`text-[0.6rem] lg:text-sm font-spaceGrotesk px-3 py-2 bg-secondary border border-[#899099]/30 rounded-lg text-sm transition
-                      ${selectedTag === tech ? "bg-white/25" : ""}`}
-                    onClick={() => {
-                      setSelectedTag(tech)
-                      setCurrentPage(1)
-                    }}
-                    aria-pressed={selectedTag === tech}
-                  >
-                    {tech}
-                  </button>
-                ))}
-              </div>
+            {isLoading ? (
+              <TechFilterSkeleton />
+            ) : (
+              technologies.length > maxTagToShow && (
+                <TechFilter
+                  technologies={technologies}
+                  selectedTag={selectedTag}
+                  setSelectedTag={setSelectedTag}
+                  setCurrentPage={setCurrentPage}
+                />
+              )
             )}
           </div>
         </div>

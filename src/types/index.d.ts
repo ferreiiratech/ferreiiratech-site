@@ -43,3 +43,18 @@ interface ProjectCardProps {
   repository: string
   images?: string[]
 }
+
+interface SearchInputProps {
+  technologies: string[]
+  searchTech: string
+  setSearchTech: (value: string) => void
+  setSelectedTag: (value: string | null) => void
+  setCurrentPage: (value: number) => void
+}
+
+interface TechFilterProps {
+  technologies: string[]
+  selectedTag: string | null
+  setSelectedTag: (tag: string | null) => void
+  setCurrentPage: (page: number) => void
+}
