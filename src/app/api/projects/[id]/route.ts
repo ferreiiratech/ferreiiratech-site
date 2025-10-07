@@ -1,22 +1,34 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { projects } from "../data"
+import { prisma } from "@/lib/prisma"
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const { id } = await params
-  const projectId = Number(id)
+  try {
+    const { id } = await params
 
-  const project = projects.find(p => p.id === projectId)
+    // Busca projeto por ID usando Prisma
+    const project = await prisma.project.findUnique({
+      where: {
+        id: id, // No MongoDB com Prisma, o ID é uma string ObjectId
+      },
+    })
 
-  if (!project) {
+    if (!project) {
+      return NextResponse.json(
+        { error: "Projeto não encontrado" },
+        { status: 404 }
+      )
+    }
+
+    return NextResponse.json(project)
+  } catch (error) {
+    console.error("Erro ao buscar projeto:", error)
     return NextResponse.json(
-      { error: "Projeto não encontrado" },
-      { status: 404 }
+      { error: "Erro interno do servidor" },
+      { status: 500 }
     )
   }
-
-  return NextResponse.json(project)
 }

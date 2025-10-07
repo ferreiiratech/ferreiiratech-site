@@ -1,7 +1,7 @@
-import { validateDatabaseConnection } from "@/lib/mongodb"
+import { validatePrismaConnection } from "@/lib/prisma"
 
 export default async function DatabaseConnectionValidator() {
-  await validateDatabaseConnection()
+  await validatePrismaConnection()
 
   return null
 }

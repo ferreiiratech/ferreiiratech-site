@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo para projetos
+model Project {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  status           String   // "Finalizado" | "Em progresso"
+  type             String   // "pessoal" | "acadêmico" | "freelancer" | "desafio técnico" | "projeto open source"
+  title            String
+  description      String
+  context          String?
+  functionality    Json[]   // Array de objetos com funcionalidades
+  technologiesTag  String[] // Array de strings com tecnologias
+  technologyUsed   Json?    // Objeto com tecnologias usadas detalhadas
+  architecture     String?
+  repository       String
+  images           String[] // Array de URLs das imagens
+  startDate        DateTime
+  endDate          DateTime
+  linkRepo         String?
+  comments         String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("projects")
+}
