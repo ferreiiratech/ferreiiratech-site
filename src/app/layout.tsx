@@ -1,8 +1,8 @@
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import "./globals.css"
-import SmoothScrollProvider from "../hooks/useLenis"
 import DatabaseConnectionValidator from "@/components/DatabaseConnectionValidator"
+import SmoothScrollProvider from "../hooks/useLenis"
 
 export const metadata: Metadata = {
   title: "Leonardo Ferreira",

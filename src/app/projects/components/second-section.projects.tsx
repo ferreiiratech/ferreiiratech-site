@@ -1,11 +1,11 @@
 "use client"
 
 import ProjectCard from "@/app/components/ui/ProjectCard"
-import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
 import SearchInput from "@/app/components/ui/search-input"
+import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
 import SearchInputSkeleton from "@/app/components/ui/skeleton/search-input-skeleton"
-import TechFilter from "@/app/components/ui/tech-filter"
 import TechFilterSkeleton from "@/app/components/ui/skeleton/tech-filter-skeleton"
+import TechFilter from "@/app/components/ui/tech-filter"
 import { publicEnv } from "@/app/env/client"
 import {
   Pagination,

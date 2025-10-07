@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation"
 import { publicEnv } from "@/app/env/client"
+import { notFound } from "next/navigation"
 
 async function fetchProject(id: string): Promise<ProjectCardProps | null> {
   const res = await fetch(

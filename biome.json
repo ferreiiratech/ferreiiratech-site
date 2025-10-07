@@ -26,6 +26,6 @@
     }
   },
   "files": {
-    "ignore": ["node_modules", "dist", ".next"]
+    "ignore": ["node_modules", "dist", ".next", "prisma/generated/"]
   }
 }
