@@ -1,7 +1,7 @@
 # 🚀 Pull Request Template - FerreiiraTech Site
 
 ## 📋 **Descrição**
-<!-- Descreva brevemente as mudanças implementadas -->
+<!-- Descreva brevemente as mudanças implementadas em português do Brasil-->
 > Uma breve descrição do que foi implementado/alterado neste PR.
 
 ### 🎯 **Tipo de mudança**
