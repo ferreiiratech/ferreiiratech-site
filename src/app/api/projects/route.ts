@@ -3,14 +3,18 @@ import { NextResponse } from "next/server"
 
 export async function GET() {
   try {
-    // Busca todos os projetos usando Prisma
     const projects = await prisma.project.findMany({
       orderBy: {
-        createdAt: "desc", // Ordena por data de criação, mais recentes primeiro
+        createdAt: "desc",
       },
     })
 
-    return NextResponse.json(projects)
+    return NextResponse.json(projects, {
+      status: 200,
+      headers: {
+        "Cache-Control": "public, max-age=86400, stale-while-revalidate=59",
+      },
+    })
   } catch (error) {
     console.error("Erro ao buscar projetos:", error)
     return NextResponse.json(

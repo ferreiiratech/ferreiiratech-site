@@ -6,7 +6,6 @@ import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
 import SearchInputSkeleton from "@/app/components/ui/skeleton/search-input-skeleton"
 import TechFilterSkeleton from "@/app/components/ui/skeleton/tech-filter-skeleton"
 import TechFilter from "@/app/components/ui/tech-filter"
-import { publicEnv } from "@/app/env/client"
 import {
   Pagination,
   PaginationContent,
@@ -16,58 +15,41 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
+import { useProjects } from "@/lib/api"
 import { useEffect, useState } from "react"
 
 export default function SecondSectionProjects() {
-  const [projetos, setProjetos] = useState<ProjectCardProps[]>([])
+  const { projects, isLoading, error } = useProjects()
   const [technologies, setTechnologies] = useState<string[]>([])
   const [currentPage, setCurrentPage] = useState(1)
   const [searchTech, setSearchTech] = useState("")
-  const [isLoading, setIsLoading] = useState(true)
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
   const projectsPerPage = 8
   const maxTagToShow = 3
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      const response = await fetch(
-        `${publicEnv.NEXT_PUBLIC_SITE_URL}/projects`,
-        { method: "GET", next: { revalidate: 86400 } }
-      )
-
-      if (response.ok) {
-        setProjetos(await response.json())
-      }
-
-      setIsLoading(false)
-    }
-
-    fetchProjects()
-  }, [])
-
-  useEffect(() => {
-    const allTechnologies = projetos
+    const allTechnologies = projects
       .flatMap(project => project.technologiesTag ?? [])
       .filter(tech => typeof tech === "string")
 
     setTechnologies(
       Array.from(new Set(allTechnologies)).sort(() => Math.random() - 0.5)
     )
-  }, [projetos])
+  }, [projects])
 
   const filteredProjects = selectedTag
-    ? projetos.filter(project =>
+    ? projects.filter(project =>
         (project.technologiesTag ?? []).some(
           tech => tech.toLowerCase() === selectedTag.toLowerCase()
         )
       )
     : searchTech.trim()
-      ? projetos.filter(project =>
+      ? projects.filter(project =>
           (project.technologiesTag ?? []).some(tech =>
             tech.toLowerCase().includes(searchTech.toLowerCase())
           )
         )
-      : projetos
+      : projects
 
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage)
   const startIndex = (currentPage - 1) * projectsPerPage
@@ -98,6 +80,10 @@ export default function SecondSectionProjects() {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page)
     }
+  }
+
+  if (error) {
+    return <></>
   }
 
   return (
