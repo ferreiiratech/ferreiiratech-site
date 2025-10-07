@@ -9,7 +9,15 @@ import Card from "./Card"
 const ProjectCard = React.memo((props: ProjectCardProps) => {
   return (
     <Card>
-      <div className="mb-4">
+      <div className="mb-4 flex flex-row gap-2">
+        <span
+          className={
+            "text-[0.6rem] font-spaceGrotesk px-2 py-1 bg-secondary border border-[#899099]/30 rounded-lg cursor-default border-hover-highlight"
+          }
+        >
+          {props.type.charAt(0).toUpperCase() + props.type.slice(1)}
+        </span>
+
         <span
           className={`text-[0.6rem] font-spaceGrotesk px-2 py-1 bg-secondary border border-[#899099]/30 rounded-lg cursor-default border-hover-highlight
             ${
@@ -21,7 +29,7 @@ const ProjectCard = React.memo((props: ProjectCardProps) => {
             }
           `}
         >
-          {props.status}
+          {props.status.charAt(0).toUpperCase() + props.status.slice(1)}
         </span>
       </div>
 
@@ -61,7 +69,7 @@ const ProjectCard = React.memo((props: ProjectCardProps) => {
 
       <div className="mt-auto">
         <div className="flex gap-2 mb-6">
-          {props.technologies.slice(0, 4).map(tech => (
+          {props.technologiesTag.slice(0, 4).map(tech => (
             <span
               key={tech}
               className="text-[0.6rem] lg:text-sm font-spaceGrotesk px-3 py-1 bg-secondary border border-[#899099]/30 rounded-lg cursor-default"

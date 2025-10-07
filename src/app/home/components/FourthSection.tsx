@@ -2,34 +2,16 @@
 
 import ProjectCard from "@/app/components/ui/ProjectCard"
 import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
-import { publicEnv } from "@/app/env"
+import { useProjects } from "@/hooks/use-projects"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 
 export default function FourthSection() {
-  const [projetos, setProjetos] = useState<ProjectCardProps[]>([])
+  const { projects, isLoading, error } = useProjects()
   const projectsPerPage = 4
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
-        {
-          method: "GET",
-          next: { revalidate: 86400 },
-        }
-      )
-
-      if (response.ok) {
-        const data = await response.json()
-        setProjetos(data)
-      }
-    }
-
-    fetchData()
-  }, [])
-
-  const isLoading = projetos.length === 0
+  if (error) {
+    return <></>
+  }
 
   return (
     <section className="bg-secondary text-primary mt-[-2rem] 2xl:mt-[-10rem]">
@@ -47,7 +29,7 @@ export default function FourthSection() {
             ? Array.from({ length: projectsPerPage }).map((_, idx) => (
                 <ProjectCardSkeleton key={idx} />
               ))
-            : projetos
+            : projects
                 .slice(0, projectsPerPage)
                 .map((item: ProjectCardProps) => (
                   <ProjectCard
@@ -57,8 +39,12 @@ export default function FourthSection() {
                     images={item.images}
                     title={item.title}
                     description={item.description}
-                    technologies={item.technologies}
+                    technologiesTag={item.technologiesTag}
                     repository={item.repository}
+                    type={item.type}
+                    startDate={item.startDate}
+                    endDate={item.endDate}
+                    linkRepo={item.linkRepo}
                   />
                 ))}
         </div>

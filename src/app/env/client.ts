@@ -11,9 +11,13 @@ const rawPublicEnv = {
 const parsedPublic = publicSchema.safeParse(rawPublicEnv)
 
 if (!parsedPublic.success) {
-  throw new Error(
-    `Erro nas variáveis públicas: ${JSON.stringify(parsedPublic.error, null, 2)}`
-  )
+  const erro = parsedPublic.error.issues
+    .map(issue => `${issue.path.join(".")}: ${issue.message}`)
+    .join(", ")
+
+  console.error(`Erro nas variáveis públicas: ${erro}`)
+
+  throw new Error(`Erro nas variáveis públicas: ${erro}`)
 }
 
 export const publicEnv = parsedPublic.data
