@@ -1,6 +1,6 @@
 import FooterSection from "../components/FooterSection"
 import Header from "../components/Header"
-import { publicEnv } from "../env"
+import { publicEnv } from "../env/client"
 import FirstSectionProjects from "./components/first-section.projects"
 import SecondSectionProjects from "./components/second-section.projects"
 

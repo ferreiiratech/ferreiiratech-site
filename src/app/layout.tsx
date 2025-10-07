@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import "./globals.css"
 import SmoothScrollProvider from "../hooks/useLenis"
+import DatabaseConnectionValidator from "@/components/DatabaseConnectionValidator"
 
 export const metadata: Metadata = {
   title: "Leonardo Ferreira",
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   //}
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -73,6 +74,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="no-copy">
       <body>
+        <DatabaseConnectionValidator />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <Analytics />
       </body>

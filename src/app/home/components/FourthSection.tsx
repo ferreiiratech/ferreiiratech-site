@@ -2,7 +2,7 @@
 
 import ProjectCard from "@/app/components/ui/ProjectCard"
 import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
-import { publicEnv } from "@/app/env"
+import { publicEnv } from "@/app/env/client"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 

@@ -1,11 +1,14 @@
 import { notFound } from "next/navigation"
-import { publicEnv } from "@/app/env"
+import { publicEnv } from "@/app/env/client"
 
 async function fetchProject(id: string): Promise<ProjectCardProps | null> {
-  const res = await fetch(`${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects/${id}`, {
-    method: "GET",
-    cache: "force-cache",
-  })
+  const res = await fetch(
+    `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects/${id}`,
+    {
+      method: "GET",
+      cache: "force-cache",
+    }
+  )
 
   if (!res.ok) return null
 

@@ -6,7 +6,7 @@ import SearchInput from "@/app/components/ui/search-input"
 import SearchInputSkeleton from "@/app/components/ui/skeleton/search-input-skeleton"
 import TechFilter from "@/app/components/ui/tech-filter"
 import TechFilterSkeleton from "@/app/components/ui/skeleton/tech-filter-skeleton"
-import { publicEnv } from "@/app/env"
+import { publicEnv } from "@/app/env/client"
 import {
   Pagination,
   PaginationContent,
