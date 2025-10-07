@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import "./globals.css"
+import SmoothScrollProvider from "../hooks/useLenis"
 
 export const metadata: Metadata = {
   title: "Leonardo Ferreira",
@@ -72,7 +73,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="no-copy">
       <body>
-        {children}
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <Analytics />
       </body>
     </html>
