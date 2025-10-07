@@ -31,7 +31,7 @@ export default function SecondSectionProjects() {
   useEffect(() => {
     const fetchProjects = async () => {
       const response = await fetch(
-        `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
+        `${publicEnv.NEXT_PUBLIC_SITE_URL}/projects`,
         { method: "GET", next: { revalidate: 86400 } }
       )
 

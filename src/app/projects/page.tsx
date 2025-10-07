@@ -6,7 +6,7 @@ import SecondSectionProjects from "./components/second-section.projects"
 
 const ProjectsPage = async () => {
   const response = await fetch(
-    `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
+    `${publicEnv.NEXT_PUBLIC_SITE_URL}/projects`,
     {
       method: "GET",
       cache: "no-store",

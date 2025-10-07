@@ -13,7 +13,7 @@ export default function FourthSection() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects`,
+        `${publicEnv.NEXT_PUBLIC_SITE_URL}/projects`,
         {
           method: "GET",
           next: { revalidate: 86400 },

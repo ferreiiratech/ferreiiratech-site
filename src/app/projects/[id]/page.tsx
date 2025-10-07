@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 
 async function fetchProject(id: string): Promise<ProjectCardProps | null> {
   const res = await fetch(
-    `${publicEnv.NEXT_PUBLIC_SITE_URL}/api/projects/${id}`,
+    `${publicEnv.NEXT_PUBLIC_SITE_URL}/projects/${id}`,
     {
       method: "GET",
       cache: "force-cache",
