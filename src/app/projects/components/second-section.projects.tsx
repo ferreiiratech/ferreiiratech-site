@@ -15,7 +15,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { useProjects } from "@/lib/api"
+import { useProjects } from "@/hooks/use-projects"
 import { useEffect, useState } from "react"
 
 export default function SecondSectionProjects() {

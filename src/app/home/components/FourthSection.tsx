@@ -2,7 +2,7 @@
 
 import ProjectCard from "@/app/components/ui/ProjectCard"
 import ProjectCardSkeleton from "@/app/components/ui/skeleton/card-skeleton"
-import { useProjects } from "@/lib/api"
+import { useProjects } from "@/hooks/use-projects"
 import Link from "next/link"
 
 export default function FourthSection() {
