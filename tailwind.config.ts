@@ -36,11 +36,47 @@ export default {
         spaceGrotesk: ["Space-Grotesk", "sans-serif"],
       },
       colors: {
+        // ShadcnUI colors - apenas para componentes admin
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        shadcn: {
+          primary: {
+            DEFAULT: "hsl(var(--primary))",
+            foreground: "hsl(var(--primary-foreground))",
+          },
+          secondary: {
+            DEFAULT: "hsl(var(--secondary))",
+            foreground: "hsl(var(--secondary-foreground))",
+          },
+          destructive: {
+            DEFAULT: "hsl(var(--destructive))",
+            foreground: "hsl(var(--destructive-foreground))",
+          },
+          muted: {
+            DEFAULT: "hsl(var(--muted))",
+            foreground: "hsl(var(--muted-foreground))",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--accent))",
+            foreground: "hsl(var(--accent-foreground))",
+          },
+          popover: {
+            DEFAULT: "hsl(var(--popover))",
+            foreground: "hsl(var(--popover-foreground))",
+          },
+          card: {
+            DEFAULT: "hsl(var(--card))",
+            foreground: "hsl(var(--card-foreground))",
+          },
+        },
+
+        // Suas cores originais do site
         primary: "var(--color-primary)", // #EFEFEF (Branco)
         secondary: "var(--color-secondary)", // #06080A (Preto Suave)
         highlight: "var(--color-highlight)", // #9956F6 (Roxo Destaque)
 
-        /* Tons de Cinza */
         gray: {
           100: "var(--gray-100)", // #BEBFC0 (Cinza Claro)
           200: "var(--gray-200)", // #A8A8A9 (Cinza Médio)
@@ -49,20 +85,16 @@ export default {
           500: "var(--gray-500)", // #899099 (50%)
           600: "var(--gray-600)", // #44443F (Cinza Muito Escuro)
         },
-
-        /* Tons de Preto */
         black: {
           100: "var(--black-100)", // #121415 (Preto Puro)
           200: "var(--black-200)", // #12161B (Preto Variado)
           300: "var(--black-300)", // #06080A (Preto Suave)
           opacity: {
-            90: "var(--black-opacity-90)", // Preto com Opacidade 80%
+            90: "var(--black-opacity-90)", // Preto com Opacidade 90%
             80: "var(--black-opacity-80)", // Preto com Opacidade 80%
-            40: "var(--black-opacity-40)", // Preto com Opacidade 60%
+            40: "var(--black-opacity-40)", // Preto com Opacidade 40%
           },
         },
-
-        /* Tons de Roxo */
         purple: {
           100: "var(--purple-100)", // #BC94F4 (Roxo Claro)
           150: "var(--purple-150)", // #9956F6 (Roxo Destaque 80%)
