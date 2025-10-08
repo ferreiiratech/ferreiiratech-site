@@ -17,7 +17,7 @@
 }
 
 :root {
-  /* Cores Principais */
+  /* Cores Principais do Site */
   --color-primary: #efefef; /* Branco */
   --color-secondary: #06080a; /* Preto Suave */
   --color-highlight: #9956f6; /* Roxo Destaque */
@@ -44,14 +44,50 @@
   /* Outros Tons */
   --black-opacity-80: rgba(6, 8, 10, 0.8); /* Preto 80% */
   --black-opacity-60: rgba(6, 8, 10, 0.6); /* Preto 60% */
-  --black-opacity-40: rgba(6, 8, 10, 0.4); /* Preto 80% */
+  --black-opacity-40: rgba(6, 8, 10, 0.4); /* Preto 40% */
 }
 
+/* ShadcnUI Theme Variables - Apenas para Admin */
+.dark {
+  --background: #06080a; /* Seu --color-secondary #06080a */
+  --foreground: #efefef; /* Seu --color-primary #efefef */
+  --card: #121415; /* Seu --black-100 #121415 */
+  --card-foreground: #efefef;
+  --popover: #121415;
+  --popover-foreground: #efefef;
+  --primary: #efefef;
+  --primary-foreground: #06080a;
+  --secondary: #44443f; /* Seu --gray-600 #44443f */
+  --secondary-foreground: #efefef;
+  --muted: #44443f;
+  --muted-foreground: #bebfc0; /* Seu --gray-100 #bebfc0 */
+  --accent: #44443f;
+  --accent-foreground: #efefef;
+  --destructive: #ef4444;
+  --destructive-foreground: #efefef;
+  --border: #44443f;
+  --input: #44443f;
+  --ring: #9956f6; /* Seu roxo destaque #9956f6 */
+  --radius: 0.5rem;
+}
+
+/* Estilos padrão do site - suas cores originais */
 body {
   overflow: overlay;
   color: var(--color-secondary);
   background: url("/img/background-texture.svg") var(--color-primary);
   font-family: "Inter", sans-serif;
+}
+
+/* Aplicar cores ShadcnUI apenas no contexto dark (admin) */
+.dark {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.dark body {
+  background: var(--background); /* Remove textura e usa cor sólida */
+  color: var(--foreground);
 }
 
 body::-webkit-scrollbar {
