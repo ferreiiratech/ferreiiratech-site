@@ -80,14 +80,6 @@ export function AdminSidebar() {
             })}
           </nav>
         </div>
-
-        {/* Help */}
-        <div className="mt-auto p-4">
-          <Button variant="outline" size="sm" className="w-full justify-start">
-            <HelpCircle className="mr-2 h-4 w-4" />
-            Ajuda & Suporte
-          </Button>
-        </div>
       </div>
     </div>
   )
