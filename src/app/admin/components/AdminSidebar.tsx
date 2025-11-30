@@ -25,11 +25,6 @@ const sidebarItems = [
     icon: FolderOpen,
   },
   {
-    title: "Analytics",
-    href: "/admin/analytics",
-    icon: BarChart3,
-  },
-  {
     title: "Configurações",
     href: "/admin/settings",
     icon: Settings,
