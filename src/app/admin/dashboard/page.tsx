@@ -251,11 +251,6 @@ export default function AdminDashboard() {
             </Button>
 
             <Button variant="outline" className="w-full justify-start gap-2">
-              <Activity className="h-4 w-4" />
-              Relatórios
-            </Button>
-
-            <Button variant="outline" className="w-full justify-start gap-2">
               <Users className="h-4 w-4" />
               Configurações
             </Button>
