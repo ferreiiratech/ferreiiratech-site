@@ -30,9 +30,9 @@ export default function AdminLayout({
   return (
     <div className="dark">
       <ProtectedRoute>
-        <div className="flex h-screen bg-background">
+        <div className="flex h-screen bg-background overflow-hidden">
           <AdminSidebar />
-          <div className="flex flex-col flex-1 overflow-hidden">
+          <div className="flex flex-col flex-1">
             <AdminHeader />
             <main className="flex-1 overflow-y-auto bg-muted/50 p-6">
               {children}
