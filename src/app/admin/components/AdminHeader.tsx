@@ -14,10 +14,25 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Search, Menu, LogOut, User, Settings } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { useState, useEffect } from "react"
 import { AdminSidebar } from "./AdminSidebar"
+import { getCookie } from "@/lib/cookies"
 
 export function AdminHeader() {
   const router = useRouter()
+  const [userInitials, setUserInitials] = useState("AD")
+
+  useEffect(() => {
+    const userName = getCookie("user-name")
+    if (userName) {
+      const names = userName.split(" ")
+      const initials = names
+        .map((n) => n.charAt(0).toUpperCase())
+        .slice(0, 2)
+        .join("")
+      setUserInitials(initials)
+    }
+  }, [])
 
   const handleLogout = async () => {
     try {
@@ -68,7 +83,7 @@ export function AdminHeader() {
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" size="icon" className="rounded-full">
             <Avatar className="h-8 w-8">
-              <AvatarFallback>AD</AvatarFallback>
+              <AvatarFallback>{userInitials}</AvatarFallback>
             </Avatar>
             <span className="sr-only">Toggle user menu</span>
           </Button>
