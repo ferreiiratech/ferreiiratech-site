@@ -1,14 +1,21 @@
 "use client"
 import Lenis from "@studio-freight/lenis"
 import { useEffect, useRef } from "react"
+import { usePathname } from "next/navigation"
 
 export default function SmoothScrollProvider({
   children,
 }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null)
+  const pathname = usePathname()
 
   useEffect(() => {
     if (typeof window === "undefined") return
+
+    // Desabilitar Lenis nas rotas admin
+    if (pathname?.startsWith("/admin")) {
+      return
+    }
 
     const lenis = new Lenis({
       duration: 1.2,
@@ -30,7 +37,7 @@ export default function SmoothScrollProvider({
     return () => {
       lenis.destroy()
     }
-  }, [])
+  }, [pathname])
 
   return <>{children}</>
 }
