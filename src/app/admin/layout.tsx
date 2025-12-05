@@ -1,7 +1,7 @@
 "use client"
 
 import { AdminSidebar } from "./components/AdminSidebar"
-import { AdminHeader } from "./components/AdminHeader2"
+import { AdminHeader } from "./components/AdminHeader"
 import { ProtectedRoute } from "./components/ProtectedRoute"
 import { usePathname } from "next/navigation"
 

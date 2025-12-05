@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,11 +21,14 @@ export function AdminHeader() {
 
   const handleLogout = async () => {
     try {
-      await fetch("/api/auth/logout", {
+      const response = await fetch("/api/auth/logout", {
         method: "POST",
         credentials: "include",
       })
-      router.push("/admin/login")
+
+      if (response.ok) {
+        router.push("/admin/login")
+      }
     } catch (error) {
       console.error("Erro ao fazer logout:", error)
     }
@@ -67,6 +70,7 @@ export function AdminHeader() {
             <Avatar className="h-8 w-8">
               <AvatarFallback>AD</AvatarFallback>
             </Avatar>
+            <span className="sr-only">Toggle user menu</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
