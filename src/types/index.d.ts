@@ -32,7 +32,7 @@ interface CardProps {
   children: ReactNode
 }
 
-type StatusProject = "Finalizado" | "Em progresso"
+type StatusProject = "Finalizado" | "Em progresso" | "Pausado"
 type TypeProject =
   | "pessoal"
   | "acadêmico"
