@@ -108,8 +108,8 @@ export function AdminSidebar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
-                    isActive && "bg-muted text-primary"
+                    "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-gray-50/10",
+                    isActive && "bg-highlight font-semibold hover:bg-highlight",
                   )}
                 >
                   <item.icon className="h-4 w-4" />
@@ -137,19 +137,25 @@ export function AdminSidebar() {
                 </div>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
+            <DropdownMenuContent 
+              align="end" 
+              className="w-56 bg-secondary !border-[#44443f]"
+            >
+              <DropdownMenuLabel className="!text-[#efefef]">Minha Conta</DropdownMenuLabel>
+              <DropdownMenuSeparator className="!bg-[#44443f]" />
+              <DropdownMenuItem className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer">
                 <User className="mr-2 h-4 w-4" />
                 <span>Perfil</span>
               </DropdownMenuItem>
-              <DropdownMenuItem>
+              <DropdownMenuItem className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer">
                 <Settings className="mr-2 h-4 w-4" />
                 <span>Configurações</span>
               </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={handleLogout}>
+              <DropdownMenuSeparator className="!bg-[#44443f]" />
+              <DropdownMenuItem 
+                onClick={handleLogout} 
+                className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer"
+              >
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Sair</span>
               </DropdownMenuItem>
