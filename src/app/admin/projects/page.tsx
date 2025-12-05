@@ -133,6 +133,7 @@ export default function ProjectsPage() {
         <Button
           onClick={() => router.push("/admin/dashboard/create")}
           className="gap-2"
+          variant="outline"
         >
           <Plus className="h-4 w-4" />
           Novo Projeto
@@ -212,14 +213,14 @@ export default function ProjectsPage() {
                           .map((tech, index) => (
                             <Badge
                               key={index}
-                              variant="secondary"
-                              className="text-xs"
+                              variant="default"
+                              className="text-xs bg-gray-50/10"
                             >
                               {tech}
                             </Badge>
                           ))}
                         {project.technologiesTag.length > 2 && (
-                          <Badge variant="secondary" className="text-xs">
+                          <Badge variant="default" className="text-xs">
                             +{project.technologiesTag.length - 2}
                           </Badge>
                         )}
@@ -235,16 +236,16 @@ export default function ProjectsPage() {
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <DropdownMenuItem>
+                        <DropdownMenuContent align="end" className="bg-secondary !text-[#efefef] !border-[#44443f]">
+                          <DropdownMenuItem className="focus:!bg-[#44443f] cursor-pointer">
                             <Eye className="mr-2 h-4 w-4" />
                             Ver Detalhes
                           </DropdownMenuItem>
-                          <DropdownMenuItem>
+                          <DropdownMenuItem className="focus:!bg-[#44443f] cursor-pointer">
                             <Edit className="mr-2 h-4 w-4" />
                             Editar
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-destructive">
+                          <DropdownMenuItem className="text-destructive focus:!bg-[#44443f] cursor-pointer">
                             <Trash2 className="mr-2 h-4 w-4" />
                             Excluir
                           </DropdownMenuItem>
