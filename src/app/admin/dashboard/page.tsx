@@ -20,19 +20,8 @@ import {
 } from "lucide-react"
 import { useRouter } from "next/navigation"
 
-interface Project {
-  _id: string
-  title: string
-  description: string
-  status: string
-  type: string
-  technologiesTag: string[]
-  startDate: string
-  endDate: string
-}
-
 export default function AdminDashboard() {
-  const [projects, setProjects] = useState<Project[]>([])
+  const [projects, setProjects] = useState<ProjectCardProps[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
 
@@ -54,29 +43,16 @@ export default function AdminDashboard() {
     }
   }
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status: StatusProject) => {
     switch (status) {
-      case "finished":
-        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-      case "in-progress":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
-      case "paused":
-        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
+      case "Finalizado":
+        return "bg-green-100 text-green-800"
+      case "Em progresso":
+        return "bg-blue-100 text-blue-800 "
+      case "Pausado":
+        return "bg-yellow-100 text-yellow-800 "
       default:
-        return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
-    }
-  }
-
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case "finished":
-        return "Finalizado"
-      case "in-progress":
-        return "Em Progresso"
-      case "paused":
-        return "Pausado"
-      default:
-        return status
+        return "bg-gray-100 text-gray-800"
     }
   }
 
@@ -88,9 +64,9 @@ export default function AdminDashboard() {
     )
   }
 
-  const finishedProjects = projects.filter(p => p.status === "finished").length
+  const finishedProjects = projects.filter(p => p.status === "Finalizado").length
   const inProgressProjects = projects.filter(
-    p => p.status === "in-progress"
+    p => p.status === "Em progresso"
   ).length
   const totalProjects = projects.length
 
@@ -107,6 +83,7 @@ export default function AdminDashboard() {
         <Button
           onClick={() => router.push("/admin/dashboard/create")}
           className="gap-2"
+          variant="outline"
         >
           <Plus className="h-4 w-4" />
           Novo Projeto
@@ -186,7 +163,7 @@ export default function AdminDashboard() {
             <div className="space-y-4">
               {projects.slice(0, 5).map(project => (
                 <div
-                  key={project._id}
+                  key={project.id}
                   className="flex items-center justify-between p-4 border rounded-lg"
                 >
                   <div className="space-y-1">
@@ -202,8 +179,8 @@ export default function AdminDashboard() {
                         .map((tech, index) => (
                           <Badge
                             key={index}
-                            variant="secondary"
-                            className="text-xs"
+                            variant="default"
+                            className="text-xs bg-gray-50/10"
                           >
                             {tech}
                           </Badge>
@@ -212,7 +189,7 @@ export default function AdminDashboard() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Badge className={getStatusColor(project.status)}>
-                      {getStatusText(project.status)}
+                      {project.status}
                     </Badge>
                     <Button variant="ghost" size="icon">
                       <ArrowUpRight className="h-4 w-4" />
