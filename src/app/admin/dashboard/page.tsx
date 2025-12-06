@@ -19,6 +19,7 @@ import {
   ArrowUpRight,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { getStatusColor } from "@/lib/project-utils"
 
 export default function AdminDashboard() {
   const [projects, setProjects] = useState<ProjectCardProps[]>([])
@@ -40,19 +41,6 @@ export default function AdminDashboard() {
       console.error("Erro ao carregar projetos:", error)
     } finally {
       setIsLoading(false)
-    }
-  }
-
-  const getStatusColor = (status: StatusProject) => {
-    switch (status) {
-      case "Finalizado":
-        return "bg-green-100 text-green-800"
-      case "Em progresso":
-        return "bg-blue-100 text-blue-800 "
-      case "Pausado":
-        return "bg-yellow-100 text-yellow-800 "
-      default:
-        return "bg-gray-100 text-gray-800"
     }
   }
 
