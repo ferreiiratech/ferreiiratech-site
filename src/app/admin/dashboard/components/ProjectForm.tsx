@@ -65,7 +65,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
       // Validar com o schema da API
       const validatedData = CreateProjectSchema.parse(projectData)
 
-      const response = await fetch("/api/admin/projects", {
+      const response = await fetch("/api/projects", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
