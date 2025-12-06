@@ -27,7 +27,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
   } = useForm<ProjectFormData>({
     resolver: zodResolver(CreateProjectFormSchema),
     defaultValues: {
-      status: "finished",
+      status: "Finalizado",
       type: "web",
     },
   })
@@ -107,9 +107,9 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             disabled={isLoading}
           >
-            <option value="finished">Finalizado</option>
-            <option value="in-progress">Em Progresso</option>
-            <option value="paused">Pausado</option>
+            <option value="Finalizado">Finalizado</option>
+            <option value="Em Progresso">Em Progresso</option>
+            <option value="Pausado">Pausado</option>
           </select>
           {errors.status && (
             <p className="text-sm text-destructive">{errors.status.message}</p>
