@@ -32,7 +32,7 @@ interface CardProps {
   children: ReactNode
 }
 
-type StatusProject = "Finalizado" | "Em progresso"
+type StatusProject = "Finalizado" | "Em progresso" | "Pausado"
 type TypeProject =
   | "pessoal"
   | "acadêmico"
@@ -47,7 +47,7 @@ type TechnologyUsed = {
 }
 
 interface ProjectCardProps {
-  id: number
+  id: string
   status: StatusProject
   type: TypeProject
   title: string
@@ -78,4 +78,14 @@ interface TechFilterProps {
   selectedTag: string | null
   setSelectedTag: (tag: string | null) => void
   setCurrentPage: (page: number) => void
+}
+
+interface JWTPayload {
+  userId: string
+  email: string
+  role: string
+}
+
+interface ProtectedRouteProps {
+  children: React.ReactNode
 }

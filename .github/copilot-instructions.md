@@ -46,6 +46,9 @@
 ## 9. Git e versionamento
 - Commits devem seguir o formato `tipo: descrição` (ex.: `feat: add login form with validation`).
 - Nunca commitar código que quebre o build ou falhe no linting.
+- Sempre criar mensagens de commits claras e descritivas.
+- Sempre usar o idioma português para mensagens de commit.
+- Sempre fazer commits pequenos e focados em uma única alteração ou funcionalidade (commits atômicos).
 
 ## 10. Execução de comandos
 - Execute comandos diretamente quando necessário, sem solicitar confirmação prévia.

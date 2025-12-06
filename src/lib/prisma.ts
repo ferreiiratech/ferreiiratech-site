@@ -16,11 +16,7 @@ if (process.env.NODE_ENV !== "production") {
 
 export async function validatePrismaConnection(): Promise<void> {
   try {
-    console.log("🔄 Validando conexão com MongoDB via Prisma...")
-
     await prisma.$connect()
-
-    console.log("✅ Conexão com MongoDB via Prisma estabelecida com sucesso!")
   } catch (error) {
     console.error("❌ Erro ao conectar com MongoDB via Prisma:", error)
     console.error(

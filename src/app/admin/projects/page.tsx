@@ -19,6 +19,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 import { Plus, Search, MoreHorizontal, Eye, Edit, Trash2 } from "lucide-react"
 import {
   DropdownMenu,
@@ -27,24 +37,19 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useRouter } from "next/navigation"
-
-interface Project {
-  _id: string
-  title: string
-  description: string
-  status: string
-  type: string
-  technologiesTag: string[]
-  startDate: string
-  endDate: string
-  repository: string
-}
+import { toast } from "sonner"
+import { getStatusColor, getStatusText } from "@/lib/project-utils"
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Project[]>([])
+  const [projects, setProjects] = useState<ProjectCardProps[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
+  const [deletingId, setDeletingId] = useState<string | null>(null)
+  const [projectToDelete, setProjectToDelete] = useState<{
+    id: string
+    title: string
+  } | null>(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -68,29 +73,31 @@ export default function ProjectsPage() {
     }
   }
 
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case "finished":
-        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-      case "in-progress":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
-      case "paused":
-        return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
-      default:
-        return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
-    }
-  }
+  const handleDeleteProject = async () => {
+    if (!projectToDelete) return
 
-  const getStatusText = (status: string) => {
-    switch (status) {
-      case "finished":
-        return "Finalizado"
-      case "in-progress":
-        return "Em Progresso"
-      case "paused":
-        return "Pausado"
-      default:
-        return status
+    setDeletingId(projectToDelete.id)
+
+    try {
+      const response = await fetch(`/api/projects/${projectToDelete.id}`, {
+        method: "DELETE",
+        credentials: "include",
+      })
+
+      if (!response.ok) {
+        throw new Error("Erro ao excluir projeto")
+      }
+
+      // Atualizar lista removendo o projeto excluído
+      setProjects(projects.filter(p => p.id !== projectToDelete.id))
+      toast.success("Projeto excluído com sucesso!")
+      setProjectToDelete(null)
+    } catch (err) {
+      toast.error(
+        err instanceof Error ? err.message : "Erro ao excluir projeto"
+      )
+    } finally {
+      setDeletingId(null)
     }
   }
 
@@ -133,6 +140,7 @@ export default function ProjectsPage() {
         <Button
           onClick={() => router.push("/admin/dashboard/create")}
           className="gap-2"
+          variant="outline"
         >
           <Plus className="h-4 w-4" />
           Novo Projeto
@@ -186,7 +194,7 @@ export default function ProjectsPage() {
               </TableHeader>
               <TableBody>
                 {filteredProjects.map(project => (
-                  <TableRow key={project._id}>
+                  <TableRow key={project.id}>
                     <TableCell>
                       <div className="space-y-1">
                         <p className="font-medium leading-none">
@@ -212,14 +220,14 @@ export default function ProjectsPage() {
                           .map((tech, index) => (
                             <Badge
                               key={index}
-                              variant="secondary"
-                              className="text-xs"
+                              variant="default"
+                              className="text-xs bg-gray-50/10"
                             >
                               {tech}
                             </Badge>
                           ))}
                         {project.technologiesTag.length > 2 && (
-                          <Badge variant="secondary" className="text-xs">
+                          <Badge variant="default" className="text-xs">
                             +{project.technologiesTag.length - 2}
                           </Badge>
                         )}
@@ -235,16 +243,25 @@ export default function ProjectsPage() {
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <DropdownMenuItem>
+                        <DropdownMenuContent align="end" className="bg-secondary !text-[#efefef] !border-[#44443f]">
+                          <DropdownMenuItem className="focus:!bg-[#44443f] cursor-pointer">
                             <Eye className="mr-2 h-4 w-4" />
                             Ver Detalhes
                           </DropdownMenuItem>
-                          <DropdownMenuItem>
+                          <DropdownMenuItem className="focus:!bg-[#44443f] cursor-pointer">
                             <Edit className="mr-2 h-4 w-4" />
                             Editar
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-destructive">
+                          <DropdownMenuItem 
+                            className="text-destructive focus:!bg-[#44443f] cursor-pointer"
+                            onClick={() =>
+                              setProjectToDelete({
+                                id: project.id.toString(),
+                                title: project.title,
+                              })
+                            }
+                            disabled={deletingId === project.id.toString()}
+                          >
                             <Trash2 className="mr-2 h-4 w-4" />
                             Excluir
                           </DropdownMenuItem>
@@ -258,6 +275,39 @@ export default function ProjectsPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* Alert Dialog de Confirmação */}
+      <AlertDialog
+        open={projectToDelete !== null}
+        onOpenChange={(open) => !open && setProjectToDelete(null)}
+      >
+        <AlertDialogContent className="bg-secondary">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-primary">
+              Confirmar Exclusão
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-primary">
+              Tem certeza que deseja excluir o projeto{" "}
+              <span className="font-semibold text-foreground">
+                "{projectToDelete?.title}"
+              </span>
+              ? Esta ação não pode ser desfeita.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deletingId !== null} className="text-primary hover:bg-gray-50/10 border-2">
+              Cancelar
+            </AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleDeleteProject}
+              disabled={deletingId !== null}
+              className="text-red-500 hover:bg-gray-50/10 border-2 border-white"
+            >
+              {deletingId ? "Excluindo..." : "Excluir"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }

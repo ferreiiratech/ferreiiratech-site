@@ -4,7 +4,7 @@ import * as motion from "motion/react-client"
 import { useState } from "react"
 
 export default function DonationCard(props: DonationCardProps) {
-  const textToCopy = "texto para copiar"
+  const textToCopy = "00020126960014br.gov.bcb.pix0136912cab6a-c7db-4601-9913-6bcdbe46faf10234Apoiando trabalho do Ferreiiratech5204000053039865802BR5922Leonardo Ferreira Lima6009Sao Paulo62290525REC68EDF83B5FBE9135499051630475E8"
   const [isCopied, setIsCopied] = useState<"idle" | "success" | "error">("idle")
 
   const handleCopy = async () => {

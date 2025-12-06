@@ -15,7 +15,7 @@ export const LoginSchema = z.object({
 // Schema para criação de projeto
 export const CreateProjectSchema = z
   .object({
-    status: z.enum(["finished", "in-progress", "paused"]),
+    status: z.enum(["Finalizado", "Em Progresso", "Pausado"]),
     type: z.enum(["web", "mobile", "desktop", "api"]),
     title: z
       .string()
@@ -76,7 +76,7 @@ export const CreateProjectSchema = z
 
 // Schema para formulário (com campos de string para conversão)
 export const CreateProjectFormSchema = z.object({
-  status: z.enum(["finished", "in-progress", "paused"]),
+  status: z.enum(["Finalizado", "Em Progresso", "Pausado"]),
   type: z.enum(["web", "mobile", "desktop", "api"]),
   title: z
     .string()
