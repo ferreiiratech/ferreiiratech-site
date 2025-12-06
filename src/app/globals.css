@@ -49,6 +49,11 @@
 
 /* ShadcnUI Theme Variables - Apenas para Admin */
 .dark {
+
+  --color-primary: #06080a; /* Branco */
+  --color-secondary: #efefef; /* Preto Suave */
+  --color-highlight: #9956f6; /* Roxo Destaque */
+
   --background: #06080a; /* Seu --color-secondary #06080a */
   --foreground: #efefef; /* Seu --color-primary #efefef */
   --card: #121415; /* Seu --black-100 #121415 */

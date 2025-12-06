@@ -2,6 +2,15 @@
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import {
   LayoutDashboard,
   FolderOpen,
@@ -9,9 +18,13 @@ import {
   Settings,
   HelpCircle,
   Building2,
+  LogOut,
+  User,
 } from "lucide-react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
+import { useState, useEffect } from "react"
+import { getCookie } from "@/lib/cookies"
 
 const sidebarItems = [
   {
@@ -25,11 +38,6 @@ const sidebarItems = [
     icon: FolderOpen,
   },
   {
-    title: "Analytics",
-    href: "/admin/analytics",
-    icon: BarChart3,
-  },
-  {
     title: "Configurações",
     href: "/admin/settings",
     icon: Settings,
@@ -38,6 +46,37 @@ const sidebarItems = [
 
 export function AdminSidebar() {
   const pathname = usePathname()
+  const router = useRouter()
+  const [userInitials, setUserInitials] = useState("AD")
+  const [userName, setUserName] = useState("Usuário")
+
+  useEffect(() => {
+    const name = getCookie("user-name")
+    if (name) {
+      setUserName(name)
+      const names = name.split(" ")
+      const initials = names
+        .map((n) => n.charAt(0).toUpperCase())
+        .slice(0, 2)
+        .join("")
+      setUserInitials(initials)
+    }
+  }, [])
+
+  const handleLogout = async () => {
+    try {
+      const response = await fetch("/api/auth/logout", {
+        method: "POST",
+        credentials: "include",
+      })
+
+      if (response.ok) {
+        router.push("/admin/login")
+      }
+    } catch (error) {
+      console.error("Erro ao fazer logout:", error)
+    }
+  }
 
   return (
     <div className="hidden border-r bg-muted/40 md:block w-60">
@@ -69,8 +108,8 @@ export function AdminSidebar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
-                    isActive && "bg-muted text-primary"
+                    "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-gray-50/10",
+                    isActive && "bg-highlight font-semibold hover:bg-highlight",
                   )}
                 >
                   <item.icon className="h-4 w-4" />
@@ -81,12 +120,47 @@ export function AdminSidebar() {
           </nav>
         </div>
 
-        {/* Help */}
-        <div className="mt-auto p-4">
-          <Button variant="outline" size="sm" className="w-full justify-start">
-            <HelpCircle className="mr-2 h-4 w-4" />
-            Ajuda & Suporte
-          </Button>
+        {/* User menu */}
+        <div className="mt-auto border-t border-gray-50/30 p-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                className="w-full justify-start gap-3 px-3"
+              >
+                <Avatar className="h-8 w-8 border border-gray-50/30">
+                  <AvatarFallback>{userInitials}</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col items-start text-sm">
+                  <span className="font-medium">{userName}</span>
+                  <span className="text-xs text-muted-foreground">Admin</span>
+                </div>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent 
+              align="end" 
+              className="w-56 bg-secondary !border-[#44443f]"
+            >
+              <DropdownMenuLabel className="!text-[#efefef]">Minha Conta</DropdownMenuLabel>
+              <DropdownMenuSeparator className="!bg-[#44443f]" />
+              <DropdownMenuItem className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer">
+                <User className="mr-2 h-4 w-4" />
+                <span>Perfil</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer">
+                <Settings className="mr-2 h-4 w-4" />
+                <span>Configurações</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator className="!bg-[#44443f]" />
+              <DropdownMenuItem 
+                onClick={handleLogout} 
+                className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer"
+              >
+                <LogOut className="mr-2 h-4 w-4" />
+                <span>Sair</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
     </div>

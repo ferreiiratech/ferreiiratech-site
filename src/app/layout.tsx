@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import DatabaseConnectionValidator from "@/components/DatabaseConnectionValidator"
 import SmoothScrollProvider from "../hooks/useLenis"
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: "Leonardo Ferreira",
@@ -76,6 +77,7 @@ export default async function RootLayout({
       <body>
         <DatabaseConnectionValidator />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <Toaster position="top-right" richColors />
         <Analytics />
       </body>
     </html>
