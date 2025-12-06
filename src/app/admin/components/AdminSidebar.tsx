@@ -44,7 +44,7 @@ const sidebarItems = [
   },
 ]
 
-export function AdminSidebar() {
+export function AdminSidebar({ isMobile = false }: { isMobile?: boolean }) {
   const pathname = usePathname()
   const router = useRouter()
   const [userInitials, setUserInitials] = useState("AD")
@@ -79,8 +79,8 @@ export function AdminSidebar() {
   }
 
   return (
-    <div className="hidden border-r bg-muted/40 md:block w-60">
-      <div className="flex h-full max-h-screen flex-col gap-2">
+    <div className={cn("border-r bg-muted/40 w-full flex flex-col", !isMobile && "hidden md:block md:w-60", isMobile && "h-full")}>
+      <div className="flex h-full flex-col gap-2">
         {/* Logo */}
         <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
           <Link
@@ -108,7 +108,7 @@ export function AdminSidebar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-gray-50/10",
+                    "flex items-center gap-3 rounded-lg px-3 py-2 text-white transition-all hover:bg-gray-50/10",
                     isActive && "bg-highlight font-semibold hover:bg-highlight",
                   )}
                 >
@@ -128,12 +128,12 @@ export function AdminSidebar() {
                 variant="ghost"
                 className="w-full justify-start gap-3 px-3"
               >
-                <Avatar className="h-8 w-8 border border-gray-50/30">
+                <Avatar className="h-8 w-8 border text-white border-gray-50/30">
                   <AvatarFallback>{userInitials}</AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col items-start text-sm">
-                  <span className="font-medium">{userName}</span>
-                  <span className="text-xs text-muted-foreground">Admin</span>
+                  <span className="font-medium text-white">{userName}</span>
+                  <span className="text-xs text-muted-foreground text-white">Admin</span>
                 </div>
               </Button>
             </DropdownMenuTrigger>
