@@ -79,3 +79,13 @@ interface TechFilterProps {
   setSelectedTag: (tag: string | null) => void
   setCurrentPage: (page: number) => void
 }
+
+interface JWTPayload {
+  userId: string
+  email: string
+  role: string
+}
+
+interface ProtectedRouteProps {
+  children: React.ReactNode
+}
