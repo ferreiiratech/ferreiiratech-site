@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma"
 import { NextResponse } from "next/server"
 
+// Rota pública para obter a lista de projetos
 export async function GET() {
   try {
     const projects = await prisma.project.findMany({
