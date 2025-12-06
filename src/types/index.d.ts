@@ -47,7 +47,7 @@ type TechnologyUsed = {
 }
 
 interface ProjectCardProps {
-  id: number
+  id: string
   status: StatusProject
   type: TypeProject
   title: string
