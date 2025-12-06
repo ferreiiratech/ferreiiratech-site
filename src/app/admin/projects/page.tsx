@@ -19,6 +19,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 import { Plus, Search, MoreHorizontal, Eye, Edit, Trash2 } from "lucide-react"
 import {
   DropdownMenu,
@@ -27,24 +37,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useRouter } from "next/navigation"
-
-interface Project {
-  _id: string
-  title: string
-  description: string
-  status: string
-  type: string
-  technologiesTag: string[]
-  startDate: string
-  endDate: string
-  repository: string
-}
+import { toast } from "sonner"
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = useState<Project[]>([])
+  const [projects, setProjects] = useState<ProjectCardProps[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
+  const [deletingId, setDeletingId] = useState<string | null>(null)
+  const [projectToDelete, setProjectToDelete] = useState<{
+    id: string
+    title: string
+  } | null>(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -65,6 +69,34 @@ export default function ProjectsPage() {
       setError(err instanceof Error ? err.message : "Erro desconhecido")
     } finally {
       setIsLoading(false)
+    }
+  }
+
+  const handleDeleteProject = async () => {
+    if (!projectToDelete) return
+
+    setDeletingId(projectToDelete.id)
+
+    try {
+      const response = await fetch(`/api/projects/${projectToDelete.id}`, {
+        method: "DELETE",
+        credentials: "include",
+      })
+
+      if (!response.ok) {
+        throw new Error("Erro ao excluir projeto")
+      }
+
+      // Atualizar lista removendo o projeto excluído
+      setProjects(projects.filter(p => p.id !== projectToDelete.id))
+      toast.success("Projeto excluído com sucesso!")
+      setProjectToDelete(null)
+    } catch (err) {
+      toast.error(
+        err instanceof Error ? err.message : "Erro ao excluir projeto"
+      )
+    } finally {
+      setDeletingId(null)
     }
   }
 
@@ -187,7 +219,7 @@ export default function ProjectsPage() {
               </TableHeader>
               <TableBody>
                 {filteredProjects.map(project => (
-                  <TableRow key={project._id}>
+                  <TableRow key={project.id}>
                     <TableCell>
                       <div className="space-y-1">
                         <p className="font-medium leading-none">
@@ -245,7 +277,16 @@ export default function ProjectsPage() {
                             <Edit className="mr-2 h-4 w-4" />
                             Editar
                           </DropdownMenuItem>
-                          <DropdownMenuItem className="text-destructive focus:!bg-[#44443f] cursor-pointer">
+                          <DropdownMenuItem 
+                            className="text-destructive focus:!bg-[#44443f] cursor-pointer"
+                            onClick={() =>
+                              setProjectToDelete({
+                                id: project.id.toString(),
+                                title: project.title,
+                              })
+                            }
+                            disabled={deletingId === project.id.toString()}
+                          >
                             <Trash2 className="mr-2 h-4 w-4" />
                             Excluir
                           </DropdownMenuItem>
@@ -259,6 +300,39 @@ export default function ProjectsPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* Alert Dialog de Confirmação */}
+      <AlertDialog
+        open={projectToDelete !== null}
+        onOpenChange={(open) => !open && setProjectToDelete(null)}
+      >
+        <AlertDialogContent className="bg-secondary">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-primary">
+              Confirmar Exclusão
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-primary">
+              Tem certeza que deseja excluir o projeto{" "}
+              <span className="font-semibold text-foreground">
+                "{projectToDelete?.title}"
+              </span>
+              ? Esta ação não pode ser desfeita.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deletingId !== null} className="text-primary hover:bg-gray-50/10 border-2">
+              Cancelar
+            </AlertDialogCancel>
+            <AlertDialogAction
+              onClick={handleDeleteProject}
+              disabled={deletingId !== null}
+              className="text-red-500 hover:bg-gray-50/10 border-2 border-white"
+            >
+              {deletingId ? "Excluindo..." : "Excluir"}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }
