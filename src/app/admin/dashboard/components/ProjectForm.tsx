@@ -112,7 +112,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
             <option value="Pausado">Pausado</option>
           </select>
           {errors.status && (
-            <p className="text-sm text-destructive">{errors.status.message}</p>
+            <p className="text-sm text-red-500">{errors.status.message}</p>
           )}
         </div>
 
@@ -131,7 +131,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
             <option value="api">API</option>
           </select>
           {errors.type && (
-            <p className="text-sm text-destructive">{errors.type.message}</p>
+            <p className="text-sm text-red-500">{errors.type.message}</p>
           )}
         </div>
       </div>
@@ -146,7 +146,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           disabled={isLoading}
         />
         {errors.title && (
-          <p className="text-sm text-destructive">{errors.title.message}</p>
+          <p className="text-sm text-red-500">{errors.title.message}</p>
         )}
       </div>
 
@@ -161,7 +161,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           disabled={isLoading}
         />
         {errors.description && (
-          <p className="text-sm text-destructive">
+          <p className="text-sm text-red-500">
             {errors.description.message}
           </p>
         )}
@@ -178,7 +178,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           disabled={isLoading}
         />
         {errors.context && (
-          <p className="text-sm text-destructive">{errors.context.message}</p>
+          <p className="text-sm text-red-500">{errors.context.message}</p>
         )}
       </div>
 
@@ -195,7 +195,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           Separe as tecnologias por vírgula
         </p>
         {errors.technologiesTagString && (
-          <p className="text-sm text-destructive">
+          <p className="text-sm text-red-500">
             {errors.technologiesTagString.message}
           </p>
         )}
@@ -222,7 +222,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           disabled={isLoading}
         />
         {errors.repository && (
-          <p className="text-sm text-destructive">
+          <p className="text-sm text-red-500">
             {errors.repository.message}
           </p>
         )}
@@ -253,7 +253,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
             disabled={isLoading}
           />
           {errors.startDate && (
-            <p className="text-sm text-destructive">
+            <p className="text-sm text-red-500">
               {errors.startDate.message}
             </p>
           )}
@@ -269,7 +269,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
             disabled={isLoading}
           />
           {errors.endDate && (
-            <p className="text-sm text-destructive">{errors.endDate.message}</p>
+            <p className="text-sm text-red-500">{errors.endDate.message}</p>
           )}
         </div>
       </div>
@@ -298,8 +298,8 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
         />
       </div>
 
-      <div className="flex gap-4 pt-4">
-        <Button type="submit" disabled={isLoading} className="flex-1">
+      <div className="flex gap-4 pt-4 justify-end">
+        <Button type="submit" variant="outline" disabled={isLoading} >
           {isLoading ? "Criando..." : "Criar Projeto"}
         </Button>
         <Button
