@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
+import { toast } from "sonner"
 import {
   Card,
   CardContent,
@@ -23,7 +24,6 @@ type LoginData = z.infer<typeof LoginSchema>
 
 export default function AdminLoginPage() {
   const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState("")
   const router = useRouter()
 
   const {
@@ -36,7 +36,6 @@ export default function AdminLoginPage() {
 
   const onSubmit = async (data: LoginData) => {
     setIsLoading(true)
-    setError("")
 
     try {
       const response = await fetch("/api/auth/login", {
@@ -53,10 +52,11 @@ export default function AdminLoginPage() {
         throw new Error(result.error || "Erro ao fazer login")
       }
 
+      toast.success("Login realizado com sucesso!")
       // Redirecionar para dashboard do admin
       router.push("/admin/dashboard")
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Erro desconhecido")
+      toast.error(err instanceof Error ? err.message : "Erro ao fazer login")
     } finally {
       setIsLoading(false)
     }
@@ -81,12 +81,6 @@ export default function AdminLoginPage() {
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <CardContent className="space-y-4">
-              {error && (
-                <div className="bg-destructive/15 border border-destructive text-destructive px-4 py-3 rounded">
-                  {error}
-                </div>
-              )}
-
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
