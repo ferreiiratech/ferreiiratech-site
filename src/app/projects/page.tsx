@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import FirstSectionProjects from "./components/first-section.projects"
 import SecondSectionProjects from "./components/second-section.projects"
 
-const ProjectsPage = async () => {
+export default function ProjectsPage() {
   return (
     <>
       <Header />
@@ -13,5 +13,3 @@ const ProjectsPage = async () => {
     </>
   )
 }
-
-export default ProjectsPage
