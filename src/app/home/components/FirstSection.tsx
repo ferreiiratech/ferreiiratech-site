@@ -34,7 +34,6 @@ export default function FirstSection() {
           width={500}
           height={500}
           priority={true}
-          fetchPriority="high"
         />
         <div className="absolute -top-20 -right-32">
           <Image
