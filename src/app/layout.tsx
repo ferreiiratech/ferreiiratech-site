@@ -84,7 +84,7 @@ export default async function RootLayout({
   return (
     <html lang="pt-BR" className="no-copy">
       <body>
-        <DatabaseConnectionValidator />
+        {/* <DatabaseConnectionValidator /> */}
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <Toaster position="top-right" richColors />
         <Analytics />
