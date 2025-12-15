@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "@/lib/utils"
+import { cn, getInitials } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import {
@@ -54,12 +54,7 @@ export function AdminSidebar({ isMobile = false }: { isMobile?: boolean }) {
     const name = getCookie("user-name")
     if (name) {
       setUserName(name)
-      const names = name.split(" ")
-      const initials = names
-        .map((n) => n.charAt(0).toUpperCase())
-        .slice(0, 2)
-        .join("")
-      setUserInitials(initials)
+      setUserInitials(getInitials(name))
     }
   }, [])
 

@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { getInitials } from "@/lib/utils"
 import Image from "next/image"
 
 const testimonials: Testemonial[] = [
@@ -31,14 +32,6 @@ const testimonials: Testemonial[] = [
     stars: 5,
   },
 ]
-
-const getInitials = (name: string): string => {
-  const names = name.split(" ")
-  if (names.length >= 2) {
-    return `${names[0][0]}${names[1][0]}`
-  }
-  return names[0][0]
-}
 
 export default function SecondSection() {
   return (
@@ -93,6 +86,23 @@ export default function SecondSection() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-16 lg:mt-24 flex flex-col items-center gap-6 lg:gap-10 mx-5">
+        <p className="font-inter text-gray-300 text-base sm:text-lg lg:text-xl text-center">
+          Empresas que confiaram em mim:
+        </p>
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-10 max-w-4xl">
+          <div className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center">
+            <p className="text-gray-400 text-sm">Logo Empresa 1</p>
+          </div>
+          <div className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center">
+            <p className="text-gray-400 text-sm">Logo Empresa 2</p>
+          </div>
+          <div className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center">
+            <p className="text-gray-400 text-sm">Logo Empresa 3</p>
+          </div>
+        </div>
       </div>
     </section>
   )
