@@ -39,7 +39,7 @@ export default function FirstSection() {
       </div>
       <div className="w-full h-[388px] lg:h-full flex flex-col gap-4">
         <YouTubePlayer videoId="TREjh6d5fLg" title="Vídeo de apresentação" />
-        <div className="flex gap-6 sm:gap-12 items-center justify-center flex-wrap">
+        <div className="flex gap-6 sm:gap-8 items-center justify-center flex-wrap">
           <div className="flex gap-1.5 items-center">
             <Image
               src={"/img/icons/check-cicle-icon.svg"}
@@ -81,7 +81,7 @@ export default function FirstSection() {
           </div>
         </div>
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden flex justify-center">
         <Button
           text="Receber orçamento em 15 minutos!"
           link={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
