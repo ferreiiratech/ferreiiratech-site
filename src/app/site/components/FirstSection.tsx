@@ -21,7 +21,7 @@ const phoneNumber = serverEnv.PHONE_NUMBER
 
 export default function FirstSection() {
   return (
-    <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[1fr_1fr] lg:mx-44 lg:mt-28 2xl:mx-72">
+    <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[1fr_1fr] lg:mx-44 lg:mt-44 2xl:mx-72">
       <div className="space-y-5 lg:space-y-10">
         <TitleH1 title2="Pare de perder clientes por causa de um site fraco!" />
         <Description
