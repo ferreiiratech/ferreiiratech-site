@@ -1,3 +1,4 @@
+import Card from "@/app/components/ui/Card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { getInitials } from "@/lib/utils"
 import Image from "next/image"
@@ -61,10 +62,7 @@ export default function SecondSection() {
       </div>
       <div className="grid grid-cols-1 gap-8 mx-5 xs:mx-10 sm:mx-14 md:mx-24 sm:grid-cols-2 lg:grid-cols-4 lg:mx-44 2xl:mx-72 lg:gap-6">
         {customerTestimonialsList.map((testimonial, index) => (
-          <div
-            key={index}
-            className="border border-gray-600/50 rounded-2xl p-4 flex flex-col gap-4 bg-secondary"
-          >
+          <Card key={index}>
             <div className="flex gap-2 items-start">
               <Avatar className="w-11 h-11 border border-gray-600/50">
                 <AvatarFallback className="bg-gray-600/50 text-primary text-base font-inter">
@@ -99,7 +97,7 @@ export default function SecondSection() {
                 {testimonial.stars}.0
               </p>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
 
@@ -109,9 +107,9 @@ export default function SecondSection() {
         </p>
         <div className="flex flex-wrap justify-center gap-6 lg:gap-10 max-w-4xl">
           {companiesThatTrustedMeList.map((company, index) => (
-            <div
+            <Card
               key={index}
-              className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center"
+              className="h-[100px] w-[200px] items-center justify-center"
             >
               <Image
                 src={company.logoUrl}
@@ -119,7 +117,7 @@ export default function SecondSection() {
                 width={70}
                 height={70}
               />
-            </div>
+            </Card>
           ))}
         </div>
       </div>
