@@ -4,6 +4,12 @@ interface YouTubePlayerProps {
   showControls?: boolean;
 }
 
+interface Feature {
+  iconPath: string
+  alt: string
+  text: string
+}
+
 interface Testemonial {
   name: string;
   job: string;

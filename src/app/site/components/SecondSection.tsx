@@ -2,52 +2,7 @@ import Card from "@/app/components/ui/Card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { getInitials } from "@/lib/utils"
 import Image from "next/image"
-
-const customerTestimonialsList: Testemonial[] = [
-  {
-    name: "Maria Costa",
-    job: "Advogada",
-    quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
-    stars: 5,
-  },
-  {
-    name: "João Silva",
-    job: "Restaurante",
-    quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
-    stars: 5,
-  },
-  {
-    name: "Ana Lima",
-    job: "Consultoria",
-    quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
-    stars: 5,
-  },
-  {
-    name: "Carlos Costa",
-    job: "Empresário",
-    quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
-    stars: 5,
-  },
-]
-
-const companiesThatTrustedMeList: CompaniesThatTrustedMe[] = [
-  {
-    name: "Perreira e Zanatta Advogados",
-    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
-  },
-  {
-    name: "Perreira e Zanatta Advogados",
-    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
-  },
-  {
-    name: "Perreira e Zanatta Advogados",
-    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
-  },
-]
+import { companiesThatTrustedMeList, customerTestimonialsList } from "./data"
 
 export default function SecondSection() {
   return (

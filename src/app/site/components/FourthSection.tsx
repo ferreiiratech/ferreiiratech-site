@@ -2,74 +2,7 @@
 
 import Card from "@/app/components/ui/Card"
 import { motion } from "motion/react"
-
-const processSteps: ProcessStep[] = [
-  {
-    number: "01",
-    title: "Briefing",
-    duration: "24 horas",
-    description:
-      "Entendo seu negócio, seu público e seus objetivos. Coletamos todas as informações necessárias para criar o site perfeito.",
-    items: [
-      "Chamada strategy de 30 min",
-      "Levantamento de requisitos",
-      "Análise de concorrentes",
-      "Definição de personas",
-    ],
-  },
-  {
-    number: "02",
-    title: "Prototipação",
-    duration: "48 horas",
-    description:
-      "Crio wireframes e protótipos interativos. Você vê exatamente como o site vai ficar antes da codificação.",
-    items: [
-      "Design mockups",
-      "Protótipo interativo",
-      "Validação do layout",
-      "Aprovação do design",
-    ],
-  },
-  {
-    number: "03",
-    title: "Desenvolvimento",
-    duration: "5 dias",
-    description:
-      "Codifico o site com as melhores práticas. Responsivo, otimizado e pronto para vender.",
-    items: [
-      "Código limpo e otimizado",
-      "Integração de ferramentas",
-      "Testes de funcionalidade",
-      "Otimização de performance",
-    ],
-  },
-  {
-    number: "04",
-    title: "Entrega",
-    duration: "1 dia",
-    description:
-      "Site no ar e funcionando perfeitamente. Domínio configurado, hospedagem ativa, tudo pronto.",
-    items: [
-      "Deploy em produção",
-      "Testes finais",
-      "Configuração de domínio",
-      "Documentação entregue",
-    ],
-  },
-  {
-    number: "05",
-    title: "Ajustes & Suporte",
-    duration: "30 dias",
-    description:
-      "Acompanhamento completo. Qualquer dúvida ou ajuste, estou à disposição por 30 dias.",
-    items: [
-      "Suporte via WhatsApp",
-      "Monitoramento 24/7",
-      "Ajustes ilimitados",
-      "Otimizações extras",
-    ],
-  },
-]
+import { processSteps } from "./data"
 
 export default function FourthSection() {
   return (

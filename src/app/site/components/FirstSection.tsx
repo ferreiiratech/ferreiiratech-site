@@ -4,6 +4,7 @@ import Button from "@/app/components/ui/button"
 import YouTubePlayer from "@/app/components/YouTubePlayer"
 import Image from "next/image"
 import { serverEnv } from "@/app/env/server"
+import { features } from "./data"
 
 const getGreeting = (): string => {
   const currentHour = new Date().getHours()
@@ -40,45 +41,21 @@ export default function FirstSection() {
       <div className="w-full h-[388px] lg:h-full flex flex-col gap-4">
         <YouTubePlayer videoId="TREjh6d5fLg" title="Vídeo de apresentação" />
         <div className="flex gap-6 sm:gap-8 items-center justify-center flex-wrap">
-          <div className="flex gap-1.5 items-center">
-            <Image
-              src={"/img/icons/check-cicle-icon.svg"}
-              alt="Seta para baixo"
-              className="pointer-events-none select-none contrast-50"
-              loading="lazy"
-              width={15}
-              height={15}
-            />
-            <p className="text-xs xxs:text-sm text-secondary font-inter">
-              Entrega rápida
-            </p>
-          </div>
-          <div className="flex gap-1.5 items-center">
-            <Image
-              src={"/img/icons/graph-icon.svg"}
-              alt="Seta para baixo"
-              className="pointer-events-none select-none contrast-200"
-              loading="lazy"
-              width={15}
-              height={15}
-            />
-            <p className="text-xs xxs:text-sm text-secondary font-inter">
-              Páginas otimizadas
-            </p>
-          </div>
-          <div className="flex gap-1.5 items-center">
-            <Image
-              src={"/img/icons/check-shield-icon.svg"}
-              alt="Seta para baixo"
-              className="pointer-events-none select-none contrast-200"
-              loading="lazy"
-              width={15}
-              height={15}
-            />
-            <p className="text-xs xxs:text-sm text-secondary font-inter">
-              Você satisfeito ou seu dinheiro de volta
-            </p>
-          </div>
+          {features.map(feature => (
+            <div key={feature.text} className="flex gap-1.5 items-center">
+              <Image
+                src={feature.iconPath}
+                alt={feature.alt}
+                className="pointer-events-none select-none contrast-200"
+                loading="lazy"
+                width={15}
+                height={15}
+              />
+              <p className="text-xs xxs:text-sm text-secondary font-inter">
+                {feature.text}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="lg:hidden flex justify-center">
