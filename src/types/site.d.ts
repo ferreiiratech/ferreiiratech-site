@@ -17,7 +17,15 @@ interface CompaniesThatTrustedMe {
 }
 
 interface BenefitCard {
-  icon: LucideIcon
-  title: string
-  description: string
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+interface ProcessStep {
+  number: string;
+  title: string;
+  duration: string;
+  description: string;
+  items: string[];
 }
