@@ -15,3 +15,9 @@ interface CompaniesThatTrustedMe {
   name: string;
   logoUrl: string;
 }
+
+interface BenefitCard {
+  icon: LucideIcon
+  title: string
+  description: string
+}
