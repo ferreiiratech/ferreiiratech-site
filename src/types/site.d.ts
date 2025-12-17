@@ -10,3 +10,8 @@ interface Testemonial {
   quote: string;
   stars: number;
 }
+
+interface CompaniesThatTrustedMe {
+  name: string;
+  logoUrl: string;
+}

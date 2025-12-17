@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { getInitials } from "@/lib/utils"
 import Image from "next/image"
 
-const testimonials: Testemonial[] = [
+const customerTestimonialsList: Testemonial[] = [
   {
     name: "Maria Costa",
     job: "Advogada",
@@ -33,6 +33,21 @@ const testimonials: Testemonial[] = [
   },
 ]
 
+const companiesThatTrustedMeList: CompaniesThatTrustedMe[] = [
+  {
+    name: "Perreira e Zanatta Advogados",
+    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
+  },
+  {
+    name: "Perreira e Zanatta Advogados",
+    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
+  },
+  {
+    name: "Perreira e Zanatta Advogados",
+    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
+  },
+]
+
 export default function SecondSection() {
   return (
     <section className="bg-secondary mt-14 lg:mt-36 py-20 lg:py-32 text-primary">
@@ -45,7 +60,7 @@ export default function SecondSection() {
         </p>
       </div>
       <div className="grid grid-cols-1 gap-8 mx-5 xs:mx-10 sm:mx-14 md:mx-24 sm:grid-cols-2 lg:grid-cols-4 lg:mx-44 2xl:mx-72 lg:gap-6">
-        {testimonials.map((testimonial, index) => (
+        {customerTestimonialsList.map((testimonial, index) => (
           <div
             key={index}
             className="border border-gray-600/50 rounded-2xl p-4 flex flex-col gap-4 bg-secondary"
@@ -93,15 +108,19 @@ export default function SecondSection() {
           Empresas que confiaram em mim:
         </p>
         <div className="flex flex-wrap justify-center gap-6 lg:gap-10 max-w-4xl">
-          <div className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center">
-            <p className="text-gray-400 text-sm">Logo Empresa 1</p>
-          </div>
-          <div className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center">
-            <p className="text-gray-400 text-sm">Logo Empresa 2</p>
-          </div>
-          <div className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center">
-            <p className="text-gray-400 text-sm">Logo Empresa 3</p>
-          </div>
+          {companiesThatTrustedMeList.map((company, index) => (
+            <div
+              key={index}
+              className="bg-gray-600/20 border border-gray-600/50 rounded-2xl h-[100px] w-[200px] flex items-center justify-center"
+            >
+              <Image
+                src={company.logoUrl}
+                alt={`${company.name} Logo`}
+                width={70}
+                height={70}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
