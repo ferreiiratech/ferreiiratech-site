@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CreateProjectFormSchema, CreateProjectSchema } from "@/lib/validations"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
 import type { z } from "zod"
 
 type ProjectFormData = z.infer<typeof CreateProjectFormSchema>
@@ -161,9 +161,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           disabled={isLoading}
         />
         {errors.description && (
-          <p className="text-sm text-red-500">
-            {errors.description.message}
-          </p>
+          <p className="text-sm text-red-500">{errors.description.message}</p>
         )}
       </div>
 
@@ -222,9 +220,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           disabled={isLoading}
         />
         {errors.repository && (
-          <p className="text-sm text-red-500">
-            {errors.repository.message}
-          </p>
+          <p className="text-sm text-red-500">{errors.repository.message}</p>
         )}
       </div>
 
@@ -253,9 +249,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
             disabled={isLoading}
           />
           {errors.startDate && (
-            <p className="text-sm text-red-500">
-              {errors.startDate.message}
-            </p>
+            <p className="text-sm text-red-500">{errors.startDate.message}</p>
           )}
         </div>
 
@@ -299,7 +293,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
       </div>
 
       <div className="flex gap-4 pt-4 justify-end">
-        <Button type="submit" variant="outline" disabled={isLoading} >
+        <Button type="submit" variant="outline" disabled={isLoading}>
           {isLoading ? "Criando..." : "Criar Projeto"}
         </Button>
         <Button

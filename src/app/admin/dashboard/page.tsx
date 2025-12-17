@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -8,18 +9,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import { getStatusColor } from "@/lib/project-utils"
 import {
+  Activity,
+  ArrowUpRight,
   FolderOpen,
+  Plus,
   TrendingUp,
   Users,
-  Activity,
-  Plus,
-  ArrowUpRight,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { getStatusColor } from "@/lib/project-utils"
+import { useEffect, useState } from "react"
 
 export default function AdminDashboard() {
   const [projects, setProjects] = useState<ProjectCardProps[]>([])
@@ -52,7 +52,9 @@ export default function AdminDashboard() {
     )
   }
 
-  const finishedProjects = projects.filter(p => p.status === "Finalizado").length
+  const finishedProjects = projects.filter(
+    p => p.status === "Finalizado"
+  ).length
   const inProgressProjects = projects.filter(
     p => p.status === "Em progresso"
   ).length

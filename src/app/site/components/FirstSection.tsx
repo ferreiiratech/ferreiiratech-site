@@ -1,9 +1,9 @@
+import YouTubePlayer from "@/app/components/YouTubePlayer"
+import Button from "@/app/components/ui/button"
 import Description from "@/app/components/ui/description"
 import TitleH1 from "@/app/components/ui/title-h1"
-import Button from "@/app/components/ui/button"
-import YouTubePlayer from "@/app/components/YouTubePlayer"
-import Image from "next/image"
 import { serverEnv } from "@/app/env/server"
+import Image from "next/image"
 import { features } from "./data"
 
 const getGreeting = (): string => {

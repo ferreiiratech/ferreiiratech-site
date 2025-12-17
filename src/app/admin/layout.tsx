@@ -1,9 +1,9 @@
 "use client"
 
-import { AdminSidebar } from "./components/AdminSidebar"
-import { AdminHeader } from "./components/AdminHeader"
-import { ProtectedRoute } from "./components/ProtectedRoute"
 import { usePathname } from "next/navigation"
+import { AdminHeader } from "./components/AdminHeader"
+import { AdminSidebar } from "./components/AdminSidebar"
+import { ProtectedRoute } from "./components/ProtectedRoute"
 
 export default function AdminLayout({
   children,

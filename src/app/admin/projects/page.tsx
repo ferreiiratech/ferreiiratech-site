@@ -1,24 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -29,16 +10,35 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import { Plus, Search, MoreHorizontal, Eye, Edit, Trash2 } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useRouter } from "next/navigation"
-import { toast } from "sonner"
+import { Input } from "@/components/ui/input"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 import { getStatusColor, getStatusText } from "@/lib/project-utils"
+import { Edit, Eye, MoreHorizontal, Plus, Search, Trash2 } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+import { toast } from "sonner"
 
 export default function ProjectsPage() {
   const [projects, setProjects] = useState<ProjectCardProps[]>([])
@@ -243,7 +243,10 @@ export default function ProjectsPage() {
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="bg-secondary !text-[#efefef] !border-[#44443f]">
+                        <DropdownMenuContent
+                          align="end"
+                          className="bg-secondary !text-[#efefef] !border-[#44443f]"
+                        >
                           <DropdownMenuItem className="focus:!bg-[#44443f] cursor-pointer">
                             <Eye className="mr-2 h-4 w-4" />
                             Ver Detalhes
@@ -252,7 +255,7 @@ export default function ProjectsPage() {
                             <Edit className="mr-2 h-4 w-4" />
                             Editar
                           </DropdownMenuItem>
-                          <DropdownMenuItem 
+                          <DropdownMenuItem
                             className="text-destructive focus:!bg-[#44443f] cursor-pointer"
                             onClick={() =>
                               setProjectToDelete({
@@ -279,7 +282,7 @@ export default function ProjectsPage() {
       {/* Alert Dialog de Confirmação */}
       <AlertDialog
         open={projectToDelete !== null}
-        onOpenChange={(open) => !open && setProjectToDelete(null)}
+        onOpenChange={open => !open && setProjectToDelete(null)}
       >
         <AlertDialogContent className="bg-secondary">
           <AlertDialogHeader>
@@ -295,7 +298,10 @@ export default function ProjectsPage() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel disabled={deletingId !== null} className="text-primary hover:bg-gray-50/10 border-2">
+            <AlertDialogCancel
+              disabled={deletingId !== null}
+              className="text-primary hover:bg-gray-50/10 border-2"
+            >
               Cancelar
             </AlertDialogCancel>
             <AlertDialogAction

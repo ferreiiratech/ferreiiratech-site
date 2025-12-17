@@ -8,7 +8,13 @@ export default function Button({
   link,
   iconPath,
   isHiddenOnMobile = true,
-}: { text: string; linkTitle?: string; link?: string; iconPath?: string, isHiddenOnMobile?: boolean }) {
+}: {
+  text: string
+  linkTitle?: string
+  link?: string
+  iconPath?: string
+  isHiddenOnMobile?: boolean
+}) {
   const handleClick = () => {
     if (!linkTitle && !link) return
 

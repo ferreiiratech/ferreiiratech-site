@@ -1,14 +1,14 @@
 import {
-  Zap,
-  Search,
-  CheckCircle,
-  ShieldCheck,
-  HeartHandshake,
   BadgeDollarSign,
+  CheckCircle,
   Clock,
   Globe,
+  HeartHandshake,
+  Search,
   Server,
-} from "lucide-react";
+  ShieldCheck,
+  Zap,
+} from "lucide-react"
 
 export const features: Feature[] = [
   {
@@ -26,7 +26,7 @@ export const features: Feature[] = [
     alt: "Ícone de escudo",
     text: "Você satisfeito ou seu dinheiro de volta",
   },
-];
+]
 
 export const customerTestimonialsList: Testemonial[] = [
   {
@@ -57,7 +57,7 @@ export const customerTestimonialsList: Testemonial[] = [
       "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
     stars: 5,
   },
-];
+]
 
 export const companiesThatTrustedMeList: CompaniesThatTrustedMe[] = [
   {
@@ -72,7 +72,7 @@ export const companiesThatTrustedMeList: CompaniesThatTrustedMe[] = [
     name: "Perreira e Zanatta Advogados",
     logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
   },
-];
+]
 
 export const firstBenefits: BenefitCard[] = [
   {
@@ -108,7 +108,7 @@ export const firstBenefits: BenefitCard[] = [
     title: "Hospedagem grátis",
     description: "Hospede seu site com desempenho otimizado sem custo inicial.",
   },
-];
+]
 
 export const secondBenefits: BenefitCard[] = [
   {
@@ -129,7 +129,7 @@ export const secondBenefits: BenefitCard[] = [
     description:
       "Estrutura otimizada para buscadores. Apareça nos resultados onde seus clientes procuram.",
   },
-];
+]
 
 export const processSteps: ProcessStep[] = [
   {
@@ -197,4 +197,4 @@ export const processSteps: ProcessStep[] = [
       "Otimizações extras",
     ],
   },
-];
+]

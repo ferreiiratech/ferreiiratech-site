@@ -1,7 +1,7 @@
 interface YouTubePlayerProps {
-  videoId: string;
-  title?: string;
-  showControls?: boolean;
+  videoId: string
+  title?: string
+  showControls?: boolean
 }
 
 interface Feature {
@@ -11,27 +11,27 @@ interface Feature {
 }
 
 interface Testemonial {
-  name: string;
-  job: string;
-  quote: string;
-  stars: number;
+  name: string
+  job: string
+  quote: string
+  stars: number
 }
 
 interface CompaniesThatTrustedMe {
-  name: string;
-  logoUrl: string;
+  name: string
+  logoUrl: string
 }
 
 interface BenefitCard {
-  icon: LucideIcon;
-  title: string;
-  description: string;
+  icon: LucideIcon
+  title: string
+  description: string
 }
 
 interface ProcessStep {
-  number: string;
-  title: string;
-  duration: string;
-  description: string;
-  items: string[];
+  number: string
+  title: string
+  duration: string
+  description: string
+  items: string[]
 }
