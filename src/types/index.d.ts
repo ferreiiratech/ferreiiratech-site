@@ -29,6 +29,7 @@ interface TechItemProps {
 }
 
 interface CardProps {
+  className?: string
   children: ReactNode
 }
 
