@@ -5,6 +5,7 @@ import FourthSection from "@/app/site/components/FourthSection"
 import SecondSection from "@/app/site/components/SecondSection"
 import ThirdSection from "@/app/site/components/ThirdSection"
 import FooterSection from "../components/FooterSection"
+import SixthSection from "./components/SixthSection"
 
 export default function SitePage() {
   return (
@@ -15,6 +16,7 @@ export default function SitePage() {
       <ThirdSection />
       <FourthSection />
       <FifthSection />
+      <SixthSection />
       <FooterSection />
     </>
   )

@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss"
-import type { PluginAPI } from "tailwindcss/types/config"
+import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
 
 export default {
   darkMode: ["class"],
@@ -81,7 +81,7 @@ export default {
           "@apply hover:border-[#899099]/40 transition-colors duration-300 ease-in-out":
             {},
         },
-      })
+      });
     },
   ],
-} satisfies Config
+} satisfies Config;
