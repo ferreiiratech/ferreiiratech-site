@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "Desenvolvimento de Software",
     "Landing Pages",
   ],
-  manifest: "/manifest.json",
+  manifest: "/manifest.webmanifest",
   openGraph: {
     title: "Leonardo Ferreira | FerreiiraTech",
     description:
