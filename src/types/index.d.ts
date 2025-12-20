@@ -48,6 +48,7 @@ type TechnologyUsed = {
 }
 
 interface ProjectCardProps {
+  isBackgroundLight?: boolean
   id: string
   status: StatusProject
   type: TypeProject
