@@ -4,6 +4,7 @@ import Card from "@/app/components/ui/Card"
 import { publicEnv } from "@/app/env/client"
 import { getGreeting } from "@/lib/site-utils"
 import { Check, X } from "lucide-react"
+import { motion } from "motion/react"
 import { pricingPlans } from "./data"
 
 const phoneNumber = publicEnv.NEXT_PUBLIC_PHONE_NUMBER
@@ -29,7 +30,24 @@ export default function SixthSection() {
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {pricingPlans.map((plan, index) => (
-              <div key={index} className="relative">
+              <motion.div
+                key={index}
+                className="relative"
+                initial={{
+                  opacity: 0,
+                  y: 50,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
+              >
                 {plan.isPopular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
                     <span className="bg-highlight text-white text-xs font-bold px-4 py-1 rounded-full uppercase">
@@ -123,7 +141,7 @@ export default function SixthSection() {
                     {plan.buttonText}
                   </button>
                 </Card>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
