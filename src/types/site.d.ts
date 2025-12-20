@@ -51,3 +51,8 @@ interface PricingPlan {
   buttonText: string
   buttonVariant?: "default" | "primary" | "custom"
 }
+
+interface FAQItem {
+  question: string
+  answer: string
+}

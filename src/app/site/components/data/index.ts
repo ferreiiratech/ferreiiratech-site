@@ -302,3 +302,56 @@ export const pricingPlans: PricingPlan[] = [
     buttonVariant: "custom",
   },
 ]
+
+export const faqData: FAQItem[] = [
+  {
+    question: "Quanto tempo leva para meu site ficar pronto?",
+    answer:
+      "O prazo médio é de 7 a 10 dias úteis do primeiro contato até o site estar 100% funcional e no ar. Sites mais simples podem ficar prontos em 5 dias, enquanto projetos mais complexos podem levar até 15 dias.",
+  },
+  {
+    question: "O que está incluído no suporte?",
+    answer:
+      "O suporte inclui: correção de bugs, ajustes de texto e imagens, dúvidas sobre o uso do site, pequenas alterações de layout e suporte técnico via WhatsApp. NÃO inclui: adição de novas funcionalidades ou seções completas.",
+  },
+  {
+    question: "E depois que o suporte acabar?",
+    answer:
+      "Após o período de suporte, você pode contratar manutenções avulsas (a partir de R$ 50) ou um plano de manutenção mensal (a partir de R$ 150/mês). Também posso te ensinar a fazer alterações básicas sozinho.",
+  },
+  {
+    question: "Preciso pagar domínio e hospedagem todo ano?",
+    answer:
+      "O primeiro ano está incluso no seu plano. Após 12 meses, você paga apenas a renovação do domínio (cerca de R$ 40/ano) e hospedagem (cerca de R$ 15-30/mês dependendo do plano). Eu te ajudo com o processo.",
+  },
+  {
+    question: "O site é meu ou fica com você?",
+    answer:
+      "O site é 100% seu! Transfiro todos os acessos (domínio, hospedagem, código-fonte) para você após o pagamento final. Você tem total controle e propriedade do seu site.",
+  },
+  {
+    question: "Posso fazer alterações sozinho depois?",
+    answer:
+      "Sim! Dependendo do plano, posso criar um painel administrativo simples para você editar textos, imagens e produtos. Também ofereço um tutorial em vídeo mostrando como fazer alterações básicas.",
+  },
+  {
+    question: "Oferece garantia ou política de reembolso?",
+    answer:
+      "Sim! Se após aprovar o protótipo você não ficar satisfeito com o resultado final (mesmo após ajustes), devolvo 50% do valor pago. Se desistir antes do protótipo, devolvo 100%. Sua satisfação é minha prioridade.",
+  },
+  {
+    question: "Como funciona o pagamento?",
+    answer:
+      "Pagamento dividido em 2x: 50% para iniciar (após aprovação do orçamento) e 50% na entrega final. Aceito PIX, transferência bancária e cartão de crédito (com acréscimo de taxas).",
+  },
+  {
+    question: "Quem mantém o site depois da entrega?",
+    answer:
+      "Você pode manter sozinho (te ensino), contratar um plano de manutenção comigo, ou chamar qualquer outro profissional. Como você terá todos os acessos, fica totalmente livre para escolher.",
+  },
+  {
+    question: "Meu site vai aparecer no Google?",
+    answer:
+      "Sim! Todos os sites são otimizados para SEO básico (títulos, descrições, URLs amigáveis, sitemap). Porém, ranquear bem no Google depende também de conteúdo de qualidade, tempo no ar e estratégias de marketing digital contínuas.",
+  },
+]
