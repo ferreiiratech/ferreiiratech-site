@@ -10,7 +10,7 @@ import SixthSection from "./components/SixthSection"
 
 export default function SitePage() {
   return (
-    <>
+    <div className="overflow-x-hidden max-w-full">
       <Header />
       <FirstSection />
       <SecondSection />
@@ -20,6 +20,6 @@ export default function SitePage() {
       <SixthSection />
       <SeventhSection />
       <FooterSection />
-    </>
+    </div>
   )
 }

@@ -53,8 +53,8 @@ export default async function SiteLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className="no-copy">
-      <body>
+    <html lang="pt-BR" className="no-copy overflow-x-hidden">
+      <body className="overflow-x-hidden max-w-full">
         {children}
         <Toaster position="top-right" richColors />
         <Analytics />
