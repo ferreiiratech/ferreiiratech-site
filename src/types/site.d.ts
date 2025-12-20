@@ -35,3 +35,19 @@ interface ProcessStep {
   description: string
   items: string[]
 }
+
+interface PricingFeature {
+  text: string
+  included: boolean
+}
+
+interface PricingPlan {
+  name: string
+  price: string
+  cents: string
+  isPopular?: boolean
+  isCustom?: boolean
+  features: PricingFeature[]
+  buttonText: string
+  buttonVariant?: "default" | "primary" | "custom"
+}
