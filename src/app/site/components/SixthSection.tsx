@@ -84,8 +84,8 @@ export default function SixthSection() {
                     )}
                     {plan.isCustom && (
                       <p className="text-white/90 text-sm mb-4">
-                        Precisa de algo maior? E-commerce completo, plataforma
-                        customizada ou sistema específico? Vamos conversar!
+                        Precisa de algo maior? Plataforma customizada ou sistema
+                        específico? Vamos conversar!
                       </p>
                     )}
                   </div>

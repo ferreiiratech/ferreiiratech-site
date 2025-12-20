@@ -137,7 +137,7 @@ export const processSteps: ProcessStep[] = [
     title: "Briefing",
     duration: "24 horas",
     description:
-      "Entendo seu negócio, seu público e seus objetivos. Coletamos todas as informações necessárias para criar o site perfeito.",
+      "Entendo seu negócio, seu público e seus objetivos. Coleto todas as informações necessárias para criar o site perfeito para você.",
     items: [
       "Chamada strategy de 30 min",
       "Levantamento de requisitos",
@@ -152,7 +152,7 @@ export const processSteps: ProcessStep[] = [
     description:
       "Crio wireframes e protótipos interativos. Você vê exatamente como o site vai ficar antes da codificação.",
     items: [
-      "Design mockups",
+      "Design mockups no Figma",
       "Protótipo interativo",
       "Validação do layout",
       "Aprovação do design",
@@ -189,11 +189,11 @@ export const processSteps: ProcessStep[] = [
     title: "Ajustes & Suporte",
     duration: "30 dias",
     description:
-      "Acompanhamento completo. Qualquer dúvida ou ajuste, estou à disposição por 30 dias.",
+      "Acompanhamento completo. Qualquer dúvida ou ajuste, estou à disposição por até 30 dias.",
     items: [
       "Suporte via WhatsApp",
       "Monitoramento 24/7",
-      "Ajustes ilimitados",
+      "Ajustes menores",
       "Otimizações extras",
     ],
   },
@@ -252,7 +252,7 @@ export const pricingPlans: PricingPlan[] = [
   },
   {
     name: "Avançado",
-    price: "1.499",
+    price: "1.599",
     cents: ",90",
     features: [
       { text: "Site profissional publicado e funcionando", included: true },

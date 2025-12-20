@@ -13,7 +13,7 @@ export default function FourthSection() {
             Processo de trabalho
           </h2>
           <p className="text-gray-300 text-sm xxs:text-base lg:text-xl max-w-3xl font-inter">
-            Entenda exatamente como trabalhamos, do briefing até o suporte
+            Entenda exatamente como trabalho, do briefing até o suporte
             pós-entrega.
           </p>
         </div>

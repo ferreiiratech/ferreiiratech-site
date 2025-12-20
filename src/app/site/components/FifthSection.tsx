@@ -21,7 +21,7 @@ export default function FifthSection() {
             Portfólio de resultados
           </h2>
           <p className="text-gray-300 text-sm xxs:text-base lg:text-xl max-w-3xl font-inter">
-            Projetos reais com resultados reais. Veja o que podemos fazer pelo
+            Projetos reais com resultados reais. Veja o que eu posso fazer pelo
             seu negócio.
           </p>
         </div>
@@ -52,7 +52,10 @@ export default function FifthSection() {
                 ))}
         </div>
         <div className="text-center mt-16">
-          <Link href="/projects" className="text-highlight hover:underline">
+          <Link
+            href="/projects"
+            className="text-highlight border-b-2 border-highlight"
+          >
             Veja mais projetos
           </Link>
         </div>
