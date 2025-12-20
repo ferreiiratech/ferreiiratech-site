@@ -332,7 +332,7 @@ export const faqData: FAQItem[] = [
   {
     question: "Posso fazer alterações sozinho depois?",
     answer:
-      "Sim! Dependendo do plano, posso criar um painel administrativo simples para você editar textos, imagens e produtos. Também ofereço um tutorial em vídeo mostrando como fazer alterações básicas.",
+      "Sim! Ofereço um tutorial em vídeo mostrando como fazer alterações básicas.",
   },
   {
     question: "Oferece garantia ou política de reembolso?",
@@ -342,7 +342,7 @@ export const faqData: FAQItem[] = [
   {
     question: "Como funciona o pagamento?",
     answer:
-      "Pagamento dividido em 2x: 50% para iniciar (após aprovação do orçamento) e 50% na entrega final. Aceito PIX, transferência bancária e cartão de crédito (com acréscimo de taxas).",
+      "Pagamento dividido em 2x: 30% para iniciar (após aprovação do orçamento) e 70% na entrega final. Aceito apenas PIX. Caso não aprove a entrega final, você não precisar realizar o pagamento dos 70% faltantes.",
   },
   {
     question: "Quem mantém o site depois da entrega?",
@@ -353,5 +353,26 @@ export const faqData: FAQItem[] = [
     question: "Meu site vai aparecer no Google?",
     answer:
       "Sim! Todos os sites são otimizados para SEO básico (títulos, descrições, URLs amigáveis, sitemap). Porém, ranquear bem no Google depende também de conteúdo de qualidade, tempo no ar e estratégias de marketing digital contínuas.",
+  },
+  {
+    question: "O site funciona bem em celulares e tablets?",
+    answer:
+      "Sim! Todos os projetos são desenvolvidos com design responsivo, o que significa que o layout se adapta perfeitamente a qualquer tamanho de tela, seja smartphone, tablet ou computador.",
+  },
+  {
+    question:
+      "Meu site terá o certificado de segurança (o cadeado na barra de endereço)?",
+    answer:
+      "Com certeza. Eu realizo a configuração do certificado SSL gratuitamente na sua hospedagem. Isso garante que os dados dos seus visitantes estejam protegidos e melhora sua relevância no Google.",
+  },
+  {
+    question: "Preciso enviar os textos e imagens ou você faz tudo?",
+    answer:
+      "Os textos e fotos específicos do seu negócio devem ser fornecidos por você. Caso não tenha, posso utilizar imagens de bancos de dados profissionais gratuitos e ajudar na revisão gramatical dos textos.",
+  },
+  {
+    question: "O site terá integração com WhatsApp e Redes Sociais?",
+    answer:
+      "Isso irá depender do plano que você contratar. Nem todos os planos incluem essas integrações. Verifique os detalhes de cada plano para mais informações.",
   },
 ]
