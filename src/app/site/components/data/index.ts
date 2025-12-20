@@ -198,3 +198,107 @@ export const processSteps: ProcessStep[] = [
     ],
   },
 ]
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    name: "Básico",
+    price: "499",
+    cents: ",90",
+    features: [
+      { text: "Site profissional publicado e funcionando", included: true },
+      {
+        text: "Até 3 seções estratégicas (Home, Sobre e Contato, por exemplo)",
+        included: true,
+      },
+      { text: "Domínio gratuito por 1 ano", included: true },
+      { text: "Hospedagem rápida e segura por 1 ano", included: true },
+      { text: "Design responsivo (desktop e celular)", included: true },
+      { text: "Suporte técnico por 7 dias após entrega", included: true },
+      { text: "Integração com redes sociais", included: false },
+      { text: "Email profissional personalizado", included: false },
+      { text: "Formulários de captação de leads", included: false },
+      { text: "Automação de emails", included: false },
+      {
+        text: "Otimização básica para mecanismos de busca (SEO)",
+        included: false,
+      },
+    ],
+    buttonText: "Contratar Agora",
+    buttonVariant: "default",
+  },
+  {
+    name: "Intermediário",
+    price: "899",
+    cents: ",90",
+    isPopular: true,
+    features: [
+      { text: "Site profissional publicado e funcionando", included: true },
+      { text: "Até 6 seções focadas em conversão", included: true },
+      { text: "Domínio gratuito por 1 ano", included: true },
+      { text: "Hospedagem rápida e segura por 1 ano", included: true },
+      { text: "Design responsivo e otimizado para mobile", included: true },
+      { text: "Suporte técnico por 30 dias após entrega", included: true },
+      { text: "Integração com redes sociais", included: true },
+      { text: "Email profissional personalizado", included: false },
+      { text: "Formulários de captação de leads", included: false },
+      { text: "Automação de emails", included: false },
+      {
+        text: "Otimização básica para mecanismos de busca (SEO)",
+        included: false,
+      },
+    ],
+    buttonText: "Contratar Agora",
+    buttonVariant: "primary",
+  },
+  {
+    name: "Avançado",
+    price: "1.499",
+    cents: ",90",
+    features: [
+      { text: "Site profissional publicado e funcionando", included: true },
+      { text: "Até 10 seções personalizadas", included: true },
+      { text: "Domínio gratuito por 1 ano", included: true },
+      {
+        text: "Hospedagem de alta performance gratuita por 1 ano",
+        included: true,
+      },
+      {
+        text: "Design responsivo, otimizado para mobile e focado em conversão",
+        included: true,
+      },
+      { text: "Suporte por 2 meses", included: true },
+      { text: "Integração com redes sociais", included: true },
+      { text: "Email profissional personalizado", included: true },
+      { text: "Formulários de captação de leads", included: true },
+      { text: "Automação de emails", included: true },
+      {
+        text: "Otimização básica para mecanismos de busca (SEO)",
+        included: true,
+      },
+    ],
+    buttonText: "Contratar Agora",
+    buttonVariant: "default",
+  },
+  {
+    name: "Sob Consulta",
+    price: "",
+    cents: "",
+    isCustom: true,
+    features: [
+      {
+        text: "Precisa de algo maior? Vamos conversar!",
+        included: true,
+      },
+      { text: "Projeto sob medida e personalizado", included: true },
+      { text: "Funcionalidades definidas conforme o projeto", included: true },
+      {
+        text: "Integrações avançadas com APIs e serviços externos",
+        included: true,
+      },
+      { text: "Suporte prioritário", included: true },
+      { text: "Prazos e investimento personalizados", included: true },
+    ],
+    buttonText: "Falar Comigo Sobre Projeto Especial",
+    buttonVariant: "custom",
+  },
+]
