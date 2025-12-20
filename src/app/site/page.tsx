@@ -1,4 +1,5 @@
 import Header from "@/app/components/Header"
+import FifthSection from "@/app/site/components/FifthSection"
 import FirstSection from "@/app/site/components/FirstSection"
 import FourthSection from "@/app/site/components/FourthSection"
 import SecondSection from "@/app/site/components/SecondSection"
@@ -12,6 +13,7 @@ export default function SitePage() {
       <SecondSection />
       <ThirdSection />
       <FourthSection />
+      <FifthSection />
     </>
   )
 }
