@@ -25,6 +25,7 @@ export default function FirstSection() {
             link={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
             iconPath="/img/icons/whatsapp-icon.svg"
             isHiddenOnMobile={false}
+            className="shimmer-effect"
           />
         </div>
       </div>
@@ -54,6 +55,7 @@ export default function FirstSection() {
           link={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
           iconPath="/img/icons/whatsapp-icon.svg"
           isHiddenOnMobile={false}
+          className="shimmer-effect"
         />
       </div>
     </section>

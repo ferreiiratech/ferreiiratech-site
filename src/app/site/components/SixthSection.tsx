@@ -6,12 +6,11 @@ import { getGreeting } from "@/lib/site-utils"
 import { Check, X } from "lucide-react"
 import { pricingPlans } from "./data"
 
-const message = `Olá, ${getGreeting()}!`
 const phoneNumber = publicEnv.NEXT_PUBLIC_PHONE_NUMBER
 
 export default function SixthSection() {
   const handlePlanClick = (planName: string) => {
-    const planMessage = `${message} Tenho interesse no plano *${planName}* e gostaria de entender prazos, escopo e próximos passos para contratação.`
+    const planMessage = `Olá, ${getGreeting()}! Venho através do seu site e tenho interesse no plano *${planName}* e gostaria de entender prazos, escopo e próximos passos para contratação.`
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(planMessage)}`
     window.open(whatsappUrl, "_blank")
   }
@@ -115,7 +114,7 @@ export default function SixthSection() {
                     onClick={() => handlePlanClick(plan.name)}
                     className={`w-full py-3 rounded-lg font-semibold transition-all ${
                       plan.buttonVariant === "primary"
-                        ? "bg-highlight text-white hover:bg-highlight/90"
+                        ? "bg-highlight text-white hover:bg-highlight/90 shimmer-effect"
                         : plan.buttonVariant === "custom"
                           ? "bg-white text-highlight hover:bg-white/90"
                           : "bg-secondary text-primary border border-primary/20 hover:bg-secondary/80"
