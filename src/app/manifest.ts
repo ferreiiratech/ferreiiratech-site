@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "FerreiiraTech",
     short_name: "Ferreiira",
     description:
-      "Portfólio e serviços de desenvolvimento de software da FerreiiraTech",
+      "Portfólio profissional, artigos técnicos e vendas de serviços de desenvolvimento de software, sites e landing pages.",
     start_url: "/",
     scope: "/",
     display: "standalone",
@@ -13,23 +13,23 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#0f172a",
     icons: [
       {
-        src: "/icon-192.png",
+        src: "/favicon.ico",
         sizes: "192x192",
         type: "image/png",
       },
       {
-        src: "/icon-512.png",
+        src: "/favicon.ico",
         sizes: "512x512",
         type: "image/png",
       },
       {
-        src: "/icon-192-maskable.png",
+        src: "/favicon.ico",
         sizes: "192x192",
         type: "image/png",
         purpose: "maskable",
       },
       {
-        src: "/icon-512-maskable.png",
+        src: "/favicon.ico",
         sizes: "512x512",
         type: "image/png",
         purpose: "maskable",

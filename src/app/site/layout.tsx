@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Solicite sua página e aumente suas vendas.",
   applicationName: "FerreiiraTech",
   metadataBase: new URL("https://ferreiiratech.com"),
+  authors: [{ name: "Leonardo Ferreira", url: "https://ferreiiratech.com" }],
+  creator: "Leonardo Ferreira",
   alternates: {
     canonical: "/site",
   },
@@ -25,11 +27,21 @@ export const metadata: Metadata = {
     },
   },
   generator: "Next.js",
+  keywords: [
+    "Landing Page",
+    "Landing Page",
+    "Geração de Leads",
+    "Conversão de Vendas",
+    "Design Responsivo",
+    "Otimização SEO",
+    "Desenvolvimento Web",
+  ],
+  manifest: "/manifest.webmanifest",
   openGraph: {
     url: "/site",
     title: "Criação de Landing pages que convertem | FerreiiraTech",
     description:
-      "Criação profissional de landing pages focadas em conversão e geração de leads.",
+      "Criação profissional de landing pages que maximizam conversões e geram leads qualificados. Solicite seu site, se posicione online e aumente suas vendas.",
     images: [
       {
         url: "/og-image.png",
@@ -38,13 +50,31 @@ export const metadata: Metadata = {
         alt: "Leonardo Ferreira - Desenvolvedor Full Stack",
       },
     ],
+    locale: "pt-BR",
+    type: "website",
   },
   robots: {
     index: true,
     follow: true,
     nocache: false,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leonardo Ferreira | FerreiiraTech",
+    description:
+      "Desenvolvedor backend especializado em Java, Spring Boot e APIs REST. Portfólio profissional, artigos técnicos e vendas de serviços de desenvolvimento de software, sites e landing pages.",
+    site: "@ferreiiratech",
+    creator: "@ferreiiratech",
+    images: ["/og-image.png"],
+  },
+  category: "technology",
 }
 
 export default async function SiteLayout({

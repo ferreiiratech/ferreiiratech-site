@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ferreiiratech.com"),
   authors: [{ name: "Leonardo Ferreira", url: "https://ferreiiratech.com" }],
   creator: "Leonardo Ferreira",
+  alternates: {
+    canonical: "/site",
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -74,9 +77,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   category: "technology",
-  //verification: {
-  //  google: "google" // add your google site verification code here
-  //}
 }
 
 export default async function RootLayout({
