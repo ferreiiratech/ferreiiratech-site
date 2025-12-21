@@ -20,7 +20,7 @@ interface Project {
   technologiesTag: string[]
   startDate: string
   endDate: string
-  linkRepo: string
+  linkRepo?: string
   linkSite?: string
 }
 

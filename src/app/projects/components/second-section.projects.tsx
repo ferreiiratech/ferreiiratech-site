@@ -137,6 +137,7 @@ export default function SecondSectionProjects() {
                 startDate={item.startDate}
                 endDate={item.endDate}
                 linkRepo={item.linkRepo}
+                linkSite={item.linkSite}
               />
             ))
           ) : (

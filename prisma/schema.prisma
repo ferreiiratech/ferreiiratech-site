@@ -36,7 +36,7 @@ model Project {
   images           String[] // Array de URLs das imagens
   startDate        DateTime
   endDate          DateTime
-  linkRepo         String   // Link do repositório
+  linkRepo         String?  // Link do repositório
   linkSite         String?  // Link do site/deploy
   comments         String?
   createdAt        DateTime @default(now())

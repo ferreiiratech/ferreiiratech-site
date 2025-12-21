@@ -13,6 +13,8 @@ export default function FifthSection() {
     return <></>
   }
 
+  console.log("Projetos: ", projects)
+
   return (
     <section className="py-20 lg:py-32">
       <div className="mx-5 xs:mx-10 sm:mx-14 md:mx-24 lg:mx-44 2xl:mx-72">
@@ -37,6 +39,7 @@ export default function FifthSection() {
                   <ProjectCard
                     key={item.id}
                     isBackgroundLight={true}
+                    isShowLinkRepo={false}
                     id={item.id}
                     status={item.status}
                     images={item.images}
@@ -47,6 +50,7 @@ export default function FifthSection() {
                     startDate={item.startDate}
                     endDate={item.endDate}
                     linkRepo={item.linkRepo}
+                    linkSite={item.linkSite}
                   />
                 ))}
         </div>

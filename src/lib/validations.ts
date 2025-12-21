@@ -57,7 +57,16 @@ export const CreateProjectSchema = z
         message: "Data de fim inválida",
       })
       .transform(date => new Date(date)),
-    linkRepo: z.string().url("Link do repositório deve ser uma URL válida"),
+    linkRepo: z
+      .string()
+      .url("Link do repositório deve ser uma URL válida")
+      .optional()
+      .or(z.literal("")),
+    linkSite: z
+      .string()
+      .url("Link do site deve ser uma URL válida")
+      .optional()
+      .or(z.literal("")),
     comments: z
       .string()
       .max(1000, "Comentários devem ter no máximo 1000 caracteres")
@@ -97,7 +106,7 @@ export const CreateProjectFormSchema = z.object({
   imagesString: z.string().optional(),
   startDate: z.string().min(1, "Data de início é obrigatória"),
   endDate: z.string().min(1, "Data de fim é obrigatória"),
-  linkRepo: z.string().url("Link do repositório deve ser uma URL válida"),
+  linkRepo: z.string().optional(),
   linkSite: z.string().optional(),
   comments: z
     .string()

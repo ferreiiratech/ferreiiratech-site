@@ -7,7 +7,11 @@ import React from "react"
 import Card from "./Card"
 
 const ProjectCard = React.memo(
-  ({ isBackgroundLight = false, ...props }: ProjectCardProps) => {
+  ({
+    isBackgroundLight = false,
+    isShowLinkRepo = true,
+    ...props
+  }: ProjectCardProps) => {
     return (
       <Card className={isBackgroundLight ? "bg-[#dadcdead]" : ""}>
         <div className="mb-4 flex flex-row gap-2">
@@ -65,24 +69,42 @@ const ProjectCard = React.memo(
         </div>
 
         <div className="mt-auto">
-          <div className="flex gap-2 mb-6">
+          <div className="flex flex-wrap gap-2 sm:gap-2.5 mb-6">
             {props.technologiesTag.slice(0, 4).map(tech => (
               <span
                 key={tech}
-                className="text-[0.6rem] lg:text-sm font-spaceGrotesk px-3 py-1 border border-[#899099]/30 rounded-lg cursor-default"
+                className="text-[0.6rem] sm:text-xs lg:text-sm font-spaceGrotesk px-2 sm:px-3 py-1 border border-[#899099]/30 rounded-lg cursor-default whitespace-nowrap"
               >
                 {tech}
               </span>
             ))}
           </div>
 
-          <Link
-            href={props.linkRepo}
-            className="text-highlight hover:underline text-sm transition-colors duration-300"
-          >
-            Acesse o repositório
-            <ExternalLink className="inline-block ml-1 mb-1" size={14} />
-          </Link>
+          <div className="flex flex-wrap gap-3 sm:gap-4">
+            {isShowLinkRepo && props.linkRepo && (
+              <Link
+                href={props.linkRepo}
+                className="text-highlight hover:underline text-xs sm:text-sm transition-colors duration-300 flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Acesse o repositório</span>
+                <ExternalLink className="inline-block ml-1" size={14} />
+              </Link>
+            )}
+
+            {props.linkSite && (
+              <Link
+                href={props.linkSite}
+                className="text-highlight hover:underline text-xs sm:text-sm transition-colors duration-300 flex items-center"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Acesse o site</span>
+                <ExternalLink className="inline-block ml-1" size={14} />
+              </Link>
+            )}
+          </div>
         </div>
       </Card>
     )

@@ -49,6 +49,7 @@ type TechnologyUsed = {
 
 interface ProjectCardProps {
   isBackgroundLight?: boolean
+  isShowLinkRepo?: boolean
   id: string
   status: StatusProject
   type: TypeProject
@@ -62,7 +63,7 @@ interface ProjectCardProps {
   images?: string[]
   startDate: Date
   endDate: Date
-  linkRepo: string
+  linkRepo?: string
   linkSite?: string
   comments?: string
 }
