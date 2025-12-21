@@ -59,11 +59,10 @@ interface ProjectCardProps {
   technologiesTag: string[]
   technologyUsed?: TechnologyUsed
   architecture?: string
-  repository: string
   images?: string[]
   startDate: Date
   endDate: Date
-  linkRepo?: string
+  linkRepo: string
   comments?: string
 }
 

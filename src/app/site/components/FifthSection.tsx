@@ -43,7 +43,6 @@ export default function FifthSection() {
                     title={item.title}
                     description={item.description}
                     technologiesTag={item.technologiesTag}
-                    repository={item.repository}
                     type={item.type}
                     startDate={item.startDate}
                     endDate={item.endDate}

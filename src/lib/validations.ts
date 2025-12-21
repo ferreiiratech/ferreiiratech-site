@@ -41,7 +41,6 @@ export const CreateProjectSchema = z
       .max(1000, "Arquitetura deve ter no máximo 1000 caracteres")
       .trim()
       .optional(),
-    repository: z.string().min(1, "Repository é obrigatório"),
     images: z
       .array(z.string().url("Cada imagem deve ser uma URL válida"))
       .max(10, "Máximo de 10 imagens")
@@ -58,11 +57,7 @@ export const CreateProjectSchema = z
         message: "Data de fim inválida",
       })
       .transform(date => new Date(date)),
-    linkRepo: z
-      .string()
-      .url("Link do repositório deve ser uma URL válida")
-      .optional()
-      .or(z.literal("")),
+    linkRepo: z.string().url("Link do repositório deve ser uma URL válida"),
     comments: z
       .string()
       .max(1000, "Comentários devem ter no máximo 1000 caracteres")
@@ -99,11 +94,10 @@ export const CreateProjectFormSchema = z.object({
     .max(1000, "Arquitetura deve ter no máximo 1000 caracteres")
     .trim()
     .optional(),
-  repository: z.string().min(1, "Repository é obrigatório"),
   imagesString: z.string().optional(),
   startDate: z.string().min(1, "Data de início é obrigatória"),
   endDate: z.string().min(1, "Data de fim é obrigatória"),
-  linkRepo: z.string().optional(),
+  linkRepo: z.string().url("Link do repositório deve ser uma URL válida"),
   comments: z
     .string()
     .max(1000, "Comentários devem ter no máximo 1000 caracteres")

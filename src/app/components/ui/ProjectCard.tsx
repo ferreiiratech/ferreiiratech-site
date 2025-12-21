@@ -77,7 +77,7 @@ const ProjectCard = React.memo(
           </div>
 
           <Link
-            href={props.repository}
+            href={props.linkRepo}
             className="text-highlight hover:underline text-sm transition-colors duration-300"
           >
             Acesse o repositório

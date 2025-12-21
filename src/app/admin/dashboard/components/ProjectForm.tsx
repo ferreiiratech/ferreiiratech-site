@@ -49,7 +49,6 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           .map((tag: string) => tag.trim())
           .filter(Boolean),
         architecture: data.architecture || null,
-        repository: data.repository,
         images: data.imagesString
           ? data.imagesString
               .split(",")
@@ -208,20 +207,6 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           placeholder="Microservices, Monolith, etc."
           disabled={isLoading}
         />
-      </div>
-
-      {/* Repository */}
-      <div className="space-y-2">
-        <Label htmlFor="repository">Repositório</Label>
-        <Input
-          id="repository"
-          {...register("repository")}
-          placeholder="Nome do repositório"
-          disabled={isLoading}
-        />
-        {errors.repository && (
-          <p className="text-sm text-red-500">{errors.repository.message}</p>
-        )}
       </div>
 
       {/* Images */}

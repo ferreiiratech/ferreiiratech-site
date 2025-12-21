@@ -62,11 +62,10 @@ export async function POST(request: NextRequest) {
         technologiesTag: validatedData.technologiesTag,
         technologyUsed: {},
         architecture: validatedData.architecture || null,
-        repository: validatedData.repository,
         images: validatedData.images,
         startDate: validatedData.startDate,
         endDate: validatedData.endDate,
-        linkRepo: validatedData.linkRepo || null,
+        linkRepo: validatedData.linkRepo,
         comments: validatedData.comments || null,
       },
     })
