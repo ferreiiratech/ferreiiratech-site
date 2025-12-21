@@ -28,7 +28,7 @@ export default function SixthSection() {
           </p>
         </div>
         <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-4 gap-6">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={index}
