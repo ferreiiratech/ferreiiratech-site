@@ -66,6 +66,7 @@ export async function POST(request: NextRequest) {
         startDate: validatedData.startDate,
         endDate: validatedData.endDate,
         linkRepo: validatedData.linkRepo,
+        linkSite: validatedData.linkSite || null,
         comments: validatedData.comments || null,
       },
     })

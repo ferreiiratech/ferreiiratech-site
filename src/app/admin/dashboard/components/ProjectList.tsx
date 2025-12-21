@@ -21,6 +21,7 @@ interface Project {
   startDate: string
   endDate: string
   linkRepo: string
+  linkSite?: string
 }
 
 interface ProjectListProps {

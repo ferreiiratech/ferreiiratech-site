@@ -98,6 +98,7 @@ export const CreateProjectFormSchema = z.object({
   startDate: z.string().min(1, "Data de início é obrigatória"),
   endDate: z.string().min(1, "Data de fim é obrigatória"),
   linkRepo: z.string().url("Link do repositório deve ser uma URL válida"),
+  linkSite: z.string().optional(),
   comments: z
     .string()
     .max(1000, "Comentários devem ter no máximo 1000 caracteres")

@@ -37,6 +37,7 @@ model Project {
   startDate        DateTime
   endDate          DateTime
   linkRepo         String   // Link do repositório
+  linkSite         String?  // Link do site/deploy
   comments         String?
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt

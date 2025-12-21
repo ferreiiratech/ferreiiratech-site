@@ -63,6 +63,7 @@ interface ProjectCardProps {
   startDate: Date
   endDate: Date
   linkRepo: string
+  linkSite?: string
   comments?: string
 }
 

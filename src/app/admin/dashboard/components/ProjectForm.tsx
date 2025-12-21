@@ -58,6 +58,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
         startDate: data.startDate,
         endDate: data.endDate,
         linkRepo: data.linkRepo || null,
+        linkSite: data.linkSite || null,
         comments: data.comments || null,
       }
 
@@ -255,7 +256,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
 
       {/* Link Repo */}
       <div className="space-y-2">
-        <Label htmlFor="linkRepo">Link do Repositório (opcional)</Label>
+        <Label htmlFor="linkRepo">Link do Repositório</Label>
         <Input
           id="linkRepo"
           type="url"
@@ -263,6 +264,24 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           placeholder="https://github.com/usuario/repo"
           disabled={isLoading}
         />
+        {errors.linkRepo && (
+          <p className="text-sm text-red-500">{errors.linkRepo.message}</p>
+        )}
+      </div>
+
+      {/* Link Site */}
+      <div className="space-y-2">
+        <Label htmlFor="linkSite">Link do Site/Deploy (opcional)</Label>
+        <Input
+          id="linkSite"
+          type="url"
+          {...register("linkSite")}
+          placeholder="https://meusite.com.br"
+          disabled={isLoading}
+        />
+        {errors.linkSite && (
+          <p className="text-sm text-red-500">{errors.linkSite.message}</p>
+        )}
       </div>
 
       {/* Comments */}
