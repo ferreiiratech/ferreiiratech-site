@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss"
-import type { PluginAPI } from "tailwindcss/types/config"
+import type { Config } from "tailwindcss";
+import type { PluginAPI } from "tailwindcss/types/config";
 
 export default {
   darkMode: ["class"],
@@ -13,12 +13,18 @@ export default {
       animation: {
         "spin-slow": "spin 9s linear infinite reverse",
         "scroll-left": "scroll-left-keyframe 40s linear infinite",
+        shimmer: "shimmer 5s infinite 0.5s",
       },
       keyframes: {
         "scroll-left-keyframe": {
           "0%": { transform: "translateX(0%)" },
           "50%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0%)" },
+        },
+        shimmer: {
+          "0%": { left: "-150%" },
+          "50%": { left: "150%" },
+          "100%": { left: "150%" },
         },
       },
       screens: {
@@ -30,6 +36,7 @@ export default {
         lg: "1024px",
         xl: "1280px",
         "2xl": "1536px",
+        "3xl": "1920px",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
@@ -81,7 +88,11 @@ export default {
           "@apply hover:border-[#899099]/40 transition-colors duration-300 ease-in-out":
             {},
         },
-      })
+        ".shimmer-effect": {
+          "@apply relative overflow-hidden before:content-[''] before:absolute before:top-0 before:left-[-150%] before:w-1/2 before:h-full before:bg-gradient-to-r before:from-transparent before:via-white/40 before:to-transparent before:skew-x-[-25deg] before:animate-shimmer":
+            {},
+        },
+      });
     },
   ],
-} satisfies Config
+} satisfies Config;

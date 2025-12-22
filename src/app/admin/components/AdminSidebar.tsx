@@ -1,8 +1,7 @@
 "use client"
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,20 +10,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { getCookie } from "@/lib/cookies"
+import { cn, getInitials } from "@/lib/utils"
 import {
-  LayoutDashboard,
-  FolderOpen,
   BarChart3,
-  Settings,
-  HelpCircle,
   Building2,
+  FolderOpen,
+  HelpCircle,
+  LayoutDashboard,
   LogOut,
+  Settings,
   User,
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { useState, useEffect } from "react"
-import { getCookie } from "@/lib/cookies"
+import { useEffect, useState } from "react"
 
 const sidebarItems = [
   {
@@ -44,7 +44,7 @@ const sidebarItems = [
   },
 ]
 
-export function AdminSidebar() {
+export function AdminSidebar({ isMobile = false }: { isMobile?: boolean }) {
   const pathname = usePathname()
   const router = useRouter()
   const [userInitials, setUserInitials] = useState("AD")
@@ -54,12 +54,7 @@ export function AdminSidebar() {
     const name = getCookie("user-name")
     if (name) {
       setUserName(name)
-      const names = name.split(" ")
-      const initials = names
-        .map((n) => n.charAt(0).toUpperCase())
-        .slice(0, 2)
-        .join("")
-      setUserInitials(initials)
+      setUserInitials(getInitials(name))
     }
   }, [])
 
@@ -79,8 +74,14 @@ export function AdminSidebar() {
   }
 
   return (
-    <div className="hidden border-r bg-muted/40 md:block w-60">
-      <div className="flex h-full max-h-screen flex-col gap-2">
+    <div
+      className={cn(
+        "border-r bg-muted/40 w-full flex flex-col",
+        !isMobile && "hidden md:block md:w-60",
+        isMobile && "h-full"
+      )}
+    >
+      <div className="flex h-full flex-col gap-2">
         {/* Logo */}
         <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
           <Link
@@ -108,8 +109,8 @@ export function AdminSidebar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:bg-gray-50/10",
-                    isActive && "bg-highlight font-semibold hover:bg-highlight",
+                    "flex items-center gap-3 rounded-lg px-3 py-2 text-white transition-all hover:bg-gray-50/10",
+                    isActive && "bg-highlight font-semibold hover:bg-highlight"
                   )}
                 >
                   <item.icon className="h-4 w-4" />
@@ -128,20 +129,24 @@ export function AdminSidebar() {
                 variant="ghost"
                 className="w-full justify-start gap-3 px-3"
               >
-                <Avatar className="h-8 w-8 border border-gray-50/30">
+                <Avatar className="h-8 w-8 border text-white border-gray-50/30">
                   <AvatarFallback>{userInitials}</AvatarFallback>
                 </Avatar>
                 <div className="flex flex-col items-start text-sm">
-                  <span className="font-medium">{userName}</span>
-                  <span className="text-xs text-muted-foreground">Admin</span>
+                  <span className="font-medium text-white">{userName}</span>
+                  <span className="text-xs text-muted-foreground text-white">
+                    Admin
+                  </span>
                 </div>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent 
-              align="end" 
+            <DropdownMenuContent
+              align="end"
               className="w-56 bg-secondary !border-[#44443f]"
             >
-              <DropdownMenuLabel className="!text-[#efefef]">Minha Conta</DropdownMenuLabel>
+              <DropdownMenuLabel className="!text-[#efefef]">
+                Minha Conta
+              </DropdownMenuLabel>
               <DropdownMenuSeparator className="!bg-[#44443f]" />
               <DropdownMenuItem className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer">
                 <User className="mr-2 h-4 w-4" />
@@ -152,8 +157,8 @@ export function AdminSidebar() {
                 <span>Configurações</span>
               </DropdownMenuItem>
               <DropdownMenuSeparator className="!bg-[#44443f]" />
-              <DropdownMenuItem 
-                onClick={handleLogout} 
+              <DropdownMenuItem
+                onClick={handleLogout}
                 className="!text-[#efefef] hover:bg-gray-50/10 cursor-pointer"
               >
                 <LogOut className="mr-2 h-4 w-4" />

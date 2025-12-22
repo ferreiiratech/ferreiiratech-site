@@ -1,12 +1,12 @@
 "use client"
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CreateProjectFormSchema, CreateProjectSchema } from "@/lib/validations"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useState } from "react"
+import { useForm } from "react-hook-form"
 import type { z } from "zod"
 
 type ProjectFormData = z.infer<typeof CreateProjectFormSchema>
@@ -49,7 +49,6 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           .map((tag: string) => tag.trim())
           .filter(Boolean),
         architecture: data.architecture || null,
-        repository: data.repository,
         images: data.imagesString
           ? data.imagesString
               .split(",")
@@ -59,6 +58,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
         startDate: data.startDate,
         endDate: data.endDate,
         linkRepo: data.linkRepo || null,
+        linkSite: data.linkSite || null,
         comments: data.comments || null,
       }
 
@@ -161,9 +161,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           disabled={isLoading}
         />
         {errors.description && (
-          <p className="text-sm text-red-500">
-            {errors.description.message}
-          </p>
+          <p className="text-sm text-red-500">{errors.description.message}</p>
         )}
       </div>
 
@@ -212,22 +210,6 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
         />
       </div>
 
-      {/* Repository */}
-      <div className="space-y-2">
-        <Label htmlFor="repository">Repositório</Label>
-        <Input
-          id="repository"
-          {...register("repository")}
-          placeholder="Nome do repositório"
-          disabled={isLoading}
-        />
-        {errors.repository && (
-          <p className="text-sm text-red-500">
-            {errors.repository.message}
-          </p>
-        )}
-      </div>
-
       {/* Images */}
       <div className="space-y-2">
         <Label htmlFor="imagesString">Imagens</Label>
@@ -253,9 +235,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
             disabled={isLoading}
           />
           {errors.startDate && (
-            <p className="text-sm text-red-500">
-              {errors.startDate.message}
-            </p>
+            <p className="text-sm text-red-500">{errors.startDate.message}</p>
           )}
         </div>
 
@@ -276,7 +256,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
 
       {/* Link Repo */}
       <div className="space-y-2">
-        <Label htmlFor="linkRepo">Link do Repositório (opcional)</Label>
+        <Label htmlFor="linkRepo">Link do Repositório</Label>
         <Input
           id="linkRepo"
           type="url"
@@ -284,6 +264,24 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
           placeholder="https://github.com/usuario/repo"
           disabled={isLoading}
         />
+        {errors.linkRepo && (
+          <p className="text-sm text-red-500">{errors.linkRepo.message}</p>
+        )}
+      </div>
+
+      {/* Link Site */}
+      <div className="space-y-2">
+        <Label htmlFor="linkSite">Link do Site/Deploy (opcional)</Label>
+        <Input
+          id="linkSite"
+          type="url"
+          {...register("linkSite")}
+          placeholder="https://meusite.com.br"
+          disabled={isLoading}
+        />
+        {errors.linkSite && (
+          <p className="text-sm text-red-500">{errors.linkSite.message}</p>
+        )}
       </div>
 
       {/* Comments */}
@@ -299,7 +297,7 @@ export function ProjectForm({ onSuccess }: ProjectFormProps) {
       </div>
 
       <div className="flex gap-4 pt-4 justify-end">
-        <Button type="submit" variant="outline" disabled={isLoading} >
+        <Button type="submit" variant="outline" disabled={isLoading}>
           {isLoading ? "Criando..." : "Criar Projeto"}
         </Button>
         <Button

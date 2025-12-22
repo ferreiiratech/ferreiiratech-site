@@ -2,10 +2,12 @@ import { z } from "zod"
 
 const publicSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.string().url(),
+  NEXT_PUBLIC_PHONE_NUMBER: z.string(),
 })
 
 const rawPublicEnv = {
   NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
+  NEXT_PUBLIC_PHONE_NUMBER: process.env.NEXT_PUBLIC_PHONE_NUMBER,
 }
 
 const parsedPublic = publicSchema.safeParse(rawPublicEnv)

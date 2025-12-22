@@ -1,7 +1,7 @@
-import { prisma } from "@/lib/prisma"
-import { NextRequest, NextResponse } from "next/server"
-import { CreateProjectSchema } from "@/lib/validations"
 import { verifyAuth } from "@/lib/auth"
+import { prisma } from "@/lib/prisma"
+import { CreateProjectSchema } from "@/lib/validations"
+import { type NextRequest, NextResponse } from "next/server"
 
 // Rota pública para obter a lista de projetos
 export async function GET() {
@@ -62,11 +62,11 @@ export async function POST(request: NextRequest) {
         technologiesTag: validatedData.technologiesTag,
         technologyUsed: {},
         architecture: validatedData.architecture || null,
-        repository: validatedData.repository,
         images: validatedData.images,
         startDate: validatedData.startDate,
         endDate: validatedData.endDate,
-        linkRepo: validatedData.linkRepo || null,
+        linkRepo: validatedData.linkRepo,
+        linkSite: validatedData.linkSite || null,
         comments: validatedData.comments || null,
       },
     })
