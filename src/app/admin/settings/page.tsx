@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
@@ -7,8 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Settings, Shield, User, Bell } from "lucide-react"
+import { Bell, Settings, Shield, User } from "lucide-react"
 
 export default function SettingsPage() {
   return (

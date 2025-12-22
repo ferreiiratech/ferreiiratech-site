@@ -4,13 +4,13 @@
 export function getStatusColor(status: string): string {
   switch (status) {
     case "Finalizado":
-      return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
+      return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
     case "Em Progresso":
-      return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
+      return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
     case "Pausado":
-      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
+      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300"
     default:
-      return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300";
+      return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
   }
 }
 
@@ -20,12 +20,12 @@ export function getStatusColor(status: string): string {
 export function getStatusText(status: string): string {
   switch (status) {
     case "finished":
-      return "Finalizado";
+      return "Finalizado"
     case "in-progress":
-      return "Em Progresso";
+      return "Em Progresso"
     case "paused":
-      return "Pausado";
+      return "Pausado"
     default:
-      return status;
+      return status
   }
 }

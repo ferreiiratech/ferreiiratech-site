@@ -2,10 +2,12 @@ import { z } from "zod"
 
 const serverSchema = z.object({
   DATABASE_URL: z.string(),
+  PHONE_NUMBER: z.string(),
 })
 
 const rawServerEnv = {
   DATABASE_URL: process.env.DATABASE_URL,
+  PHONE_NUMBER: process.env.PHONE_NUMBER,
 }
 
 const parsedServer = serverSchema.safeParse(rawServerEnv)

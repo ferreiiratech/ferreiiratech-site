@@ -1,40 +1,40 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import { prisma } from "@/lib/prisma";
-import { LoginSchema } from "@/lib/validations";
+import { prisma } from "@/lib/prisma"
+import { LoginSchema } from "@/lib/validations"
+import bcrypt from "bcryptjs"
+import jwt from "jsonwebtoken"
+import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    const body = await request.json()
 
     // Validar dados de entrada
-    const validatedData = LoginSchema.parse(body);
+    const validatedData = LoginSchema.parse(body)
 
     // Buscar usuário no banco
     const user = await prisma.user.findUnique({
       where: { email: validatedData.email },
-    });
+    })
 
     if (!user) {
       return NextResponse.json(
         { error: "Credenciais inválidas" },
         { status: 401 }
-      );
+      )
     }
 
     // Verificar senha
     const isPasswordValid = await bcrypt.compare(
       validatedData.password,
       user.password
-    );
+    )
 
     if (!isPasswordValid) {
       return NextResponse.json(
         { error: "Credenciais inválidas" },
         { status: 401 }
-      );
+      )
     }
 
     // Verificar se é admin
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: "Acesso negado. Apenas administradores podem acessar." },
         { status: 403 }
-      );
+      )
     }
 
     // Gerar JWT token
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
       },
       process.env.JWT_SECRET || "fallback-secret",
       { expiresIn: "24h" }
-    );
+    )
 
     // Criar response com cookie
     const response = NextResponse.json({
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
         email: user.email,
         role: user.role,
       },
-    });
+    })
 
     // Definir cookie httpOnly com token
     response.cookies.set("auth-token", token, {
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 86400, // 24 horas
-    });
+    })
 
     // Definir cookies com informações do usuário (não sensíveis)
     response.cookies.set("user-name", user.name, {
@@ -81,29 +81,29 @@ export async function POST(request: NextRequest) {
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 86400, // 24 horas
-    });
+    })
 
     response.cookies.set("user-role", user.role, {
       httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       maxAge: 86400, // 24 horas
-    });
+    })
 
-    return response;
+    return response
   } catch (error) {
-    console.error("Erro no login:", error);
+    console.error("Erro no login:", error)
 
     if (error instanceof Error && error.name === "ZodError") {
       return NextResponse.json(
         { error: "Dados inválidos", details: error.message },
         { status: 400 }
-      );
+      )
     }
 
     return NextResponse.json(
       { error: "Erro interno do servidor" },
       { status: 500 }
-    );
+    )
   }
 }

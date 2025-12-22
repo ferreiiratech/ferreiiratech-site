@@ -3,9 +3,9 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Search, Menu } from "lucide-react"
-import { AdminSidebar } from "./AdminSidebar"
+import { Menu, Search } from "lucide-react"
 import { useEffect, useState } from "react"
+import { AdminSidebar } from "./AdminSidebar"
 
 export function AdminHeader() {
   const [open, setOpen] = useState(false)
@@ -31,7 +31,10 @@ export function AdminHeader() {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="bg-secondary flex flex-col p-0 border-0">
+        <SheetContent
+          side="left"
+          className="bg-secondary flex flex-col p-0 border-0"
+        >
           <AdminSidebar isMobile={true} />
         </SheetContent>
       </Sheet>

@@ -29,6 +29,7 @@ interface TechItemProps {
 }
 
 interface CardProps {
+  className?: string
   children: ReactNode
 }
 
@@ -47,6 +48,8 @@ type TechnologyUsed = {
 }
 
 interface ProjectCardProps {
+  isBackgroundLight?: boolean
+  isShowLinkRepo?: boolean
   id: string
   status: StatusProject
   type: TypeProject
@@ -57,11 +60,11 @@ interface ProjectCardProps {
   technologiesTag: string[]
   technologyUsed?: TechnologyUsed
   architecture?: string
-  repository: string
   images?: string[]
   startDate: Date
   endDate: Date
   linkRepo?: string
+  linkSite?: string
   comments?: string
 }
 
