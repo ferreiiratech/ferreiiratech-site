@@ -30,7 +30,7 @@ export default function FirstSection() {
         </div>
       </div>
       <div className="w-full h-[388px] lg:h-full flex flex-col gap-4">
-        <YouTubePlayer videoId="TREjh6d5fLg" title="Vídeo de apresentação" />
+        <YouTubePlayer videoId="zX99QbIZMxQ" title="Vídeo de apresentação" />
         <div className="flex gap-6 sm:gap-8 items-center justify-center flex-wrap">
           {features.map(feature => (
             <div key={feature.text} className="flex gap-1.5 items-center">
