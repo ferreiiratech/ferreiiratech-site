@@ -56,7 +56,7 @@ export default function SecondSection() {
         ))}
       </div>
 
-      <div className="mt-16 lg:mt-24 flex flex-col items-center gap-6 lg:gap-10 mx-5">
+      {/* <div className="mt-16 lg:mt-24 flex flex-col items-center gap-6 lg:gap-10 mx-5">
         <p className="font-inter text-gray-300 text-base sm:text-lg lg:text-xl text-center">
           Empresas que confiaram em mim:
         </p>
@@ -75,7 +75,7 @@ export default function SecondSection() {
             </Card>
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }
