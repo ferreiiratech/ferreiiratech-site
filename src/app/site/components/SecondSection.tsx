@@ -69,9 +69,8 @@ export default function SecondSection() {
               <Image
                 src={company.logoUrl}
                 alt={`${company.name} Logo`}
-                width={300}
-                height={150}
-                className="absolute inset-0 w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </Card>
           ))}
