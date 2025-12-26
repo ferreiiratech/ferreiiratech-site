@@ -30,32 +30,32 @@ export const features: Feature[] = [
 
 export const customerTestimonialsList: Testemonial[] = [
   {
-    name: "Maria Costa",
+    name: "Ana Clara",
     job: "Advogada",
     quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
+      "Meu site ficou muito além das minhas expectativas! Ficou perfeito! Em 2 semanas meu site estava no ar. Valeu cada centavo!",
     stars: 5,
   },
   {
-    name: "João Silva",
-    job: "Restaurante",
-    quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
-    stars: 5,
-  },
-  {
-    name: "Ana Lima",
-    job: "Consultoria",
-    quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
-    stars: 5,
-  },
-  {
-    name: "Carlos Costa",
+    name: "Carlos Eduardo",
     job: "Empresário",
     quote:
-      "Em 2 semanas meu site estava no ar e já comecei a receber pedidos pelo WhatsApp. Valeu cada centavo!",
+      "Excelente profissional! Entregou tudo no prazo combinado e o site ficou incrível. Já recebi vários elogios dos meus clientes.",
     stars: 5,
+  },
+  {
+    name: "Mariana Silva",
+    job: "Consultora",
+    quote:
+      "Recomendo demais! O atendimento foi super personalizado e o resultado final superou minhas expectativas. Meu site agora reflete exatamente a imagem que quero passar.",
+    stars: 5,
+  },
+  {
+    name: "Pamela Rodrigues",
+    job: "Fotógrafa",
+    quote:
+      "O processo está sendo super tranquilo e o resultado está ficando incrível. Meu portfólio online agora estará mais profissional e atraente para meus clientes.",
+    stars: 4.5,
   },
 ]
 
