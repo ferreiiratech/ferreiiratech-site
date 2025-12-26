@@ -30,7 +30,17 @@ export default function FirstSection() {
         </div>
       </div>
       <div className="w-full h-[388px] lg:h-full flex flex-col gap-4">
-        <YouTubePlayer videoId="zX99QbIZMxQ" title="Vídeo de apresentação" />
+        {/* <YouTubePlayer videoId="zX99QbIZMxQ" title="Vídeo de apresentação" /> */}
+        <div className="relative w-full aspect-square rounded-full overflow-hidden max-w-sm mx-auto">
+          <Image
+            src="/img/giphy_transparent.gif"
+            alt="Exemplos de sites ruins"
+            width={20}
+            height={20}
+            className="absolute inset-0 w-full h-full object-cover rounded-full"
+            loading="lazy"
+          />
+        </div>
         <div className="flex gap-6 sm:gap-8 items-center justify-center flex-wrap">
           {features.map(feature => (
             <div key={feature.text} className="flex gap-1.5 items-center">

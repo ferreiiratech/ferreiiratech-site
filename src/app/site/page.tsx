@@ -14,7 +14,7 @@ export default function SitePage() {
     <div className="overflow-x-hidden max-w-full">
       <Header />
       <FirstSection />
-      { /* <SecondSection />*/}
+      <SecondSection />
       <ThirdSection />
       <FourthSection />
       <FifthSection />
