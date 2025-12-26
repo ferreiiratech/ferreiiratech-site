@@ -61,16 +61,16 @@ export const customerTestimonialsList: Testemonial[] = [
 
 export const companiesThatTrustedMeList: CompaniesThatTrustedMe[] = [
   {
-    name: "Perreira e Zanatta Advogados",
-    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
+    name: "Juscogens",
+    logoUrl: "/img/companies/juscogens.png",
   },
   {
     name: "Perreira e Zanatta Advogados",
-    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
+    logoUrl: "/img/companies/pereira-e-zanatta-advogados.png",
   },
   {
-    name: "Perreira e Zanatta Advogados",
-    logoUrl: "https://projeto-pereira-e-zanatta-advogados.vercel.app/logo.webp",
+    name: "PixPro IA",
+    logoUrl: "/img/companies/pixpro-logo.png",
   },
 ]
 

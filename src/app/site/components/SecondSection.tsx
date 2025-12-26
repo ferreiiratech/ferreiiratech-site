@@ -60,17 +60,18 @@ export default function SecondSection() {
         <p className="font-inter text-gray-300 text-base sm:text-lg lg:text-xl text-center">
           Empresas que confiaram em mim:
         </p>
-        <div className="flex flex-wrap justify-center gap-6 lg:gap-10 max-w-4xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 justify-items-center">
           {companiesThatTrustedMeList.map((company, index) => (
             <Card
               key={index}
-              className="h-[100px] w-[200px] items-center justify-center"
+              className="h-[150px] w-[300px] overflow-hidden relative p-0"
             >
               <Image
                 src={company.logoUrl}
                 alt={`${company.name} Logo`}
-                width={70}
-                height={70}
+                width={300}
+                height={150}
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </Card>
           ))}
