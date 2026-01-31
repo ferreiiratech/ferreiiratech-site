@@ -1,19 +1,40 @@
 "use client"
 import Lenis from "@studio-freight/lenis"
 import { usePathname } from "next/navigation"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function SmoothScrollProvider({
   children,
 }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null)
   const pathname = usePathname()
+  const [isDesktop, setIsDesktop] = useState(false)
 
   useEffect(() => {
     if (typeof window === "undefined") return
 
-    // Desabilitar Lenis nas rotas admin
-    if (pathname?.startsWith("/admin")) {
+    // Verificar se é desktop (tela maior que 1024px)
+    const checkIsDesktop = () => {
+      setIsDesktop(window.matchMedia("(min-width: 1024px)").matches)
+    }
+
+    checkIsDesktop()
+
+    const mediaQuery = window.matchMedia("(min-width: 1024px)")
+    const handleChange = () => checkIsDesktop()
+
+    mediaQuery.addEventListener("change", handleChange)
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    // Desabilitar Lenis nas rotas admin ou em dispositivos mobile/tablet
+    if (pathname?.startsWith("/admin") || !isDesktop) {
       return
     }
 
@@ -37,7 +58,7 @@ export default function SmoothScrollProvider({
     return () => {
       lenis.destroy()
     }
-  }, [pathname])
+  }, [pathname, isDesktop])
 
   return <>{children}</>
 }
