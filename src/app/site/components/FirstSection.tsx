@@ -3,6 +3,7 @@ import Button from "@/app/components/ui/button"
 import Description from "@/app/components/ui/description"
 import TitleH1 from "@/app/components/ui/title-h1"
 import { serverEnv } from "@/app/env/server"
+import BackButton from "@/components/BackButton"
 import { getGreeting } from "@/lib/site-utils"
 import Image from "next/image"
 import { features } from "./data"
@@ -14,6 +15,7 @@ export default function FirstSection() {
   return (
     <section className="grid grid-cols-1 gap-10 justify-center mt-14 mx-5 xs:mx-10 sm:mx-14 md:mx-24 md:gap-14 lg:grid-cols-[1fr_1fr] lg:mx-44 lg:mt-44 2xl:mx-72">
       <div className="space-y-5 lg:space-y-10">
+        <BackButton />
         <TitleH1 title2="Pare de perder clientes por causa de um site fraco!" />
         <Description
           maxW="32rem"

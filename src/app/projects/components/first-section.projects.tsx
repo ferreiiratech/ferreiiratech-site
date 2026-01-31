@@ -3,6 +3,7 @@
 import Button from "@/app/components/ui/button"
 import Description from "@/app/components/ui/description"
 import TitleH1 from "@/app/components/ui/title-h1"
+import BackButton from "@/components/BackButton"
 
 export default function FirstSectionProjects() {
   return (
@@ -13,6 +14,7 @@ export default function FirstSectionProjects() {
     lg:mx-44 lg:mt-28 2xl:mx-72"
     >
       <div className="space-y-5 lg:space-y-10">
+        <BackButton />
         <TitleH1 title1="Minhas experiências" title2="Meus projetos" />
         <Description
           maxW="40rem"
