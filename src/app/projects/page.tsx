@@ -5,11 +5,11 @@ import SecondSectionProjects from "./components/second-section.projects"
 
 export default function ProjectsPage() {
   return (
-    <>
+    <div className="max-w-[1920px] mx-auto">
       <Header />
       <FirstSectionProjects />
       <SecondSectionProjects />
       <FooterSection />
-    </>
+    </div>
   )
 }

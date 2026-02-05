@@ -11,7 +11,7 @@ import SixthSection from "./components/SixthSection"
 
 export default function SitePage() {
   return (
-    <div className="overflow-x-hidden max-w-full">
+    <div className="overflow-x-hidden max-w-[1920px] mx-auto">
       <Header />
       <FirstSection />
       <SecondSection />

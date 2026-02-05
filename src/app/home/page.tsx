@@ -14,7 +14,7 @@ const HomePage = () => {
   const secondSectionRef = useRef<HTMLDivElement>(null)
 
   return (
-    <div>
+    <div className="max-w-[1920px] mx-auto">
       <Header />
       <FirstSection />
       <div ref={secondSectionRef}>
